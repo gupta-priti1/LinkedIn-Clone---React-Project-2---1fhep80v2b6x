@@ -1,4 +1,5 @@
 import React from "react";
+// import { Link } from "react-router-dom";
 
 import logo from "./../../assets/Images/linkedin-logo.svg";
 
@@ -14,37 +15,41 @@ import { GoBellFill } from "react-icons/go";
 
 import "./Navbar.css";
 import UserDropdown from "./UserDropdown";
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
     <div className="navbar-wrapper">
       <div className="navbar-container">
         <div className="navbar-left-items">
-          <Image src={logo} width={"50px"} className="navbar-logo"/>
+        {/* <Link to="/">
+            <Image src={logo} width={"50px"} className="navbar-logo" />
+          </Link> */}
           <SearchBar />
         </div>
         <div className="navbar-right-items">
           <div>
-            <FaHome className="navbar-icon"/>
-            <h4 >Home</h4>
+            <FaHome className="navbar-icon" />
+            <h4>Home</h4>
           </div>
           <div>
-            <HiUsers className="navbar-icon"/>
+            <HiUsers className="navbar-icon" />
             <h4>Network</h4>
           </div>
           <div>
-            <BsFillBriefcaseFill className="navbar-icon"/>
+            <BsFillBriefcaseFill className="navbar-icon" />
             <h4>Jobs</h4>
           </div>
           <div>
-            <HiMiniChatBubbleLeftEllipsis className="navbar-icon"/>
+            <HiMiniChatBubbleLeftEllipsis className="navbar-icon" />
             <h4>Messaging</h4>
           </div>
           <div>
-            <GoBellFill className="navbar-icon"/>
+            <GoBellFill className="navbar-icon" />
             <h4>Notifications</h4>
           </div>
-          <UserDropdown/>
+          <UserDropdown />
         </div>
       </div>
     </div>
