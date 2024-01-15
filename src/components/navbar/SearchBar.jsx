@@ -1,17 +1,17 @@
 import React from "react";
-import { Input, TextField } from "@mui/material";
+import { Input } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
+import { SearchInput, SearchbarContainer } from "../Styles/Style";
 
 const SearchBar = () => {
   return (
-    <div className="searchbar-container ">
-        <SearchIcon />
-        <Input
-         className="search-input"
-         placeholder="Search"
-        />
-    </div>
+    <SearchbarContainer>
+      <SearchIcon />
+      <SearchInput>
+        <Input placeholder="Search" fullWidth />
+      </SearchInput>
+    </SearchbarContainer>
   );
 };
 

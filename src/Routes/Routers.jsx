@@ -7,6 +7,7 @@ const Routers = () => {
     <>
     <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/feed' element={<Home/>}/>
     </Routes>
     </>
   )

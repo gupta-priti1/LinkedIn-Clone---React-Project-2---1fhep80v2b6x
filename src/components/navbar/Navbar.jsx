@@ -1,11 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Image } from "react-bootstrap";
+
 
 import logo from "./../../assets/Images/linkedin-logo.svg";
 
-import SearchBar from "./SearchBar";
-
-import { Image } from "react-bootstrap";
 
 import { FaHome } from "react-icons/fa";
 import { HiUsers } from "react-icons/hi";
@@ -13,25 +12,33 @@ import { BsFillBriefcaseFill } from "react-icons/bs";
 import { HiMiniChatBubbleLeftEllipsis } from "react-icons/hi2";
 import { GoBellFill } from "react-icons/go";
 
-import "./Navbar.css";
+
+import SearchBar from "./SearchBar";
 import UserDropdown from "./UserDropdown";
-import { Link } from "react-router-dom";
+
+import { Wrapper } from "../Styles/Wrapper";
+import { NavbarContainer, NavbarLeftItems, NavbarRightItems } from "../Styles/Style";
+
 
 
 const Navbar = () => {
   return (
-    <div className="navbar-wrapper">
-      <div className="navbar-container">
-        <div className="navbar-left-items">
-        {/* <Link to="/">
-            <Image src={logo} width={"50px"} className="navbar-logo" />
-          </Link> */}
+    // <div className="navbar-wrapper">
+
+    <Wrapper>
+      <NavbarContainer>
+        <NavbarLeftItems>
+          <Link to="/feed">
+            <Image src={logo} width={"45px"} className="navbar-logo" />
+          </Link>
           <SearchBar />
-        </div>
-        <div className="navbar-right-items">
+          </NavbarLeftItems>
+        <NavbarRightItems>
           <div>
-            <FaHome className="navbar-icon" />
-            <h4>Home</h4>
+            <Link to="/feed" className="link">
+              <FaHome className="navbar-icon" />
+              <h4>Home</h4>
+            </Link>
           </div>
           <div>
             <HiUsers className="navbar-icon" />
@@ -50,9 +57,10 @@ const Navbar = () => {
             <h4>Notifications</h4>
           </div>
           <UserDropdown />
-        </div>
-      </div>
-    </div>
+        </NavbarRightItems>
+      
+      </NavbarContainer>
+    </Wrapper>
   );
 };
 

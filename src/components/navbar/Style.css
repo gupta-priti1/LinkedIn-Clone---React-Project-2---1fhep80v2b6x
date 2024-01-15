@@ -1,26 +1,19 @@
-.navbar-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: white;
-}
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 70%;
 }
-.navbar-logo {
-  height: 45px;
-  width: 45px;
-}
-
 .navbar-left-items {
   display: flex;
   align-items: center;
   width: 35%;
 }
+.link {
+  color: gray;
+  text-decoration: none;
+}
+
 .searchbar-container {
   display: flex;
   align-items: center;
@@ -37,8 +30,8 @@
   border: none !important;
 }
 .search-input::after {
-    border-left:1pxsolid black !important;
-  }
+  border-left: 1px solid black !important;
+}
 .navbar-right-items {
   display: flex;
   justify-content: space-between;
@@ -66,6 +59,7 @@
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+  text-decoration: none !important;
 }
 .menu-btn {
   display: flex;
