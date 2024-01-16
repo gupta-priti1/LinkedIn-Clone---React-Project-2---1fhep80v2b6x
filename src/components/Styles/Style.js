@@ -13,12 +13,6 @@ export const NavbarLeftItems = styled.div`
   align-items: center;
   width: 30%;
 `;
-export const NavbarRightItems = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 22px;
-  align-items: center;
-`;
 
 export const SearchbarContainer = styled(NavbarContainer)`
   display: flex;
@@ -29,7 +23,6 @@ export const SearchbarContainer = styled(NavbarContainer)`
   background-color: #edf3f8;
   border-radius: 5px;
 `;
-
 export const SearchInput = styled(NavbarContainer)`
   input {
     text-align: left;
@@ -45,4 +38,37 @@ export const SearchInput = styled(NavbarContainer)`
   .MuiInputBase-root.MuiInput-root:hover {
     border-bottom: none;
   }
+`;
+export const NavbarRightItems = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  align-items: center;
+`;
+
+export const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  .link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .link:hover {
+    color: black;
+  }
+  .navbar-icon {
+    width: 25px;
+    height: 22px;
+  }
+`;
+export const NavbarLinkText = styled.h4`
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-decoration: none !important;
 `;
