@@ -43,23 +43,31 @@ const Navbar = () => {
           </LinkContainer>
 
           <LinkContainer>
-            <HiUsers className="navbar-icon" />
-            <NavbarLinkText>Network</NavbarLinkText>
+            <Link to="/mynetwork" className="link">
+              <HiUsers className="navbar-icon" />
+              <NavbarLinkText>Network</NavbarLinkText>
+            </Link>
           </LinkContainer>
 
           <LinkContainer>
-            <BsFillBriefcaseFill className="navbar-icon" />
-            <NavbarLinkText>Jobs</NavbarLinkText>
+            <Link to="/mynetwork" className="link">
+              <BsFillBriefcaseFill className="navbar-icon" />
+              <NavbarLinkText>Jobs</NavbarLinkText>
+            </Link>
           </LinkContainer>
 
           <LinkContainer>
-            <HiMiniChatBubbleLeftEllipsis className="navbar-icon" />
-            <NavbarLinkText>Messaging</NavbarLinkText>
+            <Link to="/mynetwork" className="link">
+              <HiMiniChatBubbleLeftEllipsis className="navbar-icon" />
+              <NavbarLinkText>Messaging</NavbarLinkText>
+            </Link>
           </LinkContainer>
 
           <LinkContainer>
-            <GoBellFill className="navbar-icon" />
-            <NavbarLinkText>Notifications</NavbarLinkText>
+            <Link to="/mynetwork" className="link">
+              <GoBellFill className="navbar-icon" />
+              <NavbarLinkText>Notifications</NavbarLinkText>
+            </Link>
           </LinkContainer>
 
           <UserDropdown />
