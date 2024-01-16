@@ -56,6 +56,10 @@ export const LinkContainer = styled.div`
   .link {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .link:hover {
     color: black;
