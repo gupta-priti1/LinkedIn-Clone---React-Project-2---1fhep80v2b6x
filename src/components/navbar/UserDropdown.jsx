@@ -8,6 +8,7 @@ import { styled } from '@mui/system';
 import { Avatar } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { DropDownWrapper} from "../Styles/Wrapper";
+import { DropDownItems } from "../Styles/Style";
 
 const UserDropdown = () => {
   return (
@@ -18,10 +19,10 @@ const UserDropdown = () => {
       <Dropdown>
         <MenuButton className="menu-btn">Me<ArrowDropDownIcon/></MenuButton>
         <Menu className="menu-items">
-          <DropDownWrapper className="menu-items">Profile</DropDownWrapper>
-          <DropDownWrapper>Try Premium</DropDownWrapper>
-          <DropDownWrapper>Dark Mode</DropDownWrapper>
-          <DropDownWrapper>Sign out</DropDownWrapper>
+          <DropDownItems className="menu-items">Profile</DropDownItems>
+          <DropDownItems>Try Premium</DropDownItems>
+          <DropDownItems>Dark Mode</DropDownItems>
+          <DropDownItems>Sign out</DropDownItems>
         </Menu>
       </Dropdown>
     </DropDownWrapper>

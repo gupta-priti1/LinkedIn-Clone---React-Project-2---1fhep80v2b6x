@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MenuItem } from "@mui/material";
 
 export const NavbarContainer = styled.div`
   display: flex;
@@ -76,3 +77,8 @@ export const NavbarLinkText = styled.h4`
   font-weight: 400;
   text-decoration: none !important;
 `;
+
+export const DropDownItems = styled(MenuItem)`
+text-decoration: none;
+background-color: white !important;
+`
