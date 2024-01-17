@@ -13,7 +13,7 @@ import { GoBellFill } from "react-icons/go";
 import SearchBar from "./SearchBar";
 import UserDropdown from "./UserDropdown";
 
-import { Wrapper } from "../Styles/Wrapper";
+import { NavbarWrapper} from "../Styles/Wrapper";
 import {
   LinkContainer,
   NavbarContainer,
@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     // <div className="navbar-wrapper">
 
-    <Wrapper>
+    <NavbarWrapper>
       <NavbarContainer>
         <NavbarLeftItems>
           <Link to="/feed">
@@ -73,7 +73,7 @@ const Navbar = () => {
           <UserDropdown />
         </NavbarRightItems>
       </NavbarContainer>
-    </Wrapper>
+    </NavbarWrapper>
   );
 };
 
