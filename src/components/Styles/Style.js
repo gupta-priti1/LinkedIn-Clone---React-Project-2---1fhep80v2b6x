@@ -79,6 +79,40 @@ export const NavbarLinkText = styled.h4`
 `;
 
 export const DropDownItems = styled(MenuItem)`
-text-decoration: none;
-background-color: white !important;
+  text-decoration: none;
+  background-color: white !important;
+`;
+// ---------------Home------------------
+
+export const HomeContainer = styled.div`
+  display: flex;
+  width: 70%;
+  height: 100%;
+  justify-content: space-between;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  position: relative;
+`;
+
+export const UserInfoContainer = styled.div`
+height: 700px;
+background-color: red;
+`
+export const PostContainer = styled.div`
+height:2000px;
+background-color: blue;
+`
+export const NewsContainer = styled.div`
+/* height:1000px; */
+`
+export const TempContainer = styled.div`
+height: 400px;
+background-color: yellow;
+`
+export const Temp2Container = styled.div`
+height: 600px;
+background-color: green;
+position: sticky;
+top: 70px;
+overflow: auto;
 `

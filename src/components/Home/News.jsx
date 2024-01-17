@@ -1,8 +1,14 @@
 import React from 'react'
+import { NewsContainer } from '../Styles/Style'
+import Temp from './Temp'
+import Temp2 from './Temp2'
 
 const News = () => {
   return (
-    <div>News</div>
+    <NewsContainer>
+        <Temp/>
+        <Temp2/>
+    </NewsContainer>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import { PostContainer } from '../Styles/Style'
 
 const Post = () => {
   return (
-    <div>Post</div>
+    <PostContainer>Post</PostContainer>
   )
 }
 
