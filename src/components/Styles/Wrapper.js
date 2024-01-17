@@ -6,8 +6,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: white;
 `;
+export const NavbarWrapper = styled(Wrapper)`
+background-color: white;
+`
 export const DropDownWrapper = styled(Wrapper)`
   .menu-btn {
     padding: 0;
