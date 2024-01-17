@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   width: 100%;
 `;
 export const NavbarWrapper = styled(Wrapper)`
-background-color: white;
-`
+  background-color: white;
+`;
 export const DropDownWrapper = styled(Wrapper)`
+  flex-direction: column;
+
   .menu-btn {
     padding: 0;
     margin: 0;
@@ -23,7 +24,7 @@ export const DropDownWrapper = styled(Wrapper)`
     color: rgba(0, 0, 0, 0.6);
     background-color: transparent;
 
-    &:hover{
+    &:hover {
       color: black;
     }
   }
