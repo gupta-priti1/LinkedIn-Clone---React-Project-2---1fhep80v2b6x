@@ -5,7 +5,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 74%;
 `;
 export const NavbarLeftItems = styled.div`
   display: flex;
@@ -86,24 +86,52 @@ export const DropDownItems = styled(MenuItem)`
 
 export const HomeContainer = styled.div`
   display: flex;
-  width: 70%;
+  width: 74%;
   height: 100%;
   justify-content: space-between;
   /* align-items: center; */
   flex-wrap: wrap;
   position: relative;
+  padding-top: 45px;
 `;
 
 export const UserInfoContainer = styled.div`
-height: 700px;
+width:225px;
 background-color: red;
 `
 export const PostContainer = styled.div`
 height:2000px;
-background-color: blue;
+width: 530px;
+display: flex;
+flex-direction: column;
+align-items: center;
 `
+export const CreatePostContainer = styled.div`
+width: 100%;
+height: 116px;
+background-color: white;
+`
+export const FlexContainer = styled.div`
+display: flex;
+justify-content: space-around;
+align-items: center;
+gap: 10px;
+`
+export const Button = styled.button`
+width: 90%;
+height: 45px;
+border-radius: 55px;
+text-align: start;
+background-color: white;
+
+&:hover{
+  background-color: #EBEBEB;
+}
+`
+
 export const NewsContainer = styled.div`
 /* height:1000px; */
+width: 300px;
 `
 export const TempContainer = styled.div`
 height: 400px;
