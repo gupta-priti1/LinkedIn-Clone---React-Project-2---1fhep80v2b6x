@@ -96,51 +96,64 @@ export const HomeContainer = styled.div`
 `;
 
 export const UserInfoContainer = styled.div`
-width:225px;
-background-color: red;
-`
+  width: 225px;
+  background-color: red;
+`;
 export const PostContainer = styled.div`
-height:2000px;
-width: 530px;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
+  height: 2000px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export const CreatePostContainer = styled.div`
-width: 100%;
-height: 116px;
-background-color: white;
-`
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e5e3e0;
+  border-radius: 15px;
+`;
 export const FlexContainer = styled.div`
-display: flex;
-justify-content: space-around;
-align-items: center;
-gap: 10px;
-`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+`;
 export const Button = styled.button`
-width: 90%;
-height: 45px;
-border-radius: 55px;
-text-align: start;
-background-color: white;
+  width: 90%;
+  height: 45px;
+  border: 1px solid #949494;
+  border-radius: 55px;
+  text-align: start;
+  background-color: white;
+  color: #949494;
+  font-weight: 600;
+  font-size: 14px;
 
-&:hover{
-  background-color: #EBEBEB;
-}
-`
-
+  &:hover {
+    background-color: #ebebeb;
+  }
+`;
+export const CreatePostTitle = styled.h4`
+  margin: 0;
+  color: #5e5e5e;
+`;
 export const NewsContainer = styled.div`
-/* height:1000px; */
-width: 300px;
-`
+  /* height:1000px; */
+  width: 300px;
+`;
 export const TempContainer = styled.div`
-height: 400px;
-background-color: yellow;
-`
+  height: 400px;
+  background-color: yellow;
+`;
 export const Temp2Container = styled.div`
-height: 600px;
-background-color: green;
-position: sticky;
-top: 70px;
-overflow: auto;
-`
+  height: 600px;
+  background-color: green;
+  position: sticky;
+  top: 70px;
+  overflow: auto;
+`;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Wrapper } from "../Styles/Wrapper";
-import { Button, CreatePostContainer, FlexContainer } from "../Styles/Style";
+import { Button, CreatePostContainer, CreatePostTitle, FlexContainer } from "../Styles/Style";
 import UserImage from "../userImage/UserImage";
-import { SlPicture } from "react-icons/sl";
-import { SlCalender } from "react-icons/sl";
+import { RiImage2Fill } from "react-icons/ri";
+import { FaCalendarAlt } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
 
 const CreatePost = () => {
@@ -23,18 +23,21 @@ const CreatePost = () => {
           />
           <Button type="click">Start a post</Button>
         </FlexContainer>
+
         <FlexContainer>
           <FlexContainer>
-            <SlPicture color="blue"  />
-            <h4>Media</h4>
+            <RiImage2Fill fontSize='28px' color="#378FE9" />
+            <CreatePostTitle>Media</CreatePostTitle>
           </FlexContainer>
+
           <FlexContainer>
-            <SlCalender />
-            <h4>Event</h4>
-          </FlexContainer>{" "}
+            <FaCalendarAlt fontSize='22px' color="#C37D16" />
+            <CreatePostTitle>Event</CreatePostTitle>
+          </FlexContainer>
+
           <FlexContainer>
-            <RiArticleFill />
-            <h4>Write article</h4>
+            <RiArticleFill fontSize='24px' color="#E06847" />
+            <CreatePostTitle>Write article</CreatePostTitle>
           </FlexContainer>
         </FlexContainer>
       </CreatePostContainer>
