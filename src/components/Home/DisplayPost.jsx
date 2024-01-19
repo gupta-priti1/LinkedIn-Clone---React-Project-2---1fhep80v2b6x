@@ -1,8 +1,14 @@
 import React from 'react'
+import { Wrapper } from '../Styles/Wrapper'
+import { DisplayPostContainer } from '../Styles/Style'
 
 const DisplayPost = () => {
   return (
-    <div>DisplayPost</div>
+    <Wrapper>
+      <DisplayPostContainer>
+        
+      </DisplayPostContainer>
+    </Wrapper>
   )
 }
 

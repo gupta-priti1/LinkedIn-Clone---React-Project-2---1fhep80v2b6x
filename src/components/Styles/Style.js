@@ -134,15 +134,15 @@ export const PostMediasContainer = styled(FlexContainer)`
   }
 `;
 export const SortByContainer = styled(FlexContainer)`
-gap: 0;
-width: 100%;
-justify-content: space-between;
-height: 35px;
-hr{
-  width: 80%;
-  margin: 5px;
-}
-`
+  gap: 0;
+  width: 100%;
+  justify-content: space-between;
+  height: 35px;
+  hr {
+    width: 80%;
+    margin: 5px;
+  }
+`;
 export const Button = styled.button`
   width: 90%;
   height: 45px;
@@ -162,6 +162,18 @@ export const CreatePostTitle = styled.h4`
   margin: 0;
   color: #5e5e5e;
 `;
+export const DisplayPostContainer = styled.div`
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e5e3e0;
+  border-radius: 15px;
+`;
+
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
