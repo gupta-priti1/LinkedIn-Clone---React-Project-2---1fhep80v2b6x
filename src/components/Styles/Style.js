@@ -133,6 +133,16 @@ export const PostMediasContainer = styled(FlexContainer)`
     border-radius: 5px;
   }
 `;
+export const SortByContainer = styled(FlexContainer)`
+gap: 0;
+width: 100%;
+justify-content: space-between;
+height: 35px;
+hr{
+  width: 80%;
+  margin: 5px;
+}
+`
 export const Button = styled.button`
   width: 90%;
   height: 45px;
