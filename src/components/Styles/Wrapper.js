@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
 `;
 export const NavbarWrapper = styled(Wrapper)`
   background-color: white;
+  height: 8vh;
+  /* position: fixed; */
 `;
 export const DropDownWrapper = styled(Wrapper)`
   flex-direction: column;
@@ -28,4 +30,7 @@ export const DropDownWrapper = styled(Wrapper)`
       color: black;
     }
   }
+`;
+export const HomeWrapper = styled(Wrapper)`
+  height: calc(100% - 8vh);
 `;
