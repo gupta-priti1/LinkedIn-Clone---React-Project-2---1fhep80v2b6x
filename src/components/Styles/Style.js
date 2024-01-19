@@ -101,7 +101,8 @@ export const UserInfoContainer = styled.div`
 `;
 export const PostContainer = styled.div`
   height: 2000px;
-  width: 550px;
+  width: 50%;
+  min-width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,6 +112,7 @@ export const CreatePostContainer = styled.div`
   height: 100px;
   background-color: white;
   padding: 15px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,6 +124,14 @@ export const FlexContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 10px;
+`;
+export const PostMediasContainer = styled(FlexContainer)`
+  padding: 8px;
+  height: 28px;
+  &:hover {
+    background-color: #ebebeb;
+    border-radius: 5px;
+  }
 `;
 export const Button = styled.button`
   width: 90%;
