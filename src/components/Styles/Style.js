@@ -100,7 +100,6 @@ export const UserInfoContainer = styled.div`
   background-color: red;
 `;
 export const PostContainer = styled.div`
-  height: 2000px;
   width: 50%;
   min-width: 550px;
   display: flex;
