@@ -181,7 +181,7 @@ export const PostMarginContainer = styled(FlexContainer)`
   justify-content: flex-start;
 `;
 export const PostPara = styled.p`
-  margin: 6px 18px;
+  margin: 14px 18px;
 `;
 export const PostUserDetails = styled(FlexContainer)`
   flex-direction: column;
