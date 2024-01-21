@@ -198,6 +198,28 @@ export const DisplayReactionsContainer = styled(FlexContainer)`
 justify-content: space-between;
 width: 90%;
 gap: 0;
+color: #5E5E5E;
+font-size: 14px;
+padding-bottom: 5px;
+border-bottom: 1px solid #e5e3e0;
+.like-icon{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  color: #D0E8FF;
+}
+h4{
+  font-weight: 200;
+  margin: 0;
+}
+`
+export const LikeDisplayContainer = styled.div`
+background-color: #378FE9;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+width: 20px;
+height: 20px;
 `
 export const NewsContainer = styled.div`
   /* height:1000px; */

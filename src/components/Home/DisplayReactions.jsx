@@ -1,6 +1,10 @@
 import React from "react";
 import { Wrapper } from "../Styles/Wrapper";
-import { DisplayReactionsContainer, FlexContainer } from "../Styles/Style";
+import {
+  DisplayReactionsContainer,
+  FlexContainer,
+  LikeDisplayContainer,
+} from "../Styles/Style";
 
 import { FaThumbsUp } from "react-icons/fa";
 const DisplayReactions = () => {
@@ -8,7 +12,9 @@ const DisplayReactions = () => {
     <Wrapper>
       <DisplayReactionsContainer>
         <FlexContainer>
-          <FaThumbsUp />
+          <LikeDisplayContainer>
+            <FaThumbsUp className="like-icon" />
+          </LikeDisplayContainer>
           <h4>0</h4>
         </FlexContainer>
         <FlexContainer>
