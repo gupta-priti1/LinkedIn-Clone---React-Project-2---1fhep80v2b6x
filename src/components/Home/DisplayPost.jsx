@@ -7,6 +7,7 @@ import UserImage from "../userImage/UserImage";
 import { MdPublic } from "react-icons/md";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
+import DisplayReactions from "./DisplayReactions";
 
 const DisplayPost = () => {
   const [post, setPost] = useState([]);
@@ -71,6 +72,7 @@ const DisplayPost = () => {
                   <Item img={img} />
                 ))}
               </Carousel>
+              <DisplayReactions/>
             </SinglePost>
           );
         })}
