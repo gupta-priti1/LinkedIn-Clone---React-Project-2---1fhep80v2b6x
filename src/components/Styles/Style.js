@@ -194,6 +194,11 @@ export const PostUserDetails = styled(FlexContainer)`
     margin: 0;
   }
 `;
+export const DisplayReactionsContainer = styled(FlexContainer)`
+justify-content: space-between;
+width: 90%;
+gap: 0;
+`
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
