@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Wrapper } from "../Styles/Wrapper";
-import { DisplayPostContainer, PostMarginContainer, PostPara, PostUserDetails, SinglePost } from "../Styles/Style";
+import {
+  DisplayPostContainer,
+  PostMarginContainer,
+  PostPara,
+  PostUserDetails,
+  SinglePost,
+} from "../Styles/Style";
 import axios from "axios";
 import UserImage from "../userImage/UserImage";
 
@@ -8,6 +14,7 @@ import { MdPublic } from "react-icons/md";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import DisplayReactions from "./DisplayReactions";
+import Reactions from "./Reactions";
 
 const DisplayPost = () => {
   const [post, setPost] = useState([]);
@@ -35,7 +42,6 @@ const DisplayPost = () => {
   return (
     <Wrapper>
       <DisplayPostContainer>
-
         {post.map((item) => {
           let date = new Date(item.createdAt).getHours();
           return (
@@ -72,7 +78,8 @@ const DisplayPost = () => {
                   <Item img={img} />
                 ))}
               </Carousel>
-              <DisplayReactions/>
+              <DisplayReactions />
+              <Reactions />
             </SinglePost>
           );
         })}
