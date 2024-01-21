@@ -163,16 +163,37 @@ export const CreatePostTitle = styled.h4`
 `;
 export const DisplayPostContainer = styled.div`
   width: 100%;
-  background-color: white;
-  padding: 15px;
+  padding: 0px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 8px;
+`;
+export const SinglePost = styled.div`
+  width: 100%;
+  background-color: white;
   border: 1px solid #e5e3e0;
   border-radius: 15px;
 `;
-
+export const PostMarginContainer = styled(FlexContainer)`
+  margin: 6px 15px;
+  justify-content: flex-start;
+`;
+export const PostPara = styled.p`
+  margin: 6px 18px;
+`;
+export const PostUserDetails = styled(FlexContainer)`
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  h4 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+`;
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
