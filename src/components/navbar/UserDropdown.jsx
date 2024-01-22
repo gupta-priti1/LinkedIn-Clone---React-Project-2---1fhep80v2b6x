@@ -8,24 +8,28 @@ import { styled } from "@mui/system";
 import { Avatar } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { DropDownWrapper } from "../Styles/Wrapper";
-import { DropDownItems } from "../Styles/Style";
+import { DropDownContainer, DropDownItems } from "../Styles/Style";
 import UserImage from "../userImage/UserImage";
 
 const UserDropdown = () => {
   return (
     <DropDownWrapper>
-      <UserImage userImageStyling={{
-          width: 25,
-          height: 25,
-          marginTop: "2px",
-          backgroundColor: "#0A66C2",
-          color: "white !important",
-          fontSize: 12,
-        }}/>
       <Dropdown>
         <MenuButton className="menu-btn">
-          Me
-          <ArrowDropDownIcon />
+          <UserImage
+            userImageStyling={{
+              width: 25,
+              height: 25,
+              marginTop: "2px",
+              backgroundColor: "#0A66C2",
+              color: "white !important",
+              fontSize: 12,
+            }}
+          />
+          <DropDownContainer>
+            Me
+            <ArrowDropDownIcon />
+          </DropDownContainer>
         </MenuButton>
         <Menu className="menu-items">
           <DropDownItems className="menu-items">Profile</DropDownItems>

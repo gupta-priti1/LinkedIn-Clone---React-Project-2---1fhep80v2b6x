@@ -19,6 +19,7 @@ export const DropDownWrapper = styled(Wrapper)`
     margin: 0;
     border: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 !important;
@@ -28,6 +29,7 @@ export const DropDownWrapper = styled(Wrapper)`
 
     &:hover {
       color: black;
+      cursor: pointer;
     }
   }
 `;

@@ -77,7 +77,11 @@ export const NavbarLinkText = styled.h4`
   font-weight: 400;
   text-decoration: none !important;
 `;
-
+export const DropDownContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+`
 export const DropDownItems = styled(MenuItem)`
   text-decoration: none;
   background-color: white !important;
@@ -196,7 +200,7 @@ export const PostUserDetails = styled(FlexContainer)`
 `;
 export const DisplayReactionsContainer = styled(FlexContainer)`
 justify-content: space-between;
-width: 90%;
+width: 95%;
 gap: 0;
 color: #5E5E5E;
 font-size: 14px;
@@ -210,6 +214,32 @@ border-bottom: 1px solid #e5e3e0;
 h4{
   font-weight: 200;
   margin: 0;
+}
+`
+export const ReactionsContainer= styled(FlexContainer)`
+justify-content: space-between;
+width: 90%;
+/* background-color: aqua; */
+padding: 3px;
+`
+
+export const SingleReaction = styled(FlexContainer)`
+color: #6B6B6B;
+height: 45px;
+width: 100px;
+justify-content: center;
+padding: 5px;
+&:hover{
+  background-color: #EBEBEB;
+  border-radius: 5px;
+}
+
+.icon{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.repost-icon{
+  height: 20px;
 }
 `
 export const LikeDisplayContainer = styled.div`
