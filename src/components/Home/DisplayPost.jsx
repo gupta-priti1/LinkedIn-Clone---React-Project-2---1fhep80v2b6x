@@ -12,12 +12,14 @@ import UserImage from "../userImage/UserImage";
 
 import { MdPublic } from "react-icons/md";
 import Carousel from "react-material-ui-carousel";
-import { Paper } from "@mui/material";
 import DisplayReactions from "./DisplayReactions";
 import Reactions from "./Reactions";
+import { postContext } from "../context/PostContext";
+import { likePostContext } from "../context/LikePostContext";
 
 const DisplayPost = () => {
-  const [post, setPost] = useState([]);
+  const {post, setPost} = postContext();
+  const {like, setLike} = likePostContext();
 
   useEffect(() => {
     fetchingPost();
@@ -33,16 +35,19 @@ const DisplayPost = () => {
     );
     if (response.status === 200) {
       setPost(response.data.data);
+      setLike(response.data.data.likeCount)
     }
   };
+
   const Item = (props) => {
     return <img src={props.img} alt="image" width={"100%"} height={"350px"} />;
   };
-  console.log(post);
+
+  console.log("post",{post ,like});
   return (
     <Wrapper>
       <DisplayPostContainer>
-        {post.map((item) => {
+        {post?.map((item) => {
           let date = new Date(item.createdAt).getHours();
           return (
             <SinglePost key={item.author.createdAt}>
