@@ -12,5 +12,5 @@ const PostContext = ({ children }) => {
   );
 };
 
-export const postContext = () => useContext();
+export const postContext = () => useContext(StorePostContext);
 export default PostContext;
