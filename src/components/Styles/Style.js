@@ -251,6 +251,14 @@ border-radius: 50%;
 width: 20px;
 height: 20px;
 `
+
+export const CommentInput = styled.input`
+width: 80%;
+padding: 8px;
+border-radius: 50px;
+`
+
+
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;

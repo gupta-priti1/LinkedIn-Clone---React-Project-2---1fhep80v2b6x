@@ -16,6 +16,7 @@ import DisplayReactions from "./DisplayReactions";
 import Reactions from "./Reactions";
 import { postContext } from "../context/PostContext";
 import { likePostContext } from "../context/LikePostContext";
+import Comments from "./Comments";
 
 const DisplayPost = () => {
   const {post, setPost} = postContext();
@@ -88,6 +89,8 @@ const DisplayPost = () => {
               </Carousel>
               <DisplayReactions props={{likes:item.likeCount, comments:item.commentCount}}/>
               <Reactions  props={{likes:item.likeCount, postId : item._id}}/>
+
+              <Comments/>
             </SinglePost>
           );
         })}
