@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Wrapper } from "../Styles/Wrapper";
 import { FlexContainer, ReactionsContainer, SingleReaction } from "../Styles/Style";
 
@@ -8,13 +8,26 @@ import { BsChatText } from "react-icons/bs";
 import { BiRepost } from "react-icons/bi";
 import { RiSendPlaneFill } from "react-icons/ri";
 import axios from "axios";
+import { likePostContext } from "../context/LikePostContext";
+import { postContext } from "../context/PostContext";
 
-const Reactions = () => {
+const Reactions = ({props}) => {
+  const {like, setLike}= likePostContext();
+  const {post} = postContext();
 
+  const postId = props.postId
+
+  // console.log(postId);
+  // useEffect(()=>{
+  //   likefetching();
+  // },[])
+  // const likefetching =()=>{
+  //   setLike(post.likeCount)
+  //   console.log('like', like);
+  // }
   const handleLikeClick = async()=>{
-    console.log('liked');
     const response = await axios.post(
-      'https://academics.newtonschool.co/api/v1/linkedin/like/65ab4d67277339d884512a41',
+      `https://academics.newtonschool.co/api/v1/linkedin/like/${postId}`,
       '',
       {
         headers: {
@@ -24,6 +37,11 @@ const Reactions = () => {
       }
     );
     console.log(response);
+    if(response.status === 201)
+    {
+      setLike(like+1);
+      console.log('liked');
+    }
   }
   return (
     <Wrapper>

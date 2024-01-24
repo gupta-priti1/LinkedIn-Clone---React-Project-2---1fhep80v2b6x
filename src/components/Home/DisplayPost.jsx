@@ -23,7 +23,9 @@ const DisplayPost = () => {
 
   useEffect(() => {
     fetchingPost();
-  }, []);
+    console.log('fetching');
+  }, [like]);
+
   const fetchingPost = async () => {
     const response = await axios.get(
       "https://academics.newtonschool.co/api/v1/linkedin/post",
@@ -33,9 +35,10 @@ const DisplayPost = () => {
         },
       }
     );
+    console.log(response);
     if (response.status === 200) {
       setPost(response.data.data);
-      setLike(response.data.data.likeCount)
+      // setLike(response.data.data.likeCount)
     }
   };
 
@@ -43,7 +46,7 @@ const DisplayPost = () => {
     return <img src={props.img} alt="image" width={"100%"} height={"350px"} />;
   };
 
-  console.log("post",{post ,like});
+  console.log("post",post);
   return (
     <Wrapper>
       <DisplayPostContainer>
@@ -83,8 +86,8 @@ const DisplayPost = () => {
                   <Item img={img} />
                 ))}
               </Carousel>
-              <DisplayReactions />
-              <Reactions />
+              <DisplayReactions props={{likes:item.likeCount, comments:item.commentCount}}/>
+              <Reactions  props={{likes:item.likeCount, postId : item._id}}/>
             </SinglePost>
           );
         })}
