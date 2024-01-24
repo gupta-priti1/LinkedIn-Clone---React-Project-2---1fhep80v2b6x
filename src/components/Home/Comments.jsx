@@ -1,16 +1,22 @@
-import { Input } from '@mui/material'
-import React from 'react'
-import { CommentInput, FlexContainer } from '../Styles/Style'
-import UserImage from '../userImage/UserImage'
+
+import React from "react";
+import { CommentInput, FlexContainer } from "../Styles/Style";
+import UserImage from "../userImage/UserImage";
 
 const Comments = () => {
-  return (
-    <FlexContainer>
-        <UserImage/>
-        <CommentInput/>
-       
-    </FlexContainer>
-  )
-}
+    const handleFetchingComments = ()=>{
 
-export default Comments
+    }
+  return (
+    <div>
+      <FlexContainer>
+        <UserImage />
+        <CommentInput />
+      </FlexContainer>
+
+
+    </div>
+  );
+};
+
+export default Comments;
