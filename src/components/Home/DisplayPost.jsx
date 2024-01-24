@@ -19,12 +19,12 @@ import { likePostContext } from "../context/LikePostContext";
 import Comments from "./Comments";
 
 const DisplayPost = () => {
-  const {post, setPost} = postContext();
-  const {like, setLike} = likePostContext();
+  const { post, setPost } = postContext();
+  const { like, setLike } = likePostContext();
 
   useEffect(() => {
     fetchingPost();
-    console.log('fetching');
+    console.log("fetching");
   }, [like]);
 
   const fetchingPost = async () => {
@@ -47,7 +47,7 @@ const DisplayPost = () => {
     return <img src={props.img} alt="image" width={"100%"} height={"350px"} />;
   };
 
-  console.log("post",post);
+  console.log("post", post);
   return (
     <Wrapper>
       <DisplayPostContainer>
@@ -87,10 +87,12 @@ const DisplayPost = () => {
                   <Item img={img} />
                 ))}
               </Carousel>
-              <DisplayReactions props={{likes:item.likeCount, comments:item.commentCount}}/>
-              <Reactions  props={{likes:item.likeCount, postId : item._id}}/>
+              <DisplayReactions
+                props={{ likes: item.likeCount, comments: item.commentCount }}
+              />
+              <Reactions props={{ likes: item.likeCount, postId: item._id }} />
 
-              <Comments/>
+              <Comments props={{ postId: item._id }} />
             </SinglePost>
           );
         })}
