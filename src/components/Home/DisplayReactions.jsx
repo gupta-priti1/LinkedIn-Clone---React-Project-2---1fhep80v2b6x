@@ -10,7 +10,6 @@ import { FaThumbsUp } from "react-icons/fa";
 const DisplayReactions = ({props}) => {
   const likes = props.likes;
   const comments = props.comments;
-  console.log(likes);
   return (
     <Wrapper>
       <DisplayReactionsContainer>
