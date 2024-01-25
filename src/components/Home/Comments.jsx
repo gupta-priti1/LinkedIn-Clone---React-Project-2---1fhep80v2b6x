@@ -7,26 +7,42 @@ import {
 import UserImage from "../userImage/UserImage";
 import DisplayingComments from "./DisplayingComments";
 import { Button } from "react-bootstrap";
+import axios from "axios";
 
 const Comments = ({ props }) => {
   const [showPostButton, setShowPostButton] = useState(false);
-  const[commentText, setCommentText]= useState('')
+  const [commentText, setCommentText] = useState("");
+
+  const postId = props.postId;
+  console.log(postId);
   const handleCommentChange = (e) => {
     // console.log(e.target.value);
     if (e.target.value.trim().length > 0 && e.target.value != "") {
       setShowPostButton(true);
-      setCommentText(e.target.value)
-    }
-    else
-    {
+      setCommentText(e.target.value);
+    } else {
       setShowPostButton(false);
     }
   };
-  console.log(commentText);
+  // console.log(commentText);
 
-  const handlePostingComment= async()=>{
-
-  }
+  const handlePostingComment = async () => {
+    const response = await axios.post(
+      `https://academics.newtonschool.co/api/v1/linkedin/comment/${postId}`,
+      {
+        content: commentText,
+      },
+      {
+        headers: {
+          projectID: "hv45l4abtvvc",
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+        },
+      }
+    );
+    console.log(response);
+  };
 
   return (
     <div>
@@ -42,8 +58,7 @@ const Comments = ({ props }) => {
           }}
         />
         <CommentInput type="text" onInput={handleCommentChange} />
-        {showPostButton &&
-         <Button onClick={handlePostingComment}>Post</Button>}
+        {showPostButton && <Button onClick={handlePostingComment}>Post</Button>}
       </CommentsContainer>
       <DisplayingComments props={props} />
     </div>
