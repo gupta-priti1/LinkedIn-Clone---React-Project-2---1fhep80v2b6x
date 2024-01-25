@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
-import { Wrapper } from "../Styles/Wrapper";
-import { FlexContainer, ReactionsContainer, SingleReaction } from "../Styles/Style";
+import { Wrapper } from "../../Styles/Wrapper";
+import {
+  FlexContainer,
+  ReactionsContainer,
+  SingleReaction,
+} from "../../Styles/Style";
 
 import { FaThumbsUp } from "react-icons/fa";
 import { FaRegThumbsUp } from "react-icons/fa";
@@ -8,16 +12,16 @@ import { BsChatText } from "react-icons/bs";
 import { BiRepost } from "react-icons/bi";
 import { RiSendPlaneFill } from "react-icons/ri";
 import axios from "axios";
-import { likePostContext } from "../context/LikePostContext";
-import { postContext } from "../context/PostContext";
+import { likePostContext } from "../../context/LikePostContext";
+import { postContext } from "../../context/PostContext";
 
-const Reactions = ({props, show}) => {
-  const {like, setLike}= likePostContext();
-  const {post} = postContext();
+const Reactions = ({ props, show }) => {
+  const { like, setLike } = likePostContext();
+  const { post } = postContext();
 
   const showComments = show.show;
   const setShowComments = show.setShow;
-  const postId = props.postId
+  const postId = props.postId;
 
   // console.log(setShowComments);
   // useEffect(()=>{
@@ -27,35 +31,35 @@ const Reactions = ({props, show}) => {
   //   setLike(post.likeCount)
   //   console.log('like', like);
   // }
-  const handleLikeClick = async()=>{
+  const handleLikeClick = async () => {
     const response = await axios.post(
       `https://academics.newtonschool.co/api/v1/linkedin/like/${postId}`,
-      '',
+      "",
       {
         headers: {
-          'projectID': 'hv45l4abtvvc',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w'
-        }
+          projectID: "hv45l4abtvvc",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+        },
       }
     );
     console.log(response);
-    if(response.status === 201)
-    {
-      setLike(like+1);
-      console.log('liked');
+    if (response.status === 201) {
+      setLike(like + 1);
+      console.log("liked");
     }
-  }
+  };
 
-  const handleCommentClick =()=>{
+  const handleCommentClick = () => {
     console.log(showComments);
     setShowComments(!showComments);
-  }
+  };
   return (
     <Wrapper>
       <ReactionsContainer>
         <SingleReaction onClick={handleLikeClick}>
           {/* <FaThumbsUp className="icon"/> */}
-          <FaRegThumbsUp className="icon"/>
+          <FaRegThumbsUp className="icon" />
           <h4>Like</h4>
         </SingleReaction>
         <SingleReaction onClick={handleCommentClick}>
@@ -63,7 +67,7 @@ const Reactions = ({props, show}) => {
           <h4>Comment</h4>
         </SingleReaction>
         <SingleReaction>
-          <BiRepost className="repost-icon"/>
+          <BiRepost className="repost-icon" />
           <h4>Repost</h4>
         </SingleReaction>
         <SingleReaction>

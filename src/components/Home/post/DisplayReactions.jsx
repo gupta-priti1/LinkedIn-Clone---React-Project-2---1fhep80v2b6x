@@ -1,13 +1,13 @@
 import React from "react";
-import { Wrapper } from "../Styles/Wrapper";
+import { Wrapper } from "../../Styles/Wrapper";
 import {
   DisplayReactionsContainer,
   FlexContainer,
   LikeDisplayContainer,
-} from "../Styles/Style";
+} from "../../Styles/Style";
 
 import { FaThumbsUp } from "react-icons/fa";
-const DisplayReactions = ({props}) => {
+const DisplayReactions = ({ props }) => {
   const likes = props.likes;
   const comments = props.comments;
   return (

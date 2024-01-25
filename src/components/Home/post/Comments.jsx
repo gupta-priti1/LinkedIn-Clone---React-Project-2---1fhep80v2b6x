@@ -3,8 +3,8 @@ import {
   CommentInput,
   CommentsContainer,
   FlexContainer,
-} from "../Styles/Style";
-import UserImage from "../userImage/UserImage";
+} from "../../Styles/Style";
+import UserImage from "../../userImage/UserImage";
 import DisplayingComments from "./DisplayingComments";
 import { Button } from "react-bootstrap";
 import axios from "axios";

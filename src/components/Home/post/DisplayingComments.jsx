@@ -1,12 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { CommentAuthorDetails, CommentsContainer, FlexContainer } from "../Styles/Style";
-import UserImage from "../userImage/UserImage";
-import { CommentsWrapper, Wrapper } from "../Styles/Wrapper";
+import {
+  CommentAuthorDetails,
+  CommentsContainer,
+  FlexContainer,
+} from "../../Styles/Style";
+import UserImage from "../../userImage/UserImage";
+import { CommentsWrapper, Wrapper } from "../../Styles/Wrapper";
 
 const DisplayingComments = ({ props }) => {
   const [comments, setComments] = useState();
-  
+
   useEffect(() => {
     handleFetchingComments();
   }, []);

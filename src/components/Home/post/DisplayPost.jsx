@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Wrapper } from "../Styles/Wrapper";
+import { Wrapper } from "../../Styles/Wrapper";
 import {
   DisplayPostContainer,
   PostMarginContainer,
   PostPara,
   PostUserDetails,
   SinglePost,
-} from "../Styles/Style";
+} from "../../Styles/Style";
 import axios from "axios";
-import UserImage from "../userImage/UserImage";
+import UserImage from "../../userImage/UserImage";
 
 import { MdPublic } from "react-icons/md";
 import Carousel from "react-material-ui-carousel";
 import DisplayReactions from "./DisplayReactions";
 import Reactions from "./Reactions";
-import { postContext } from "../context/PostContext";
-import { likePostContext } from "../context/LikePostContext";
+import { postContext } from "../../context/PostContext";
+import { likePostContext } from "../../context/LikePostContext";
 import ReactionsAndComments from "./ReactionsAndComments";
 
 const DisplayPost = () => {
@@ -90,7 +90,9 @@ const DisplayPost = () => {
               <DisplayReactions
                 props={{ likes: item.likeCount, comments: item.commentCount }}
               />
-              <ReactionsAndComments props={{ likes: item.likeCount, postId: item._id }}/>
+              <ReactionsAndComments
+                props={{ likes: item.likeCount, postId: item._id }}
+              />
             </SinglePost>
           );
         })}
