@@ -36,3 +36,7 @@ export const DropDownWrapper = styled(Wrapper)`
 export const HomeWrapper = styled(Wrapper)`
   height: calc(100% - 8vh);
 `;
+export const CommentsWrapper = styled(Wrapper)`
+flex-direction: column;
+gap: 20px;
+`

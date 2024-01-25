@@ -257,8 +257,27 @@ width: 90%;
 padding: 8px;
 border-radius: 50px;
 `
+export const CommentsContainer = styled(FlexContainer)`
+width: 95%;
+justify-content:space-between;
+padding: 0px 15px;
+`
+export const CommentAuthorDetails = styled(FlexContainer)`
+flex-direction: column;
+align-items: start;
+width: 95%;
+background-color: #F2F2F2;
+margin: 5px 0px;
+padding: 10px;
+border-radius: 10px;
 
-
+h4{
+  margin: 0;
+}
+p{
+  margin: 0;
+}
+`
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
