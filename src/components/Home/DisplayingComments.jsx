@@ -6,6 +6,7 @@ import { CommentsWrapper, Wrapper } from "../Styles/Wrapper";
 
 const DisplayingComments = ({ props }) => {
   const [comments, setComments] = useState();
+  
   useEffect(() => {
     handleFetchingComments();
   }, []);

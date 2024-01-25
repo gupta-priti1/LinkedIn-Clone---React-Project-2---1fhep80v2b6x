@@ -17,11 +17,15 @@ import Reactions from "./Reactions";
 import { postContext } from "../context/PostContext";
 import { likePostContext } from "../context/LikePostContext";
 import Comments from "./Comments";
+import { showCommentsContext } from "../context/ShowCommentsContext";
+import ReactionsAndComments from "./ReactionsAndComments";
 
 const DisplayPost = () => {
+  const {showComments, setShowComments} = showCommentsContext();
   const { post, setPost } = postContext();
   const { like, setLike } = likePostContext();
 
+console.log(showComments);
   useEffect(() => {
     fetchingPost();
     console.log("fetching");
@@ -90,9 +94,7 @@ const DisplayPost = () => {
               <DisplayReactions
                 props={{ likes: item.likeCount, comments: item.commentCount }}
               />
-              <Reactions props={{ likes: item.likeCount, postId: item._id }} />
-
-              <Comments props={{ postId: item._id }} />
+              <ReactionsAndComments props={{ likes: item.likeCount, postId: item._id }}/>
             </SinglePost>
           );
         })}

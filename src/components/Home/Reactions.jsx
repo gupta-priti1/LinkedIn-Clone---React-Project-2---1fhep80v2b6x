@@ -10,14 +10,18 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import axios from "axios";
 import { likePostContext } from "../context/LikePostContext";
 import { postContext } from "../context/PostContext";
+import { showCommentsContext } from "../context/ShowCommentsContext";
 
-const Reactions = ({props}) => {
+const Reactions = ({props, show}) => {
   const {like, setLike}= likePostContext();
   const {post} = postContext();
+  // const {showComments, setShowComments} = showCommentsContext();
 
+  const showComments = show.show;
+  const setShowComments = show.setShow;
   const postId = props.postId
 
-  // console.log(postId);
+  // console.log(setShowComments);
   // useEffect(()=>{
   //   likefetching();
   // },[])
@@ -43,6 +47,11 @@ const Reactions = ({props}) => {
       console.log('liked');
     }
   }
+
+  const handleCommentClick =()=>{
+    console.log(showComments);
+    setShowComments(!showComments);
+  }
   return (
     <Wrapper>
       <ReactionsContainer>
@@ -51,7 +60,7 @@ const Reactions = ({props}) => {
           <FaRegThumbsUp className="icon"/>
           <h4>Like</h4>
         </SingleReaction>
-        <SingleReaction>
+        <SingleReaction onClick={handleCommentClick}>
           <BsChatText />
           <h4>Comment</h4>
         </SingleReaction>

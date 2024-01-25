@@ -16,7 +16,7 @@ const Comments = ({ props }) => {
                     color: "white !important",
                     fontSize: 12,
                   }}/>
-        <CommentInput />
+        <CommentInput type="text"/>
       </CommentsContainer>
       <DisplayingComments props={props}/>
       
