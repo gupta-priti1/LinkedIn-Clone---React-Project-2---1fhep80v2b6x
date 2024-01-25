@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CommentInput, FlexContainer } from "../Styles/Style";
 import UserImage from "../userImage/UserImage";
 import axios from "axios";
+import { pink } from "@mui/material/colors";
 
 const Comments = ({ props }) => {
   const [comments, setComments] = useState();
@@ -30,14 +31,23 @@ const Comments = ({ props }) => {
   return (
     <div>
       <FlexContainer>
-        <UserImage />
+        <UserImage userImageStyling={{
+                    width: 35,
+                    height: 35,
+                    marginTop: "2px",
+                    backgroundColor: "#0A66C2",
+                    color: "white !important",
+                    fontSize: 12,
+                  }}/>
         <CommentInput />
       </FlexContainer>
 
       {comments?.map((comment) => {
         return(
-
+          <FlexContainer>
+          <UserImage userImageStyling={{backgroundColor:'black'}}/>
             <div>{comment.content}</div>
+          </FlexContainer>
         )
       })}
     </div>
