@@ -46,7 +46,12 @@ const Comments = ({ props }) => {
         return(
           <FlexContainer>
           <UserImage userImageStyling={{backgroundColor:'black'}}/>
-            <div>{comment.content}</div>
+            <div>
+              <h4>
+                name
+              </h4>
+              {comment.content}
+              </div>
           </FlexContainer>
         )
       })}
