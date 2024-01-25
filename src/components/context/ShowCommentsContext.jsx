@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 const StoreShowComments = createContext();
 const ShowCommentsContext = ({ children }) => {
-  const [showComments, setShowComments] = useState([]);
+  const [showComments, setShowComments] = useState(false);
   return (
     <>
       <StoreShowComments.Provider value={{ showComments, setShowComments }}>
