@@ -16,16 +16,12 @@ import DisplayReactions from "./DisplayReactions";
 import Reactions from "./Reactions";
 import { postContext } from "../context/PostContext";
 import { likePostContext } from "../context/LikePostContext";
-import Comments from "./Comments";
-import { showCommentsContext } from "../context/ShowCommentsContext";
 import ReactionsAndComments from "./ReactionsAndComments";
 
 const DisplayPost = () => {
-  const {showComments, setShowComments} = showCommentsContext();
   const { post, setPost } = postContext();
   const { like, setLike } = likePostContext();
 
-console.log(showComments);
   useEffect(() => {
     fetchingPost();
     console.log("fetching");

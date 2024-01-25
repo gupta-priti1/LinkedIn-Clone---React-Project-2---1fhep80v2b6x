@@ -10,12 +10,10 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import axios from "axios";
 import { likePostContext } from "../context/LikePostContext";
 import { postContext } from "../context/PostContext";
-import { showCommentsContext } from "../context/ShowCommentsContext";
 
 const Reactions = ({props, show}) => {
   const {like, setLike}= likePostContext();
   const {post} = postContext();
-  // const {showComments, setShowComments} = showCommentsContext();
 
   const showComments = show.show;
   const setShowComments = show.setShow;
