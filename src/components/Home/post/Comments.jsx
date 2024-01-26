@@ -8,7 +8,6 @@ import UserImage from "../../userImage/UserImage";
 import DisplayingComments from "./DisplayingComments";
 import { Button } from "react-bootstrap";
 import axios from "axios";
-import { commentsContext } from "../../context/CommentsContext";
 
 const Comments = ({ props }) => {
   const [showPostButton, setShowPostButton] = useState(false);
