@@ -8,12 +8,12 @@ import {
 import UserImage from "../../userImage/UserImage";
 import { CommentsWrapper, Wrapper } from "../../Styles/Wrapper";
 
-const DisplayingComments = ({ props }) => {
+const DisplayingComments = ({ props, reFetchComments}) => {
   const [comments, setComments] = useState();
 
   useEffect(() => {
     handleFetchingComments();
-  }, []);
+  }, [reFetchComments]);
 
   const postId = props.postId;
 

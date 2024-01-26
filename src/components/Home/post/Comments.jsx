@@ -12,6 +12,7 @@ import axios from "axios";
 const Comments = ({ props }) => {
   const [showPostButton, setShowPostButton] = useState(false);
   const [commentText, setCommentText] = useState("");
+  const [reFetchComments, setRefetchComments] = useState(false);
 
   const postId = props.postId;
   console.log(postId);
@@ -44,6 +45,7 @@ const Comments = ({ props }) => {
 
     console.log(response);
     setCommentText("")
+    setRefetchComments(!reFetchComments)
   };
 
   return (
@@ -62,7 +64,7 @@ const Comments = ({ props }) => {
         <CommentInput type="text" onInput={handleCommentChange} value={commentText}/>
         {showPostButton && <Button onClick={handlePostingComment}>Post</Button>}
       </CommentsContainer>
-      <DisplayingComments props={props} />
+      <DisplayingComments props={props} reFetchComments={reFetchComments} />
     </div>
   );
 };
