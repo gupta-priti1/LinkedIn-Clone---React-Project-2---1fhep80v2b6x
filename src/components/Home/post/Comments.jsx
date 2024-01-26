@@ -14,8 +14,6 @@ const Comments = ({ props }) => {
   const [showPostButton, setShowPostButton] = useState(false);
   const [commentText, setCommentText] = useState("");
 
-  const {comments, setComments} = commentsContext();
-
   const postId = props.postId;
   console.log(postId);
   const handleCommentChange = (e) => {
@@ -46,6 +44,7 @@ const Comments = ({ props }) => {
     );
 
     console.log(response);
+    setCommentText("")
   };
 
   return (
@@ -61,7 +60,7 @@ const Comments = ({ props }) => {
             fontSize: 12,
           }}
         />
-        <CommentInput type="text" onInput={handleCommentChange} />
+        <CommentInput type="text" onInput={handleCommentChange} value={commentText}/>
         {showPostButton && <Button onClick={handlePostingComment}>Post</Button>}
       </CommentsContainer>
       <DisplayingComments props={props} />
