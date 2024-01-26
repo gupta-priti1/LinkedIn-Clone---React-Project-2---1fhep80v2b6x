@@ -9,7 +9,8 @@ export const Wrapper = styled.div`
 export const NavbarWrapper = styled(Wrapper)`
   background-color: white;
   height: 8vh;
-  /* position: fixed; */
+  position: fixed;
+  z-index: 9;
 `;
 export const DropDownWrapper = styled(Wrapper)`
   flex-direction: column;
@@ -34,9 +35,10 @@ export const DropDownWrapper = styled(Wrapper)`
   }
 `;
 export const HomeWrapper = styled(Wrapper)`
+  margin-top: 8vh;
   height: calc(100% - 8vh);
 `;
 export const CommentsWrapper = styled(Wrapper)`
-flex-direction: column;
-gap: 20px;
-`
+  flex-direction: column;
+  gap: 20px;
+`;
