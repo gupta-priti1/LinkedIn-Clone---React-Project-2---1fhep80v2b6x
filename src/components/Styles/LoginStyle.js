@@ -11,4 +11,6 @@ justify-content: flex-start;
 `
 
 export const LoginContainer = styled(FlexContainer)`
+justify-content: space-between;
+width: 75%;
 `
