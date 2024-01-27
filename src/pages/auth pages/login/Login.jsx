@@ -1,13 +1,14 @@
 import React from 'react'
-import LoginNavbar from '../LoginNavbar'
+import LoginNavbar from './LoginNavbar'
 import LoginBody from './LoginBody'
+import { LoginWrapper } from '../../../components/Styles/LoginStyle'
 
 const Login = () => {
   return (
-    <div>
+    <LoginWrapper>
       <LoginNavbar/>
       <LoginBody/>
-    </div>
+    </LoginWrapper>
   )
 }
 
