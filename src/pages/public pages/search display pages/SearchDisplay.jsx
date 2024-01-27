@@ -1,12 +1,16 @@
 import React from "react";
 import Temp2 from "../../../components/Home/Temp2";
+import { SearchDisplayWrapper} from "../../../components/Styles/Wrapper";
+import { FlexContainer } from "../../../components/Styles/Style";
 
 const SearchDisplay = () => {
   return (
-    <div>
-      SearchDisplay
+    <SearchDisplayWrapper>
+      <FlexContainer>
+        search
+      </FlexContainer>
       <Temp2 />
-    </div>
+    </SearchDisplayWrapper>
   );
 };
 
