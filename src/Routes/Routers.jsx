@@ -6,10 +6,11 @@ import Jobs from '../pages/Jobs'
 import Messaging from '../pages/Messaging'
 import Notifications from '../pages/Notifications'
 import SearchDisplay from '../pages/SearchDisplay'
+import {RoutesWrapper } from '../components/Styles/Wrapper'
 
 const Routers = () => {
   return (
-    <>
+    <RoutesWrapper>
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/feed' element={<Home/>}/>
@@ -19,7 +20,7 @@ const Routers = () => {
         <Route path='/notifications' element={<Notifications/>}/>
         <Route path='/search/:searchTerm' element={<SearchDisplay/>}/>
     </Routes>
-    </>
+    </RoutesWrapper>
   )
 }
 

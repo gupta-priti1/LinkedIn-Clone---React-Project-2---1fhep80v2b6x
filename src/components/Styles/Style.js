@@ -96,7 +96,7 @@ export const HomeContainer = styled.div`
   /* align-items: center; */
   flex-wrap: wrap;
   position: relative;
-  padding-top: 45px;
+  padding-top: 15px;
 `;
 
 export const UserInfoContainer = styled.div`

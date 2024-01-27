@@ -7,13 +7,13 @@ import { HomeContainer } from "../components/Styles/Style";
 
 const Home = () => {
   return (
-    <HomeWrapper>
+    <>
       <HomeContainer>
         <UserInfo />
         <Post />
         <News />
       </HomeContainer>
-    </HomeWrapper>
+    </>
   );
 };
 
