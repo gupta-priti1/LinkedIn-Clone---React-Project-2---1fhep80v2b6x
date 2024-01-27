@@ -24,7 +24,7 @@ const DisplayPost = () => {
 
   useEffect(() => {
     fetchingPost();
-    console.log("fetching");
+    // console.log("fetching");
   }, [like]);
 
   const fetchingPost = async () => {
@@ -36,7 +36,7 @@ const DisplayPost = () => {
         },
       }
     );
-    console.log(response);
+    // console.log(response);
     if (response.status === 200) {
       setPost(response.data.data);
       // setLike(response.data.data.likeCount)
@@ -47,7 +47,7 @@ const DisplayPost = () => {
     return <img src={props.img} alt="image" width={"100%"} height={"350px"} />;
   };
 
-  console.log("post", post);
+  // console.log("post", post);
   return (
     <Wrapper>
       <DisplayPostContainer>

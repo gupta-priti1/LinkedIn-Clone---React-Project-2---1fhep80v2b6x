@@ -32,7 +32,7 @@ const DisplayingComments = ({ props, reFetchComments}) => {
       setComments(response.data.data);
     }
   };
-  console.log("comments", comments);
+  // console.log("comments", comments);
   return (
     <CommentsWrapper>
       {comments?.map((comment) => {
