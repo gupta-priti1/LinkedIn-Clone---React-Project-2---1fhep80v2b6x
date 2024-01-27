@@ -10,7 +10,7 @@ import { RoutesWrapper } from "../components/Styles/Wrapper";
 
 const Routers = () => {
   return (
-    <RoutesWrapper>
+    <RoutesWrapper className="route">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/feed" element={<Home />} />

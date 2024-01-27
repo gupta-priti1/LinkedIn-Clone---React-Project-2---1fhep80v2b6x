@@ -1,14 +1,14 @@
 import React from "react";
 import Temp2 from "../../../components/Home/Temp2";
 import { SearchDisplayWrapper} from "../../../components/Styles/Wrapper";
-import { FlexContainer } from "../../../components/Styles/Style";
+import PostContainer from "../../../components/postContainer/PostContainer";
+import { searchItemsContext } from "../../../components/context/SearchItemsContext";
 
 const SearchDisplay = () => {
+  const{searchItems, setSearchItems} = searchItemsContext();
   return (
     <SearchDisplayWrapper>
-      <FlexContainer>
-        search
-      </FlexContainer>
+        <PostContainer posts={searchItems}/>
       <Temp2 />
     </SearchDisplayWrapper>
   );

@@ -50,4 +50,5 @@ export const PostWrapper = styled(Wrapper)`
 `;
 export const SearchDisplayWrapper = styled(Wrapper)`
 gap: 20px;
+height: 100%;
 `
