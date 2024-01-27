@@ -5,6 +5,7 @@ import MyNetwork from '../pages/MyNetwork'
 import Jobs from '../pages/Jobs'
 import Messaging from '../pages/Messaging'
 import Notifications from '../pages/Notifications'
+import SearchDisplay from '../pages/SearchDisplay'
 
 const Routers = () => {
   return (
@@ -16,6 +17,7 @@ const Routers = () => {
         <Route path='/jobs' element={<Jobs/>}/>
         <Route path='/messaging' element={<Messaging/>}/>
         <Route path='/notifications' element={<Notifications/>}/>
+        <Route path='/search/:searchTerm' element={<SearchDisplay/>}/>
     </Routes>
     </>
   )
