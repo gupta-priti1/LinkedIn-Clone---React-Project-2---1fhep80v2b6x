@@ -17,6 +17,7 @@ import Reactions from "./Reactions";
 import { postContext } from "../../context/PostContext";
 import { likePostContext } from "../../context/LikePostContext";
 import ReactionsAndComments from "./ReactionsAndComments";
+import PostContainer from "../../postContainer/PostContainer";
 
 const DisplayPost = () => {
   const { post, setPost } = postContext();
@@ -43,59 +44,13 @@ const DisplayPost = () => {
     }
   };
 
-  const Item = (props) => {
-    return <img src={props.img} alt="image" width={"100%"} height={"350px"} />;
-  };
+ 
 
   // console.log("post", post);
   return (
     <Wrapper>
       <DisplayPostContainer>
-        {post?.map((item) => {
-          let date = new Date(item.createdAt).getHours();
-          return (
-            <SinglePost key={item.author.createdAt}>
-              <PostMarginContainer>
-                <UserImage
-                  userImageStyling={{
-                    width: 35,
-                    height: 35,
-                    marginTop: "2px",
-                    backgroundColor: "green",
-                    color: "white !important",
-                    fontSize: 12,
-                  }}
-                />
-                <PostUserDetails>
-                  <h4>{item.author.name}</h4>
-                  <p>
-                    {date}hrs •{" "}
-                    <span>
-                      <MdPublic />
-                    </span>
-                  </p>
-                </PostUserDetails>
-              </PostMarginContainer>
-
-              <PostPara>{item.content}</PostPara>
-              <Carousel
-                autoPlay={false}
-                animation={"slide"}
-                cycleNavigation={false}
-              >
-                {item?.images?.map((img) => (
-                  <Item img={img} />
-                ))}
-              </Carousel>
-              <DisplayReactions
-                props={{ likes: item.likeCount, comments: item.commentCount }}
-              />
-              <ReactionsAndComments
-                props={{ likes: item.likeCount, postId: item._id }}
-              />
-            </SinglePost>
-          );
-        })}
+       <PostContainer posts={post}/>
       </DisplayPostContainer>
     </Wrapper>
   );

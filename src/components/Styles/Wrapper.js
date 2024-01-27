@@ -43,6 +43,11 @@ export const CommentsWrapper = styled(Wrapper)`
   gap: 20px;
 `;
 
+export const PostWrapper = styled(Wrapper)`
+  width: 50%;
+  min-width: 550px;
+  flex-direction: column;
+`;
 export const SearchDisplayWrapper = styled(Wrapper)`
 gap: 20px;
 `

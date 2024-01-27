@@ -103,13 +103,7 @@ export const UserInfoContainer = styled.div`
   width: 225px;
   background-color: red;
 `;
-export const PostContainer = styled.div`
-  width: 50%;
-  min-width: 550px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+
 export const CreatePostContainer = styled.div`
   width: 100%;
   height: 100px;

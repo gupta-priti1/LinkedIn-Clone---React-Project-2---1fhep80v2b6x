@@ -47,7 +47,7 @@ const SearchBar = () => {
       console.log(e);
     }
   };
-// console.log('searchItems', searchItems);
+console.log('searchItems', searchItems);
 
   const handleSearchInput = (e) => {
     setSearchTerm(e.target.value);
