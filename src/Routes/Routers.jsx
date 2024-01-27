@@ -7,12 +7,13 @@ import Messaging from "../pages/public pages/Messaging";
 import Notifications from "../pages/public pages/Notifications";
 import SearchDisplay from "../pages/public pages/search display pages/SearchDisplay";
 import { RoutesWrapper } from "../components/Styles/Wrapper";
+import Login from "../pages/auth pages/login/Login";
 
 const Routers = () => {
   return (
     <RoutesWrapper className="route">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/feed" element={<Home />} />
         <Route path="/mynetwork" element={<MyNetwork />} />
         <Route path="/jobs" element={<Jobs />} />
