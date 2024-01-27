@@ -42,3 +42,7 @@ export const CommentsWrapper = styled(Wrapper)`
   flex-direction: column;
   gap: 20px;
 `;
+
+export const SearchDisplayWrapper = styled(Wrapper)`
+gap: 20px;
+`
