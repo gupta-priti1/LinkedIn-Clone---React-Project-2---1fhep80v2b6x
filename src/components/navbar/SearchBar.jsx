@@ -6,9 +6,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import { SearchInput, SearchbarContainer } from "../Styles/Style";
 
 import axios from "axios";
+import { searchItemsContext } from "../context/SearchItemsContext";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const navigate = useNavigate();
+
+  const{searchItems, setSearchItems} = searchItemsContext();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,7 +24,7 @@ const SearchBar = () => {
   }, [searchTerm]);
 
   const fetchingSearchResult = async () => {
-    if(searchTerm === '')
+    if(searchTerm.trim() === '')
     {
       return
     }
@@ -31,11 +37,17 @@ const SearchBar = () => {
           },
         }
       );
-      console.log(response);
+      // console.log(response);
+      if(response.status === 200)
+      {
+        setSearchItems(response.data.data)
+      }
+      navigate(`/search/${searchTerm}`)
     } catch (e) {
       console.log(e);
     }
   };
+// console.log('searchItems', searchItems);
 
   const handleSearchInput = (e) => {
     setSearchTerm(e.target.value);
