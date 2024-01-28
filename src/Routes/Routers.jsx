@@ -13,7 +13,7 @@ const Routers = () => {
   return (
     <RoutesWrapper className="route">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/feed" element={<Home />} />
         <Route path="/mynetwork" element={<MyNetwork />} />
         <Route path="/jobs" element={<Jobs />} />
