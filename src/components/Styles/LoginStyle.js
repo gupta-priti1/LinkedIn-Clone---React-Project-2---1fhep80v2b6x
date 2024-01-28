@@ -55,9 +55,9 @@ border-radius: 40px;
 }
 `
 export const SignUpContainer = styled(JoinNowContainer)`
-border: 1px solid blue;
-color: blue;
+border: 1px solid #004182;
+color: #004182;
 &:hover{
-    background-color: lightblue;
+    background-color: #F0F7FE;
 }
 `
