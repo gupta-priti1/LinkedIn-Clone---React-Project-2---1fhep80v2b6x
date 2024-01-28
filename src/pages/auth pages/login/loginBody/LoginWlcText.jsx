@@ -1,10 +1,11 @@
 import React from 'react'
+import { LoginText } from '../../../../components/Styles/LoginStyle'
 
 const LoginWlcText = () => {
   return (
-    <>
-    wlc
-    </>
+    <LoginText>
+    Welcome to your professional community
+    </LoginText>
   )
 }
 
