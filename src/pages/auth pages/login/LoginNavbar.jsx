@@ -10,46 +10,46 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { IoLogoYoutube } from "react-icons/io";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import { LoginContainer } from "../../../components/Styles/LoginStyle";
-import { FlexContainer } from "../../../components/Styles/Style";
+import {GetTheAppContainer, JoinNowContainer, LoginItemsContainer, Logo, SignUpContainer } from "../../../components/Styles/LoginStyle";
+import { NavbarContainer, NavbarRightItems } from "../../../components/Styles/Style";
 
 const LoginNavbar = () => {
   return (
-    <LoginContainer>
-      <div>
-        <h2>Linked</h2>
+    <NavbarContainer>
+      <Logo>
+        <h2 className="logo-text">Linked</h2>
         {/* <Image src={logo} width={"45px"}/> */}
-        <LinkedInIcon style={{ fontSize: "70px" }} />
-      </div>
-      <FlexContainer>
-        <span>
-          <FaRegNewspaper style={{ fontSize: "30px" }} />
+        <LinkedInIcon style={{ fontSize: "40px" }} />
+      </Logo>
+      <NavbarRightItems>
+        <LoginItemsContainer>
+          <FaRegNewspaper style={{ fontSize: "28px" }} className="icon"/>
           <h4>Articles</h4>
-        </span>
-        <span>
-          <PeopleAltIcon style={{ fontSize: "30px" }} />
+        </LoginItemsContainer>
+        <LoginItemsContainer>
+          <PeopleAltIcon style={{ fontSize: "26px" }} />
           <h4>People</h4>
-        </span>
-        <span>
-          <IoLogoYoutube style={{ fontSize: "30px" }} />
+        </LoginItemsContainer>
+        <LoginItemsContainer>
+          <IoLogoYoutube style={{ fontSize: "25px" }} />
           <h4>Learning</h4>
-        </span>
-        <span>
-          <BsFillBriefcaseFill style={{ fontSize: "30px" }} />
+        </LoginItemsContainer>
+        <LoginItemsContainer>
+          <BsFillBriefcaseFill style={{ fontSize: "25px" }} />
           <h4>Jobs</h4>
-        </span>
-        <span>
+        </LoginItemsContainer>
+        <GetTheAppContainer >
           <LaptopMacIcon style={{ fontSize: "30px" }} />
           <h4>Get the app</h4>
-        </span>
-        <span>
+        </GetTheAppContainer>
+        <JoinNowContainer>
           <h4>Join now</h4>
-        </span>
-        <span>
+        </JoinNowContainer>
+        <SignUpContainer>
           <h4>Sign in</h4>
-        </span>
-      </FlexContainer>
-    </LoginContainer>
+        </SignUpContainer>
+      </NavbarRightItems>
+    </NavbarContainer>
   );
 };
 
