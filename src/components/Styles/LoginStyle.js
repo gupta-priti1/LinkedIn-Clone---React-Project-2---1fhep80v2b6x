@@ -61,3 +61,17 @@ color: #004182;
     background-color: #F0F7FE;
 }
 `
+
+export const LoginBodyContainer = styled(FlexContainer)`
+flex: 1;
+`
+export const LoginText = styled.h1`
+font-size: 56px;
+font-weight: 200;
+color: #b24020;
+`
+
+export const LoginForm = styled.form`
+display: flex;
+flex-direction: column;
+`
