@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Routers from "./Routes/Routers";
-import Login from "./pages/auth pages/login/Login";
+import Signup from "./pages/auth pages/signup/Signup";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <div className="app-container">
             {/* <Navbar />
             <Routers /> */}
-            <Login/>
+            <Signup/>
       </div>
     </div>
   );
