@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button} from "@mui/material";
+import { SubmitButton } from '../Styles/LoginStyle';
 
 const ButtonComponent = ({text}) => {
   return (
-    <Button type='submit' variant="contained">{text}</Button>
+    <SubmitButton type='submit' variant="contained">{text}</SubmitButton>
   )
 }
 

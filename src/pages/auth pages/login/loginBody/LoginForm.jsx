@@ -1,20 +1,20 @@
 import React from "react";
 import ButtonComponent from "../../../../components/button/ButtonComponent";
-// import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Form, FormInput } from "../../../../components/Styles/LoginStyle";
 
 const LoginForm = () => {
   return (
-    <LoginForm>
+    <Form>
         <label>
             Email:
         </label>
-        <input type="email" required/>
+        <FormInput type="email" required/>
         <label>
             Password:
         </label>
-        <input type="password" required/>
+        <FormInput type="password" required/>
         <ButtonComponent text="Login"/>
-    </LoginForm>
+    </Form>
   );
 };
 
