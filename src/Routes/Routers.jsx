@@ -8,6 +8,7 @@ import Notifications from "../pages/public pages/Notifications";
 import SearchDisplay from "../pages/public pages/search display pages/SearchDisplay";
 import { RoutesWrapper } from "../components/Styles/Wrapper";
 import Login from "../pages/auth pages/login/Login";
+import Signup from "../pages/auth pages/signup/Signup";
 
 const Routers = () => {
   return (
@@ -20,6 +21,8 @@ const Routers = () => {
         <Route path="/messaging" element={<Messaging />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/search/:searchTerm" element={<SearchDisplay />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </RoutesWrapper>
   );
