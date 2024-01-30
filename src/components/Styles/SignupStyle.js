@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { Form, FormInput, LoginWrapper } from "./LoginStyle";
-import { FlexContainer } from "./Style";
+import { FlexContainer, NavbarContainer } from "./Style";
 
 export const SignupWrapper = styled(LoginWrapper)`
   background-color: #eeeeee;
   align-items: start;
 `;
+export const SignupNav = styled(NavbarContainer)`
+margin-left: 10%;
+`
 export const SignupText = styled.h1`
   font-size: 34px;
   font-weight: 500;

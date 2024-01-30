@@ -1,15 +1,21 @@
-import React from 'react'
-import LinkedinLogo from '../../../components/logo/LinkedinLogo'
-import SignupBody from './SignupBody'
-import { SignupWrapper } from '../../../components/Styles/SignupStyle'
+import React from "react";
+import LinkedinLogo from "../../../components/logo/LinkedinLogo";
+import SignupBody from "./SignupBody";
+import {
+  SignupNav,
+  SignupWrapper,
+} from "../../../components/Styles/SignupStyle";
+import LoginNavbar from "../login/LoginNavbar";
 
 const Signup = () => {
   return (
     <SignupWrapper>
-        <LinkedinLogo/>
-        <SignupBody/>
+      <SignupNav>
+        <LinkedinLogo />
+      </SignupNav>
+      <SignupBody />
     </SignupWrapper>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
