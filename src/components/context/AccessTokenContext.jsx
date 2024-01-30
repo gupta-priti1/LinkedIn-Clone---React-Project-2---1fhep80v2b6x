@@ -2,7 +2,10 @@ import React, { createContext, useContext, useState } from "react";
 
 const TokenStore = createContext();
 const AccessTokenContext = ({ children }) => {
-  const [accessToken, setAccessToken] = useState('');
+  const accessTokenFromLocalStorage = localStorage.getItem("accessToken")
+    ? JSON.parse(localStorage.getItem("accessToken"))
+    : "";
+  const [accessToken, setAccessToken] = useState(accessTokenFromLocalStorage);
   return (
     <>
       <TokenStore.Provider value={{ accessToken, setAccessToken }}>
