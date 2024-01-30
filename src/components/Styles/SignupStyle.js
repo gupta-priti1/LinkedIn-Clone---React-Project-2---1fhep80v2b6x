@@ -38,6 +38,10 @@ export const AgreementText = styled.p`
     color: #0a66c2;
     cursor: pointer;
     text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 `;
 
