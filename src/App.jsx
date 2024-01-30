@@ -12,8 +12,7 @@ const App = () => {
       <div className="app-container">
             {/* <Navbar />
             <Routers /> */}
-            <Signup/>
-            {/* <Login/> */}
+            <Login/>
       </div>
     </div>
   );
