@@ -1,6 +1,7 @@
 import React from 'react'
 import { AgreementText, FormSignup, OrContainer, SignupInput } from '../../../components/Styles/SignupStyle'
 import ButtonComponent from '../../../components/button/ButtonComponent'
+import Or from '../../../components/FormOrComponent/Or'
 
 const SignupForm = () => {
   return (
@@ -15,11 +16,7 @@ const SignupForm = () => {
       Privacy Policy  </span>and <span>Cookie Policy</span>.</AgreementText>
       <ButtonComponent text='Agree and Join'/>
 
-      <OrContainer>
-        <span></span>
-        <p>or</p>
-        <span></span>
-      </OrContainer>
+      <Or/>
       <AgreementText>Already on LinkedIn? <span>Sign In</span> </AgreementText>
     </FormSignup>
   )
