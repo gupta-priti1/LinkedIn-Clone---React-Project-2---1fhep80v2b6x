@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonComponent from "../../../../components/button/ButtonComponent";
-import { Form, FormInput } from "../../../../components/Styles/LoginStyle";
+import { AlreadyUserButton, Form, FormInput } from "../../../../components/Styles/LoginStyle";
+import Or from "../../../../components/FormOrComponent/Or";
 
 const LoginForm = () => {
   return (
@@ -14,6 +15,8 @@ const LoginForm = () => {
         </label>
         <FormInput type="password" required/>
         <ButtonComponent text="Login"/>
+        <Or/>
+        <AlreadyUserButton type="button">New to LinkedIn? Join now</AlreadyUserButton>
     </Form>
   );
 };
