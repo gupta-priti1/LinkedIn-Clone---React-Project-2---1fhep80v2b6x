@@ -59,6 +59,7 @@ export const JoinNowContainer = styled(LinkContainer)`
   padding: 5px;
   opacity: 0.8;
   border-radius: 40px;
+  cursor: pointer;
   &:hover {
     background-color: lightgray;
   }
