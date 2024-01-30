@@ -40,6 +40,7 @@ export const AgreementText = styled.p`
 `;
 
 export const OrContainer = styled(FlexContainer)`
+height: 30px;
 span{
   background-color: #ddd;
     height: 1.5%;

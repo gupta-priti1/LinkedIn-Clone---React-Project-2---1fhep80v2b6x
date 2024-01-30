@@ -10,7 +10,7 @@ export const LoginWrapper = styled(Wrapper)`
   justify-content: flex-start;
   overflow: auto;
 
-  @media only screen and (max-width: 1072px){
+  @media only screen and (max-width: 1072px) {
     /* align-items: flex-start; */
   }
 `;
@@ -42,7 +42,7 @@ export const LoginItemsContainer = styled(LinkContainer)`
     font-weight: 300;
   }
 
-  @media only screen and (max-width: 1072px){
+  @media only screen and (max-width: 1072px) {
     display: none;
   }
 `;
@@ -78,11 +78,11 @@ export const LoginBodyContainer = styled(FlexContainer)`
   justify-content: center;
   align-items: center;
 
-  @media only screen and (max-width: 1072px){
+  @media only screen and (max-width: 1072px) {
     justify-content: center;
     gap: 2rem;
   }
-  @media only screen and (max-width: 772px){
+  @media only screen and (max-width: 772px) {
     flex-direction: column;
   }
 `;
@@ -91,6 +91,7 @@ export const LoginText = styled.h1`
   font-weight: 200;
   color: #b24020;
   line-height: 4.5rem;
+  margin: 0;
 `;
 
 export const LoginLeftContainer = styled(FlexContainer)`
@@ -99,7 +100,7 @@ export const LoginLeftContainer = styled(FlexContainer)`
   padding-left: 70px;
   font-size: 18px;
 
-  @media only screen and (max-width: 772px){
+  @media only screen and (max-width: 772px) {
     width: 80%;
   }
 `;
@@ -126,4 +127,9 @@ export const SubmitButton = styled.button`
   border: none;
   cursor: pointer;
   margin-left: 20px;
+`;
+export const AlreadyUserButton = styled(SubmitButton)`
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
 `;
