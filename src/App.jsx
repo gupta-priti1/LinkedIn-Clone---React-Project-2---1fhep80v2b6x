@@ -12,8 +12,8 @@ const App = () => {
       <div className="app-container">
             {/* <Navbar />
             <Routers /> */}
-            {/* <Signup/> */}
-            <Login/>
+            <Signup/>
+            {/* <Login/> */}
       </div>
     </div>
   );
