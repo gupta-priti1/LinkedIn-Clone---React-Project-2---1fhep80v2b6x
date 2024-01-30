@@ -13,8 +13,10 @@ import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import {GetTheAppContainer, JoinNowContainer, LoginItemsContainer, Logo, SignUpContainer } from "../../../components/Styles/LoginStyle";
 import { NavbarContainer, NavbarRightItems } from "../../../components/Styles/Style";
 import LinkedinLogo from "../../../components/logo/LinkedinLogo";
+import { useNavigate } from "react-router-dom";
 
 const LoginNavbar = () => {
+  const navigate = useNavigate();
   return (
     <NavbarContainer>
       <LinkedinLogo/>
@@ -39,11 +41,11 @@ const LoginNavbar = () => {
           <LaptopMacIcon style={{ fontSize: "30px" }} />
           <h4>Get the app</h4>
         </GetTheAppContainer>
-        <JoinNowContainer>
+        <JoinNowContainer onClick={()=>navigate('/signup')}>
           <h4>Join now</h4>
         </JoinNowContainer>
-        <SignUpContainer>
-          <h4>Sign in</h4>
+        <SignUpContainer onClick={()=>navigate('/signup')}>
+          <h4>Sign Up</h4>
         </SignUpContainer>
       </NavbarRightItems>
     </NavbarContainer>
