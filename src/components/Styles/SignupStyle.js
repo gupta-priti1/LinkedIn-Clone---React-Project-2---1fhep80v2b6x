@@ -33,9 +33,11 @@ export const SignupInput = styled(FormInput)`
 `;
 export const AgreementText = styled.p`
   text-align: center;
-  span{
+  font-size:14px;
+  a,span{
     color: #0a66c2;
     cursor: pointer;
+    text-decoration: none;
   }
 `;
 
