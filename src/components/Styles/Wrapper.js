@@ -47,6 +47,8 @@ export const PostWrapper = styled(Wrapper)`
   width: 50%;
   min-width: 550px;
   flex-direction: column;
+  /* overflow: auto;
+  height: calc(100% - 8vh); */
 `;
 export const SearchDisplayWrapper = styled(Wrapper)`
 gap: 20px;

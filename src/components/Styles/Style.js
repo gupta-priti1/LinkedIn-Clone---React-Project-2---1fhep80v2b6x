@@ -167,6 +167,7 @@ export const DisplayPostContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
+  overflow: auto;
 `;
 export const SinglePost = styled.div`
   width: 100%;
