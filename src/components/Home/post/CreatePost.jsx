@@ -11,6 +11,7 @@ import UserImage from "../../userImage/UserImage";
 import { RiImage2Fill } from "react-icons/ri";
 import { FaCalendarAlt } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
+import BasicModal from "../../modal/Modal";
 
 const CreatePost = () => {
   return (
@@ -27,7 +28,8 @@ const CreatePost = () => {
               fontSize: 18,
             }}
           />
-          <Button type="click">Start a post</Button>
+          {/* <Button type="click">Start a post</Button> */}
+          <BasicModal/>
         </FlexContainer>
 
         <FlexContainer>
