@@ -78,10 +78,10 @@ export const NavbarLinkText = styled.h4`
   text-decoration: none !important;
 `;
 export const DropDownContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 export const DropDownItems = styled(MenuItem)`
   text-decoration: none;
   background-color: white !important;
@@ -194,85 +194,85 @@ export const PostUserDetails = styled(FlexContainer)`
   }
 `;
 export const DisplayReactionsContainer = styled(FlexContainer)`
-justify-content: space-between;
-width: 95%;
-gap: 0;
-color: #5E5E5E;
-font-size: 14px;
-padding-bottom: 5px;
-border-bottom: 1px solid #e5e3e0;
-.like-icon{
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  color: #D0E8FF;
-}
-h4{
-  font-weight: 200;
-  margin: 0;
-}
-`
-export const ReactionsContainer= styled(FlexContainer)`
-justify-content: space-between;
-width: 90%;
-/* background-color: aqua; */
-padding: 3px;
-`
+  justify-content: space-between;
+  width: 95%;
+  gap: 0;
+  color: #5e5e5e;
+  font-size: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e5e3e0;
+  .like-icon {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    color: #d0e8ff;
+  }
+  h4 {
+    font-weight: 200;
+    margin: 0;
+  }
+`;
+export const ReactionsContainer = styled(FlexContainer)`
+  justify-content: space-between;
+  width: 90%;
+  /* background-color: aqua; */
+  padding: 3px;
+`;
 
 export const SingleReaction = styled(FlexContainer)`
-color: #6B6B6B;
-height: 45px;
-width: 100px;
-justify-content: center;
-padding: 5px;
-&:hover{
-  background-color: #EBEBEB;
-  border-radius: 5px;
-}
+  color: #6b6b6b;
+  height: 45px;
+  width: 100px;
+  justify-content: center;
+  padding: 5px;
+  &:hover {
+    background-color: #ebebeb;
+    border-radius: 5px;
+  }
 
-.icon{
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-.repost-icon{
-  height: 20px;
-}
-`
+  .icon {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  .repost-icon {
+    height: 20px;
+  }
+`;
 export const LikeDisplayContainer = styled.div`
-background-color: #378FE9;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-width: 20px;
-height: 20px;
-`
+  background-color: #378fe9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+`;
 
 export const CommentInput = styled.input`
-width: 90%;
-padding: 8px;
-border-radius: 50px;
-`
+  width: 90%;
+  padding: 8px;
+  border-radius: 50px;
+`;
 export const CommentsContainer = styled(FlexContainer)`
-width: 95%;
-justify-content:space-between;
-padding: 0px 15px;
-`
+  width: 95%;
+  justify-content: space-between;
+  padding: 0px 15px;
+`;
 export const CommentAuthorDetails = styled(FlexContainer)`
-flex-direction: column;
-align-items: start;
-width: 95%;
-background-color: #F2F2F2;
-margin: 5px 0px;
-padding: 10px;
-border-radius: 10px;
+  flex-direction: column;
+  align-items: start;
+  width: 95%;
+  background-color: #f2f2f2;
+  margin: 5px 0px;
+  padding: 10px;
+  border-radius: 10px;
 
-h4{
-  margin: 0;
-}
-p{
-  margin: 0;
-}
-`
+  h4 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+`;
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
@@ -289,8 +289,19 @@ export const Temp2Container = styled.div`
   overflow: auto;
 `;
 
-
-
-
-// --------------------Search------------------------
-
+// --------------------Modal------------------------
+export const UserDetailsContainer = styled(FlexContainer)`
+  justify-content: flex-start;
+`;
+export const Label = styled.label`
+font-size: 20px;
+padding: 0 5px;
+margin: 0;
+`
+export const TextArea = styled.textarea`
+  width: 95%;
+  margin: auto;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+`;
