@@ -11,7 +11,7 @@ import UserImage from "../../userImage/UserImage";
 import { RiImage2Fill } from "react-icons/ri";
 import { FaCalendarAlt } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
-import BasicModal from "../../modal/Modal";
+import BasicModal from "../../modal/BasicModal";
 
 const CreatePost = () => {
   return (

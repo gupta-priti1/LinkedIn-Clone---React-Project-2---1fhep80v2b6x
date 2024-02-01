@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 // import Button from '@mui/material/Button';
 import Typography from "@mui/material/Typography";
@@ -14,6 +14,7 @@ import {
 import UserImage from "../userImage/UserImage";
 import { Form, SubmitButton } from "../Styles/LoginStyle";
 import { Input } from "@mui/material";
+import axios from "axios";
 
 const style = {
   position: "absolute",
@@ -29,10 +30,44 @@ const style = {
 };
 
 export default function BasicModal() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [postDetails, setPostDetails] = useState({
+    title: "",
+    description: "",
+    images: null,
+  });
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const handleChange = (e) => {
+    setPostDetails({ ...postDetails, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmitPost = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://academics.newtonschool.co/api/v1/linkedin/post/",
+        {
+          title: postDetails.title,
+          content: postDetails.description,
+          images: postDetails.images,
+        },
+        {
+          headers: {
+            projectID: "hv45l4abtvvc",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+          },
+        }
+      );
+      console.log("postCreate", response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(postDetails);
   return (
     <>
       <Button type="click" onClick={handleOpen}>
@@ -55,7 +90,7 @@ export default function BasicModal() {
             id="modal-modal-description"
             sx={{ mt: 2, height: "400px" }}
           >
-            <Form>
+            <Form onSubmit={handleSubmitPost}>
               <span width="100%">
                 <Label>Title:</Label>
                 <Input
@@ -63,15 +98,29 @@ export default function BasicModal() {
                   variant="standard"
                   style={{ width: "85%" }}
                   required
+                  name="title"
+                  onChange={(e) => handleChange(e)}
                 />
               </span>
               <TextArea
                 placeholder="What do you want to talk about?"
                 rows={11}
+                name="description"
+                onChange={(e) => handleChange(e)}
               />
-              <FlexContainer style={{justifyContent:"space-between"}}>
-                <input type="file" id="images" />
-                <SubmitButton style={{ width: "50px", padding:"4px" }} type="submit">post</SubmitButton>
+              <FlexContainer style={{ justifyContent: "space-between" }}>
+                <input
+                  type="file"
+                  id="images"
+                  name="images"
+                  onChange={(e) => handleChange(e)}
+                />
+                <SubmitButton
+                  style={{ width: "50px", padding: "4px" }}
+                  type="submit"
+                >
+                  post
+                </SubmitButton>
               </FlexContainer>
             </Form>
           </Typography>
