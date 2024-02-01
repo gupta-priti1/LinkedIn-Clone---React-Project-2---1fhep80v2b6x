@@ -10,7 +10,7 @@ import {
   Label,
   TextArea,
   UserDetailsContainer,
-} from "./../Styles/Style";
+} from "../Styles/Style";
 import UserImage from "../userImage/UserImage";
 import { Form, SubmitButton } from "../Styles/LoginStyle";
 import { Input } from "@mui/material";
