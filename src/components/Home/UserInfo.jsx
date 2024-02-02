@@ -1,5 +1,5 @@
 import React from "react";
-import { UserInfoContainer } from "../Styles/Style";
+import { UserDetails, UserInfoContainer } from "../Styles/Style";
 import { Image } from "react-bootstrap";
 
 import Background from "./../../assets/Images/user-background.png";
@@ -7,21 +7,46 @@ import UserImage from "../userImage/UserImage";
 
 const UserInfo = () => {
   return (
+    <>
     <UserInfoContainer>
+      <div style={{backgroundColor:"white"}}>
       <Image src={Background} width={"100%"} />
-      <div style={{ position: "absolute", top: "30px", left: "35%" }}>
         <UserImage
           userImageStyling={{
             width: "70px",
             height: "70px",
+            position: "absolute",
+            top: "30px",
+            left: "35%",
           }}
         />
-      </div>
-      <div style={{display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center", marginTop:"25px"}}>
+      <UserDetails>
         <h4>name</h4>
         <p>user details</p>
+      </UserDetails>
+
+      <div>
+        <div>
+          <p>Profile viewers</p>
+          <p>70</p>
+        </div>
+        <div>
+          <p>Post impressions</p>
+          <p>10</p>
+        </div>
       </div>
+      <div>
+        <p>Access exclusive tools & insights</p>
+        <p>Try Premium for free</p>
+      </div>
+      </div>
+      
+    <div style={{backgroundColor:"blue", zIndex:9, width:200, height:500}}>
+      
+    </div>
     </UserInfoContainer>
+    </>
+    
   );
 };
 

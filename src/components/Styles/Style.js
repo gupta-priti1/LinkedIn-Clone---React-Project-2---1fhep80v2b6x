@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { MenuItem } from "@mui/material";
 
+export const FlexContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -101,10 +108,20 @@ export const HomeContainer = styled.div`
 
 export const UserInfoContainer = styled.div`
   width: 225px;
-  background-color: red;
+  /* background-color: red; */
   position: relative;
 `;
 
+export const UserDetails = styled(FlexContainer)`
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 45px;
+  h4,
+  p {
+    margin: 0;
+  }
+`;
+// style={{display:"flex", justifyContent:"center", flexDirection:"column", , marginTop:"25px"}}
 export const CreatePostContainer = styled.div`
   width: 100%;
   height: 100px;
@@ -117,12 +134,7 @@ export const CreatePostContainer = styled.div`
   border: 1px solid #e5e3e0;
   border-radius: 15px;
 `;
-export const FlexContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 10px;
-`;
+
 export const PostMediasContainer = styled(FlexContainer)`
   padding: 8px;
   height: 28px;
@@ -295,10 +307,10 @@ export const UserDetailsContainer = styled(FlexContainer)`
   justify-content: flex-start;
 `;
 export const Label = styled.label`
-font-size: 20px;
-padding: 0 5px;
-margin: 0;
-`
+  font-size: 20px;
+  padding: 0 5px;
+  margin: 0;
+`;
 export const TextArea = styled.textarea`
   width: 95%;
   margin: auto;
