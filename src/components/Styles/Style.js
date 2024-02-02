@@ -102,6 +102,7 @@ export const HomeContainer = styled.div`
 export const UserInfoContainer = styled.div`
   width: 225px;
   background-color: red;
+  position: relative;
 `;
 
 export const CreatePostContainer = styled.div`
