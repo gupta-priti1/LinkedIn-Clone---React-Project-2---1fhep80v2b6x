@@ -12,7 +12,7 @@ import Signup from "../pages/auth pages/signup/Signup";
 
 const Routers = () => {
   return (
-    <RoutesWrapper className="route">
+    <RoutesWrapper >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/feed" element={<Home />} />
