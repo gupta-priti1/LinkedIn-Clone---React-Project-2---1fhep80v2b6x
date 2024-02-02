@@ -36,7 +36,7 @@ export const DropDownWrapper = styled(Wrapper)`
 `;
 export const RoutesWrapper = styled(Wrapper)`
   margin-top: 8vh;
-  height: calc(100% - 8vh);
+  /* height: calc(100% - 8vh); */
 `;
 export const CommentsWrapper = styled(Wrapper)`
   flex-direction: column;
@@ -53,4 +53,5 @@ export const PostWrapper = styled(Wrapper)`
 export const SearchDisplayWrapper = styled(Wrapper)`
 gap: 20px;
 height: 100%;
+align-items: flex-start;
 `
