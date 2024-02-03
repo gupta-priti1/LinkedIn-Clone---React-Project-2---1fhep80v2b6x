@@ -1,13 +1,14 @@
 import React from 'react'
 import UserDetails from './UserDetails'
 import Temp2 from '../Home/Temp2'
+import { UserProfileWrapper } from '../Styles/ProfileStyle'
 
 const UserProfile = () => {
   return (
-    <div>
+    <UserProfileWrapper>
         <UserDetails/>
         <Temp2/>
-    </div>
+    </UserProfileWrapper>
   )
 }
 
