@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
+  ContactInfoConatiner,
+  GenderContainer,
+  SeperatorContainer,
   UserInfoContainer,
   UserProfileDetailsContainer,
 } from "../Styles/ProfileStyle";
@@ -43,8 +46,11 @@ const UserDetails = () => {
   }
   return (
     <UserProfileDetailsContainer>
+      <SeperatorContainer>
+
+      
       <div style={{ width: "100%", position: "relative" }}>
-        <Image src={BackgroundImage} fluid width={"100%"} />
+        <Image src={BackgroundImage} fluid width={"100%"} style={{borderRadius:"10px 10px 0px 0px"}} />
         <UserImage
           userImageStyling={{
             width: "150px",
@@ -57,14 +63,14 @@ const UserDetails = () => {
       </div>
 
       <UserInfoContainer>
-        <h3>
+        <h1>
           {user.name}{" "}
           {user.gender === "male" ? (
-            <span>(He/Him)</span>
+            <GenderContainer>(He/Him)</GenderContainer>
           ) : (
-            <span>(She/Her)</span>
+            <GenderContainer>(She/Her)</GenderContainer>
           )}
-        </h3>
+        </h1>
         <div>
           {user?.skills?.map((skill) => {
             return <span>{skill} | </span>;
@@ -75,25 +81,36 @@ const UserDetails = () => {
           <span>{user.address[0]?.state}, </span>
           <span>{user.address[0]?.country} </span> */}
 
-          <span>Contact info</span>
+          <ContactInfoConatiner>Contact info</ContactInfoConatiner>
         </div>
-        <p>296 connections</p>
+        <ContactInfoConatiner>296 connections</ContactInfoConatiner>
+        </UserInfoContainer>
+        </SeperatorContainer>
 
+        <SeperatorContainer>
+
+       
+        <UserInfoContainer>
         <div>
           <h3>Experience</h3>
-          {
-            user?.workExperience?.map((exp)=>{
-              return(
-                <div>
-                  <p>{exp.designation}</p>
-                  <p>{exp.companyName}</p>
-                  <p>{exp.startDate} - {exp.endDate}</p>
-                  <p>{exp.location}</p>
-                  </div>
-              )
-            })
-          }
+          {user?.workExperience?.map((exp) => {
+            return (
+              <div>
+                <p>{exp.designation}</p>
+                <p>{exp.companyName}</p>
+                <p>
+                  {exp.startDate} - {exp.endDate}
+                </p>
+                <p>{exp.location}</p>
+              </div>
+            );
+          })}
         </div>
+        </UserInfoContainer>
+        </SeperatorContainer>
+        <SeperatorContainer>
+          <UserInfoContainer>
+        
         <div>
           <h3>Education</h3>
           {user?.education?.map((edu) => {
@@ -115,6 +132,7 @@ const UserDetails = () => {
           })}
         </div>
       </UserInfoContainer>
+      </SeperatorContainer>
     </UserProfileDetailsContainer>
   );
 };
