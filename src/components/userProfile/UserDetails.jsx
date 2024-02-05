@@ -14,6 +14,8 @@ import { Image } from "react-bootstrap";
 import UserImage from "../userImage/UserImage";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Button } from "../Styles/Style";
+import { SubmitButton } from "../Styles/LoginStyle";
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -48,27 +50,31 @@ const UserDetails = () => {
     return <p>loading...</p>;
   }
   return (
-    <UserProfileDetailsContainer>
-      <SeperatorContainer style={{ position: "relative" }}>
-        <Image
-          src={BackgroundImage}
-          fluid
-          width={"100%"}
-          style={{ borderRadius: "10px 10px 0px 0px" }}
-        />
-        <UserImage
-          userImageStyling={{
-            width: "150px",
-            height: "150px",
-            position: "absolute",
-            top: "110px",
-            left: "30px",
-          }}
-        />
+    <UserProfileDetailsContainer className="user-profile">
+      <SeperatorContainer className="seperator">
+        <div style={{ position: "relative", width: "100%", height: "150px" }}>
+          <Image
+            src={BackgroundImage}
+            fluid
+            width="100%"
+            height="150px"
+            style={{ borderRadius: "10px 10px 0px 0px" }}
+          />
+          <UserImage
+            userImageStyling={{
+              width: "150px",
+              height: "150px",
+              position: "absolute",
+              bottom: "-70px",
+              left: "30px",
+            }}
+          />
+        </div>
+
         <UserInfoContainer style={{ marginTop: "50px" }}>
           <h1>
             {user.name}{" "}
-            {user.gender === "male" ? (
+            {user?.gender === "male" ? (
               <GenderContainer>(He/Him)</GenderContainer>
             ) : (
               <GenderContainer>(She/Her)</GenderContainer>
@@ -87,6 +93,9 @@ const UserDetails = () => {
             <ContactInfoConatiner>Contact info</ContactInfoConatiner>
           </div>
           <ContactInfoConatiner>296 connections</ContactInfoConatiner>
+          <SubmitButton style={{ width: "80px", padding: "8px", margin: 0 }}>
+            Follow
+          </SubmitButton>
         </UserInfoContainer>
       </SeperatorContainer>
       <SeperatorContainer>

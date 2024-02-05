@@ -8,20 +8,21 @@ export const UserProfileWrapper = styled(Wrapper)`
   align-items: flex-start;
   margin: 20px;
 `;
-export const SeperatorContainer = styled.div`
-  background-color: white;
-  width: 80%;
-  border-radius: 10px;
-  padding-bottom: 15px;
-`;
 export const UserProfileDetailsContainer = styled(FlexContainer)`
   align-items: flex-start;
   flex-direction: column;
-  /* background-color: white; */
+  width: 80%;
+`;
+
+export const SeperatorContainer = styled.div`
+  background-color: white;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  width: 100%;
 `;
 export const UserInfoContainer = styled(FlexContainer)`
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - 80px);
   margin-top: 5px;
   align-items: flex-start;
   padding: 10px 40px 0px 40px;
@@ -49,16 +50,16 @@ export const ContactInfoConatiner = styled.span`
 `;
 
 export const Heading = styled.h3`
-margin: 2px 0px !important;
-font-size: 17px !important;
-font-weight: 600;
-`
+  margin: 2px 0px !important;
+  font-size: 17px !important;
+  font-weight: 600;
+`;
 
 export const Title = styled.p`
-margin: 2px;
-`
+  margin: 2px;
+`;
 
 export const LighterPara = styled.p`
-margin: 2px;
-opacity: 0.7;
-`
+  margin: 2px;
+  opacity: 0.7;
+`;
