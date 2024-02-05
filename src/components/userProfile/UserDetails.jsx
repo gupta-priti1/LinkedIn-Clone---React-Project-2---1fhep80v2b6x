@@ -16,6 +16,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Button } from "../Styles/Style";
 import { SubmitButton } from "../Styles/LoginStyle";
+import { followUser } from "../helper/Follow";
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -93,11 +94,15 @@ const UserDetails = () => {
             <ContactInfoConatiner>Contact info</ContactInfoConatiner>
           </div>
           <ContactInfoConatiner>296 connections</ContactInfoConatiner>
-          <SubmitButton style={{ width: "80px", padding: "8px", margin: 0 }}>
+          <SubmitButton
+            style={{ width: "80px", padding: "8px", margin: 0 }}
+            onClick={() => followUser(id)}
+          >
             Follow
           </SubmitButton>
         </UserInfoContainer>
       </SeperatorContainer>
+
       <SeperatorContainer>
         <UserInfoContainer>
           <h3>Experience</h3>
