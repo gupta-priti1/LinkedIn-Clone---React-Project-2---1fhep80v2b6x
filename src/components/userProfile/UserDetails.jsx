@@ -47,91 +47,95 @@ const UserDetails = () => {
   return (
     <UserProfileDetailsContainer>
       <SeperatorContainer>
-
-      
-      <div style={{ width: "100%", position: "relative" }}>
-        <Image src={BackgroundImage} fluid width={"100%"} style={{borderRadius:"10px 10px 0px 0px"}} />
-        <UserImage
-          userImageStyling={{
-            width: "150px",
-            height: "150px",
-            position: "absolute",
-            top: "110px",
-            left: "30px",
-          }}
-        />
-      </div>
-
-      <UserInfoContainer>
-        <h1>
-          {user.name}{" "}
-          {user.gender === "male" ? (
-            <GenderContainer>(He/Him)</GenderContainer>
-          ) : (
-            <GenderContainer>(She/Her)</GenderContainer>
-          )}
-        </h1>
-        <div>
-          {user?.skills?.map((skill) => {
-            return <span>{skill} | </span>;
-          })}
+        <div style={{ width: "100%", position: "relative" }}>
+          <Image
+            src={BackgroundImage}
+            fluid
+            width={"100%"}
+            style={{ borderRadius: "10px 10px 0px 0px" }}
+          />
+          <UserImage
+            userImageStyling={{
+              width: "150px",
+              height: "150px",
+              position: "absolute",
+              top: "110px",
+              left: "30px",
+            }}
+          />
         </div>
-        <div>
-          {/* <span>{user.address[0]?.city}, </span>
-          <span>{user.address[0]?.state}, </span>
-          <span>{user.address[0]?.country} </span> */}
 
-          <ContactInfoConatiner>Contact info</ContactInfoConatiner>
-        </div>
-        <ContactInfoConatiner>296 connections</ContactInfoConatiner>
+        <UserInfoContainer style={{ marginTop: "50px" }}>
+          <h1>
+            {user.name}{" "}
+            {user.gender === "male" ? (
+              <GenderContainer>(He/Him)</GenderContainer>
+            ) : (
+              <GenderContainer>(She/Her)</GenderContainer>
+            )}
+          </h1>
+          <div>
+            {user?.skills?.map((skill) => {
+              return <span>{skill} | </span>;
+            })}
+          </div>
+          <div>
+            <span>{user.address[0]?.city}, </span>
+            <span>{user.address[0]?.state}, </span>
+            <span>{user.address[0]?.country} </span>
+
+            <ContactInfoConatiner>Contact info</ContactInfoConatiner>
+          </div>
+          <ContactInfoConatiner>296 connections</ContactInfoConatiner>
         </UserInfoContainer>
-        </SeperatorContainer>
-
-        <SeperatorContainer>
-
-       
+      </SeperatorContainer>
+      <SeperatorContainer>
         <UserInfoContainer>
-        <div>
-          <h3>Experience</h3>
-          {user?.workExperience?.map((exp) => {
-            return (
-              <div>
-                <p>{exp.designation}</p>
-                <p>{exp.companyName}</p>
-                <p>
-                  {exp.startDate} - {exp.endDate}
-                </p>
-                <p>{exp.location}</p>
-              </div>
-            );
-          })}
-        </div>
+          <div>
+            <h3>Experience</h3>
+            {user?.workExperience?.map((exp) => {
+              return (
+                <div>
+                  <p>{exp.designation}</p>
+                  <p>{exp.companyName}</p>
+                  <p>
+                    {exp.startDate} - {exp.endDate}
+                  </p>
+                  <p>{exp.location}</p>
+                </div>
+              );
+            })}
+          </div>
         </UserInfoContainer>
-        </SeperatorContainer>
-        <SeperatorContainer>
-          <UserInfoContainer>
-        
-        <div>
-          <h3>Education</h3>
-          {user?.education?.map((edu) => {
-            return (
-              <div>
-                <h4>{edu.schoolName}</h4>
-                <p>{edu.degree}</p>
-                <p>{edu.startDate}</p>
-                <p>{edu.endDate}</p>
-                <p>{edu.description}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div>
-          <h3>Skills</h3>
-          {user?.skills?.map((skill) => {
-            return <p>{skill}</p>;
-          })}
-        </div>
-      </UserInfoContainer>
+      </SeperatorContainer>
+
+      <SeperatorContainer>
+        <UserInfoContainer>
+          <div>
+            <h3>Education</h3>
+            {user?.education?.map((edu) => {
+              return (
+                <div>
+                  <h4>{edu.schoolName}</h4>
+                  <p>{edu.degree}</p>
+                  <p>{edu.startDate}</p>
+                  <p>{edu.endDate}</p>
+                  <p>{edu.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </UserInfoContainer>
+      </SeperatorContainer>
+      <SeperatorContainer>
+        <UserInfoContainer>
+          <div>
+            <h3>Skills</h3>
+            {user?.skills?.map((skill) => {
+              return <p>{skill}</p>;
+            })}
+          </div>
+        </UserInfoContainer>
       </SeperatorContainer>
     </UserProfileDetailsContainer>
   );

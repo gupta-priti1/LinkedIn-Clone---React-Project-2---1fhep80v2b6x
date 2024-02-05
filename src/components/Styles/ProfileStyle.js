@@ -22,9 +22,9 @@ export const UserProfileDetailsContainer = styled(FlexContainer)`
 export const UserInfoContainer = styled(FlexContainer)`
   flex-direction: column;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 5px;
   align-items: flex-start;
-  padding: 5px 40px 0px 40px;
+  padding: 10px 40px 0px 40px;
 
   h3 {
     margin: 2px;
