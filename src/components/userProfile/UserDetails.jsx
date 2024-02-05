@@ -91,7 +91,6 @@ const UserDetails = () => {
       </SeperatorContainer>
       <SeperatorContainer>
         <UserInfoContainer>
-          <div>
             <h3>Experience</h3>
             {user?.workExperience?.map((exp) => {
               return (
@@ -105,13 +104,11 @@ const UserDetails = () => {
                 </div>
               );
             })}
-          </div>
         </UserInfoContainer>
       </SeperatorContainer>
 
       <SeperatorContainer>
         <UserInfoContainer>
-          <div>
             <h3>Education</h3>
             {user?.education?.map((edu) => {
               return (
@@ -124,17 +121,14 @@ const UserDetails = () => {
                 </div>
               );
             })}
-          </div>
         </UserInfoContainer>
       </SeperatorContainer>
       <SeperatorContainer>
         <UserInfoContainer>
-          <div>
             <h3>Skills</h3>
             {user?.skills?.map((skill) => {
               return <p>{skill}</p>;
             })}
-          </div>
         </UserInfoContainer>
       </SeperatorContainer>
     </UserProfileDetailsContainer>
