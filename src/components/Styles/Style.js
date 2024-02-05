@@ -181,6 +181,7 @@ export const DisplayPostContainer = styled.div`
   justify-content: space-between;
   gap: 8px;
   overflow: auto;
+  overflow-x: hidden;
 `;
 export const SinglePost = styled.div`
   width: 100%;

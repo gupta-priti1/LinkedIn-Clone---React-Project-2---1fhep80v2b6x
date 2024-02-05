@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import {
   ContactInfoConatiner,
   GenderContainer,
+  Heading,
+  LighterPara,
   SeperatorContainer,
+  Title,
   UserInfoContainer,
   UserProfileDetailsContainer,
 } from "../Styles/ProfileStyle";
@@ -46,25 +49,22 @@ const UserDetails = () => {
   }
   return (
     <UserProfileDetailsContainer>
-      <SeperatorContainer>
-        <div style={{ width: "100%", position: "relative" }}>
-          <Image
-            src={BackgroundImage}
-            fluid
-            width={"100%"}
-            style={{ borderRadius: "10px 10px 0px 0px" }}
-          />
-          <UserImage
-            userImageStyling={{
-              width: "150px",
-              height: "150px",
-              position: "absolute",
-              top: "110px",
-              left: "30px",
-            }}
-          />
-        </div>
-
+      <SeperatorContainer style={{ position: "relative" }}>
+        <Image
+          src={BackgroundImage}
+          fluid
+          width={"100%"}
+          style={{ borderRadius: "10px 10px 0px 0px" }}
+        />
+        <UserImage
+          userImageStyling={{
+            width: "150px",
+            height: "150px",
+            position: "absolute",
+            top: "110px",
+            left: "30px",
+          }}
+        />
         <UserInfoContainer style={{ marginTop: "50px" }}>
           <h1>
             {user.name}{" "}
@@ -80,9 +80,9 @@ const UserDetails = () => {
             })}
           </div>
           <div>
-            <span>{user.address[0]?.city}, </span>
+            {/* <span>{user.address[0]?.city}, </span>
             <span>{user.address[0]?.state}, </span>
-            <span>{user.address[0]?.country} </span>
+            <span>{user.address[0]?.country} </span> */}
 
             <ContactInfoConatiner>Contact info</ContactInfoConatiner>
           </div>
@@ -91,44 +91,45 @@ const UserDetails = () => {
       </SeperatorContainer>
       <SeperatorContainer>
         <UserInfoContainer>
-            <h3>Experience</h3>
-            {user?.workExperience?.map((exp) => {
-              return (
-                <div>
-                  <p>{exp.designation}</p>
-                  <p>{exp.companyName}</p>
-                  <p>
-                    {exp.startDate} - {exp.endDate}
-                  </p>
-                  <p>{exp.location}</p>
-                </div>
-              );
-            })}
+          <h3>Experience</h3>
+          {user?.workExperience?.map((exp) => {
+            return (
+              <div>
+                <Heading>{exp.designation}</Heading>
+                <Title>{exp.companyName}</Title>
+                <LighterPara>
+                  {exp.startDate} - {exp.endDate}
+                </LighterPara>
+                <LighterPara>{exp.location}</LighterPara>
+              </div>
+            );
+          })}
         </UserInfoContainer>
       </SeperatorContainer>
 
       <SeperatorContainer>
         <UserInfoContainer>
-            <h3>Education</h3>
-            {user?.education?.map((edu) => {
-              return (
-                <div>
-                  <h4>{edu.schoolName}</h4>
-                  <p>{edu.degree}</p>
-                  <p>{edu.startDate}</p>
-                  <p>{edu.endDate}</p>
-                  <p>{edu.description}</p>
-                </div>
-              );
-            })}
+          <h3>Education</h3>
+          {user?.education?.map((edu) => {
+            return (
+              <div>
+                <Heading>{edu.schoolName}</Heading>
+                <Title>{edu.degree}</Title>
+                <LighterPara>
+                  {edu.startDate} - {edu.endDate}
+                </LighterPara>
+                <LighterPara>{edu.description}</LighterPara>
+              </div>
+            );
+          })}
         </UserInfoContainer>
       </SeperatorContainer>
       <SeperatorContainer>
         <UserInfoContainer>
-            <h3>Skills</h3>
-            {user?.skills?.map((skill) => {
-              return <p>{skill}</p>;
-            })}
+          <h3>Skills</h3>
+          {user?.skills?.map((skill) => {
+            return <Title>{skill}</Title>;
+          })}
         </UserInfoContainer>
       </SeperatorContainer>
     </UserProfileDetailsContainer>

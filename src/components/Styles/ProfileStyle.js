@@ -27,7 +27,8 @@ export const UserInfoContainer = styled(FlexContainer)`
   padding: 10px 40px 0px 40px;
 
   h3 {
-    margin: 2px;
+    margin: 0px;
+    font-size: 22px;
   }
   h1 {
     margin: 3px;
@@ -46,3 +47,18 @@ export const ContactInfoConatiner = styled.span`
     cursor: pointer;
   }
 `;
+
+export const Heading = styled.h3`
+margin: 2px 0px !important;
+font-size: 17px !important;
+font-weight: 600;
+`
+
+export const Title = styled.p`
+margin: 2px;
+`
+
+export const LighterPara = styled.p`
+margin: 2px;
+opacity: 0.7;
+`
