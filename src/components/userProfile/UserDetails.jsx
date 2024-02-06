@@ -19,6 +19,7 @@ import { Button } from "../Styles/Style";
 import { SubmitButton } from "../Styles/LoginStyle";
 import { followUser } from "../helper/Follow";
 import { unfollowUser } from "../helper/Unfollow";
+import ContactInfoModal from "../modal/ContactInfoModal";
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -108,7 +109,7 @@ const UserDetails = () => {
             <span>{user.address[0]?.state}, </span>
             <span>{user.address[0]?.country} </span> */}
 
-            <ContactInfoConatiner>Contact info</ContactInfoConatiner>
+            <ContactInfoModal phone={user.phone} email={user.email}/>
           </div>
           <ContactInfoConatiner>296 connections</ContactInfoConatiner>
           {followed === true ? (
