@@ -149,7 +149,7 @@ export const SortByContainer = styled(FlexContainer)`
   justify-content: space-between;
   height: 35px;
   hr {
-    width: 80%;
+    width: 100%;
     margin: 5px;
   }
 `;
