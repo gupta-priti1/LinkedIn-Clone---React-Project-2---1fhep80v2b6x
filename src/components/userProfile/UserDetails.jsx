@@ -18,10 +18,12 @@ import axios from "axios";
 import { Button } from "../Styles/Style";
 import { SubmitButton } from "../Styles/LoginStyle";
 import { followUser } from "../helper/Follow";
+import { unfollowUser } from "../helper/Unfollow";
 
 const UserDetails = () => {
   const { id } = useParams();
   const [user, setUser] = useState({});
+  const [followed, setFollowed] = useState(false);
 
   //   console.log(id);
   useEffect(() => {
@@ -42,12 +44,26 @@ const UserDetails = () => {
       // console.log(response);
       if (response.status === 200) {
         setUser(response.data.data);
+        setFollowed(user.isFollowed);
+        console.log("refresh");
       }
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleFollowUser = () => {
+    followUser(id);
+    setFollowed(true);
+  };
+
+  const handleUnfollowUser = () => {
+    unfollowUser(id);
+    setFollowed(false);
+  };
+
   console.log(user);
+
   if (!user) {
     return <p>loading...</p>;
   }
@@ -95,14 +111,12 @@ const UserDetails = () => {
             <ContactInfoConatiner>Contact info</ContactInfoConatiner>
           </div>
           <ContactInfoConatiner>296 connections</ContactInfoConatiner>
-          {user.isFollowed ? (
-            <FollowedButton followed = {user.isFollowed}>Following</FollowedButton>
-          ) : (
-            <FollowedButton
-              onClick={() => followUser(id)}
-            >
-              Follow
+          {followed === true ? (
+            <FollowedButton followed={followed} onClick={handleUnfollowUser}>
+              Following
             </FollowedButton>
+          ) : (
+            <FollowedButton onClick={handleFollowUser}>Follow</FollowedButton>
           )}
         </UserInfoContainer>
       </SeperatorContainer>
