@@ -5,7 +5,6 @@ import { fetchAuthorDetails } from "../../helper/GetAuthorDetails";
 
 const SingleComment = ({ comment }) => {
   const [user, setUser] = useState({});
-  console.log(comment);
   useEffect(() => {
     fetchingUser();
   }, []);
@@ -16,10 +15,14 @@ const SingleComment = ({ comment }) => {
       setUser(fetchedData.userDetails);
     }
   };
-  console.log('user',user);
+  console.log("user", user);
   return (
     <>
-      <UserImage userImageStyling={{ backgroundColor: "black" }} />
+      <UserImage
+        userImageStyling={{ backgroundColor: "black", fontSize: "18px" }}
+        name={user.name}
+        profileImage={user.profileImage}
+      />
       <CommentAuthorDetails>
         <h4>{user.name}</h4>
         <p>{comment.content}</p>
