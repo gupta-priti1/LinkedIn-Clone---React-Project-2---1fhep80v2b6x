@@ -15,8 +15,6 @@ import { Image } from "react-bootstrap";
 import UserImage from "../userImage/UserImage";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Button } from "../Styles/Style";
-import { SubmitButton } from "../Styles/LoginStyle";
 import { followUser } from "../helper/Follow";
 import { unfollowUser } from "../helper/Unfollow";
 import ContactInfoModal from "../modal/ContactInfoModal";
