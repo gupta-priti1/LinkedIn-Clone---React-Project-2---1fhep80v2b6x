@@ -41,6 +41,8 @@ const PostContainer = ({ posts }) => {
                     color: "white !important",
                     fontSize: 12,
                   }}
+                  profileImage={item.author.profileImage}
+                  name={item.author.name}
                 />
                 <PostUserDetails>
                   <h4>{item.author.name}</h4>

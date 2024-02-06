@@ -1,16 +1,20 @@
 import { Avatar } from "@mui/material";
 import React from "react";
+import { Image } from "react-bootstrap";
 
-const UserImage = ({userImageStyling}) => {
+const UserImage = ({ userImageStyling, profileImage, name }) => {
   return (
-    <div className="user-photo" >
-      <Avatar
-        sx={userImageStyling}
-        style={{border:"3.5px solid white"}}
-      >
-        R
-      </Avatar>
-    </div>
+    <>
+      {profileImage ? (
+        <Image src={profileImage} style={{...userImageStyling, borderRadius:"50%"}}/>
+      ) : (
+        <div className="user-photo">
+          <Avatar sx={userImageStyling} style={{ border: "3.5px solid white" }}>
+          {name?.charAt(0).toUpperCase()}
+          </Avatar>
+        </div>
+      )}
+    </>
   );
 };
 
