@@ -7,6 +7,7 @@ import {
 } from "../../Styles/Style";
 import UserImage from "../../userImage/UserImage";
 import { CommentsWrapper, Wrapper } from "../../Styles/Wrapper";
+import SingleComment from "./SingleComment";
 
 const DisplayingComments = ({ props, reFetchComments}) => {
   const [comments, setComments] = useState();
@@ -27,7 +28,7 @@ const DisplayingComments = ({ props, reFetchComments}) => {
         },
       }
     );
-    console.log(response);
+    // console.log(response);
     if (response.status === 200) {
       setComments(response.data.data);
     }
@@ -38,11 +39,7 @@ const DisplayingComments = ({ props, reFetchComments}) => {
       {comments?.map((comment,index) => {
         return (
           <CommentsContainer key={index}>
-            <UserImage userImageStyling={{ backgroundColor: "black" }} />
-            <CommentAuthorDetails>
-              <h4>name</h4>
-              <p>{comment.content}</p>
-            </CommentAuthorDetails>
+            <SingleComment comment={comment}/>
           </CommentsContainer>
         );
       })}
