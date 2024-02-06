@@ -35,9 +35,9 @@ const DisplayingComments = ({ props, reFetchComments}) => {
   // console.log("comments", comments);
   return (
     <CommentsWrapper>
-      {comments?.map((comment) => {
+      {comments?.map((comment,index) => {
         return (
-          <CommentsContainer>
+          <CommentsContainer key={index}>
             <UserImage userImageStyling={{ backgroundColor: "black" }} />
             <CommentAuthorDetails>
               <h4>name</h4>

@@ -18,6 +18,7 @@ import axios from "axios";
 import { followUser } from "../helper/Follow";
 import { unfollowUser } from "../helper/Unfollow";
 import ContactInfoModal from "../modal/ContactInfoModal";
+import { fetchAuthorDetails } from "../helper/GetAuthorDetails";
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -30,21 +31,11 @@ const UserDetails = () => {
   }, []);
   const fetchingUserInfo = async () => {
     try {
-      const response = await axios.get(
-        `https://academics.newtonschool.co/api/v1/linkedin/user/${id}`,
-        {
-          headers: {
-            projectID: "hv45l4abtvvc",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
-          },
-        }
-      );
-      // console.log(response);
-      if (response.status === 200) {
-        setUser(response.data.data);
-        setFollowed(user.isFollowed);
-        console.log("refresh");
+      const fetchedDetails = await fetchAuthorDetails(id);
+
+      if (fetchedDetails) {
+        setUser(fetchedDetails.userDetails);
+        setFollowed(fetchedDetails.isFollowed);
       }
     } catch (error) {
       console.log(error);
@@ -84,7 +75,7 @@ const UserDetails = () => {
               position: "absolute",
               bottom: "-70px",
               left: "30px",
-              fontSize:"50px"
+              fontSize: "50px",
             }}
             profileImage={user.profileImage}
             name={user.name}
