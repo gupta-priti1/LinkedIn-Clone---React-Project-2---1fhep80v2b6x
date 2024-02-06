@@ -86,7 +86,10 @@ const UserDetails = () => {
               position: "absolute",
               bottom: "-70px",
               left: "30px",
+              fontSize:"50px"
             }}
+            profileImage={user.profileImage}
+            name={user.name}
           />
         </div>
 
@@ -109,7 +112,7 @@ const UserDetails = () => {
             <span>{user.address[0]?.state}, </span>
             <span>{user.address[0]?.country} </span> */}
 
-            <ContactInfoModal phone={user.phone} email={user.email}/>
+            <ContactInfoModal phone={user.phone} email={user.email} />
           </div>
           <ContactInfoConatiner>296 connections</ContactInfoConatiner>
           {followed === true ? (
