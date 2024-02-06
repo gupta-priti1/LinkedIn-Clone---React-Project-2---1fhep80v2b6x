@@ -12,7 +12,6 @@ const Post = () => {
       <CreatePost />
       <SortByContainer>
         <hr />
-        <p>Sort by:Top</p>
       </SortByContainer>
       <DisplayPost />
     </PostWrapper>

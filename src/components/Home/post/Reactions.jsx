@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Wrapper } from "../../Styles/Wrapper";
 import {
   FlexContainer,
@@ -16,8 +16,9 @@ import { likePostContext } from "../../context/LikePostContext";
 import { postContext } from "../../context/PostContext";
 
 const Reactions = ({ props, show }) => {
+  const [likedPost, setLikedPost] = useState(false);
+
   const { like, setLike } = likePostContext();
-  const { post } = postContext();
 
   const showComments = show.show;
   const setShowComments = show.setShow;
@@ -32,6 +33,7 @@ const Reactions = ({ props, show }) => {
   //   console.log('like', like);
   // }
   const handleLikeClick = async () => {
+    setLikedPost(!likedPost);
     const response = await axios.post(
       `https://academics.newtonschool.co/api/v1/linkedin/like/${postId}`,
       "",
@@ -47,6 +49,7 @@ const Reactions = ({ props, show }) => {
     if (response.status === 201) {
       setLike(like + 1);
       console.log("liked");
+      alert("Post liked successfully")
     }
   };
 
@@ -59,7 +62,8 @@ const Reactions = ({ props, show }) => {
       <ReactionsContainer>
         <SingleReaction onClick={handleLikeClick}>
           {/* <FaThumbsUp className="icon"/> */}
-          <FaRegThumbsUp className="icon" />
+          {likedPost ? <FaThumbsUp className="icon" color="#378FE9"/> : <FaRegThumbsUp className="icon" />}
+
           <h4>Like</h4>
         </SingleReaction>
         <SingleReaction onClick={handleCommentClick}>
