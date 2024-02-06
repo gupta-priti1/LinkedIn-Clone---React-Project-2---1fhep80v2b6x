@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   ContactInfoConatiner,
+  FollowedButton,
   GenderContainer,
   Heading,
   LighterPara,
@@ -94,12 +95,15 @@ const UserDetails = () => {
             <ContactInfoConatiner>Contact info</ContactInfoConatiner>
           </div>
           <ContactInfoConatiner>296 connections</ContactInfoConatiner>
-          <SubmitButton
-            style={{ width: "80px", padding: "8px", margin: 0 }}
-            onClick={() => followUser(id)}
-          >
-            Follow
-          </SubmitButton>
+          {user.isFollowed ? (
+            <FollowedButton followed = {user.isFollowed}>Following</FollowedButton>
+          ) : (
+            <FollowedButton
+              onClick={() => followUser(id)}
+            >
+              Follow
+            </FollowedButton>
+          )}
         </UserInfoContainer>
       </SeperatorContainer>
 

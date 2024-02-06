@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FlexContainer } from "./Style";
 import { Wrapper } from "./Wrapper";
+import { SubmitButton } from "./LoginStyle";
 
 export const UserProfileWrapper = styled(Wrapper)`
   width: 72%;
@@ -62,4 +63,19 @@ export const Title = styled.p`
 export const LighterPara = styled.p`
   margin: 2px;
   opacity: 0.7;
+`;
+
+export const FollowedButton = styled(SubmitButton)`
+  width: 90px;
+  padding: 7px;
+  font-size: 14px;
+  margin: 0;
+  background-color: ${({ followed }) => followed && "transparent"};
+  color: ${({ followed }) => followed && "black"};
+  border: ${({ followed }) => followed && "1px solid black"};
+
+  &:hover{
+    background-color: ${({ followed }) => followed && "#EBEBEB"};
+    border:${({ followed }) => followed && "2px solid black"}
+  }
 `;

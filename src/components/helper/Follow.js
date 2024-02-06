@@ -3,7 +3,7 @@ import axios from "axios";
 export const followUser = async (id) => {
   try {
     const response = await axios.post(
-      "https://academics.newtonschool.co/api/v1/linkedin/follow/65aea1f52e21e2f97fec0396",
+      `https://academics.newtonschool.co/api/v1/linkedin/follow/${id}`,
       "",
       {
         headers: {
@@ -14,7 +14,7 @@ export const followUser = async (id) => {
       }
     );
 
-    if(response.status === 200)
+    if(response.status === 201)
     {
         alert('followed successfull')
     }
