@@ -116,12 +116,60 @@ export const UserDetails = styled(FlexContainer)`
   flex-direction: column;
   justify-content: center;
   margin-top: 45px;
+  padding-left: 5px;
   h4,
   p {
     margin: 0;
   }
+  h4 {
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 `;
-// style={{display:"flex", justifyContent:"center", flexDirection:"column", , marginTop:"25px"}}
+
+export const UserImpression = styled(FlexContainer)`
+  width: 85%;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: space-between;
+  padding-left: 5px;
+  p {
+    opacity: 0.7;
+  }
+
+  span {
+    color: #0a77cd;
+  }
+`;
+
+export const HrTag = styled.hr`
+  opacity: 0.7;
+  width: 95%;
+`;
+export const UserPremium = styled(FlexContainer)`
+  flex-direction: column;
+
+  h3,
+  p {
+    margin: 0;
+  }
+  h3 {
+    font-size: 13px;
+    opacity: 0.6;
+  }
+  p {
+    margin-bottom: 5px;
+    &:hover {
+      color: #0a77cd;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+`;
+
 export const CreatePostContainer = styled.div`
   width: 100%;
   height: 100px;
