@@ -1,7 +1,6 @@
 import React from "react";
 import {
   DiscoverMoreButton,
-  FlexContainer,
   GropusContainer,
   HrTag,
   UserDetails,

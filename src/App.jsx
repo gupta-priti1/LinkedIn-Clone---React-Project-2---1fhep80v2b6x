@@ -6,7 +6,6 @@ import Routers from "./Routes/Routers";
 import Signup from "./pages/auth pages/signup/Signup";
 import Login from "./pages/auth pages/login/Login";
 import { accessTokenApi } from "./components/context/AccessTokenContext";
-import Temp2 from "./components/Home/Temp2";
 
 const App = () => {
   const { accessToken } = accessTokenApi();

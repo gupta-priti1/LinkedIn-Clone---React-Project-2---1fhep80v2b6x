@@ -1,7 +1,7 @@
 import React from 'react'
 import UserDetails from './UserDetails'
-import Temp2 from '../Home/Temp2'
 import { UserProfileWrapper } from '../Styles/ProfileStyle'
+import Temp2 from '../Home/advertisement/Temp2'
 
 const UserProfile = () => {
   return (
