@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { userContextApi } from "../../context/UserContext";
 
 const Advertisement = () => {
-//   const { userData } = userContextApi();
+  const { userData } = userContextApi();
 
   const navigate = useNavigate();
   return (
@@ -20,15 +20,21 @@ const Advertisement = () => {
       <FlexContainer style={{ justifyContent: "flex-end" }}>
         <p>Ad</p>
       </FlexContainer>
-      {/* <p>{userData.name}, unlock your full potential with LinkedIn Premium</p> */}
+      <p>{userData.name}, unlock your full potential with LinkedIn Premium</p>
       <AdImageContainer>
-        <UserImage
-          userImageStyling={{
-            width: "70px",
-            height: "70px",
-          }}
+        <div onClick={() => navigate(`/user/${userData._id}`)}>
+          <UserImage
+            userImageStyling={{
+              width: "70px",
+              height: "70px",
+            }}
+          />
+        </div>
+        <Image
+          src={premiumLogo}
+          width={65}
+          onClick={() => navigate("/premium")}
         />
-        <Image src={premiumLogo} width={65} />
       </AdImageContainer>
       <p>See who's viewed your profile in the last 90 days</p>
       <PremiumButton onClick={() => navigate("/premium")}>

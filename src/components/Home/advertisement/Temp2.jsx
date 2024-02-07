@@ -6,8 +6,8 @@ import Footer from '../../footer/Footer'
 const Temp2 = () => {
   return (
     <Temp2Container>
-      {/* <Advertisement/>
-      <Footer/> */}
+      <Advertisement/>
+      <Footer/>
     </Temp2Container>
   )
 }
