@@ -405,12 +405,13 @@ export const ShowMoreButton = styled.button`
   gap: 5px;
 `;
 export const Temp2Container = styled.div`
-  height: 600px;
-  background-color: green;
   position: sticky;
   top: 70px;
   overflow: auto;
 `;
+export const AdvertisementContainer = styled.div`
+background-color: white;
+`
 
 // --------------------Modal------------------------
 export const UserDetailsContainer = styled(FlexContainer)`
