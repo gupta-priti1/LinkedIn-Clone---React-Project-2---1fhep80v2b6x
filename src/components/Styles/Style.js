@@ -358,6 +358,12 @@ export const CommentAuthorDetails = styled(FlexContainer)`
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* @media only screen and (max-width: 1072px) {
+    display: none;
+  } */
 `;
 export const TempContainer = styled.div`
   background-color: white;

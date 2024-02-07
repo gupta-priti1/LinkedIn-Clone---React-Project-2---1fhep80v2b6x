@@ -3,7 +3,9 @@ import { Temp2Container } from '../Styles/Style'
 
 const Temp2 = () => {
   return (
-    <Temp2Container>Temp2</Temp2Container>
+    <Temp2Container>
+      
+    </Temp2Container>
   )
 }
 
