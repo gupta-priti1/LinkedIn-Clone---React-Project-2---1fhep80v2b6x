@@ -4,8 +4,11 @@ import { Image } from "react-bootstrap";
 
 import Background from "./../../assets/Images/user-background.png";
 import UserImage from "../userImage/UserImage";
+import { userContextApi } from "../context/UserContext";
 
 const UserInfo = () => {
+  const{userData} = userContextApi();
+  console.log(userData,'userdata');
   return (
     <>
     <UserInfoContainer>

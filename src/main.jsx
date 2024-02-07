@@ -7,6 +7,7 @@ import PostContext from "./components/context/PostContext.jsx";
 import LikePostContext from "./components/context/LikePostContext.jsx";
 import SearchItemsContext from "./components/context/SearchItemsContext.jsx";
 import AccessTokenContext from "./components/context/AccessTokenContext.jsx";
+import UserContext from "./components/context/UserContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <LikePostContext>
           <AccessTokenContext>
             <SearchItemsContext>
-              <App />
+              <UserContext>
+                <App />
+              </UserContext>
             </SearchItemsContext>
           </AccessTokenContext>
         </LikePostContext>
