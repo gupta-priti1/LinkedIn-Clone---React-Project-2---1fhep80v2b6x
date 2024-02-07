@@ -185,10 +185,10 @@ export const GropusContainer = styled(FlexContainer)`
   }
 `;
 export const DiscoverMoreButton = styled.div`
-text-align: center;
-height: 40px;
-opacity: 0.7;
-`
+  text-align: center;
+  height: 40px;
+  opacity: 0.7;
+`;
 export const CreatePostContainer = styled.div`
   width: 100%;
   height: 100px;
@@ -354,13 +354,49 @@ export const CommentAuthorDetails = styled(FlexContainer)`
     margin: 0;
   }
 `;
+
 export const NewsContainer = styled.div`
   /* height:1000px; */
   width: 300px;
 `;
 export const TempContainer = styled.div`
-  height: 400px;
-  background-color: yellow;
+  background-color: white;
+  border-radius: 15px;
+  padding: 2px 15px;
+  h3 {
+    font-size: 18px;
+    margin: 10px 5px 5px 5px;
+  }
+`;
+
+export const UlTemp = styled.ul`
+  list-style-type: circle;
+  padding: 0px 15px;
+  li {
+    margin: 15px 5px;
+    h4 {
+      margin: 5px;
+    }
+    p {
+      margin: 5px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  }
+`;
+
+export const ShowMoreButton = styled.button`
+  width: 100%;
+  padding: 3px;
+  opacity: 0.7;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 `;
 export const Temp2Container = styled.div`
   height: 600px;
