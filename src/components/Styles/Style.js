@@ -410,25 +410,25 @@ export const Temp2Container = styled.div`
   overflow: auto;
 `;
 export const AdvertisementContainer = styled.div`
-background-color: white;
-text-align: center;
-padding: 0px 5px 15px 5px;
-`
+  background-color: white;
+  text-align: center;
+  padding: 0px 5px 15px 5px;
+`;
 export const AdImageContainer = styled(FlexContainer)`
-justify-content: center;
-gap: 20px;
-`
+  justify-content: center;
+  gap: 20px;
+`;
 export const PremiumButton = styled.button`
-padding: 15px;
-width: 120px;
-border: 2px solid #70b5f9;
-border-radius: 50px;
-background-color: transparent;
-color: #70b5f9;
-font-size: 14px;
-font-weight: 600;
-cursor: pointer;
-`
+  padding: 15px;
+  width: 120px;
+  border: 2px solid #70b5f9;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #70b5f9;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+`;
 
 // --------------------Modal------------------------
 export const UserDetailsContainer = styled(FlexContainer)`
@@ -445,4 +445,27 @@ export const TextArea = styled.textarea`
   border: none;
   padding: 15px;
   font-size: 18px;
+`;
+
+// -------------------Footer------------------------------
+
+export const FooterContainer = styled(FlexContainer)`
+  width: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  opacity: 0.7;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+    color: black;
+    p {
+      margin: 5px;
+      &:hover {
+        text-decoration: underline;
+        color: #0a66c2;
+      }
+    }
+  }
 `;
