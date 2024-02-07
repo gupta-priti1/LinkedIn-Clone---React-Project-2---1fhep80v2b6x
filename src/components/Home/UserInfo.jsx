@@ -1,10 +1,13 @@
 import React from "react";
 import {
+  DiscoverMoreButton,
   FlexContainer,
+  GropusContainer,
   HrTag,
   UserDetails,
   UserImpression,
   UserInfoContainer,
+  UserInfoDetailsContainer,
   UserPremium,
 } from "../Styles/Style";
 import { Image } from "react-bootstrap";
@@ -25,8 +28,12 @@ const UserInfo = () => {
   return (
     <>
       <UserInfoContainer>
-        <div style={{ backgroundColor: "white" }}>
-          <Image src={Background} width={"100%"} />
+        <UserInfoDetailsContainer>
+          <Image
+            src={Background}
+            width={"100%"}
+            style={{ borderRadius: "5px 5px 0px 0px" }}
+          />
           <div onClick={handleUserClick}>
             <UserImage
               userImageStyling={{
@@ -68,15 +75,17 @@ const UserInfo = () => {
               Try Premium for free
             </p>
           </UserPremium>
-        </div>
+        </UserInfoDetailsContainer>
 
-        <div
-          style={{
-            backgroundColor: "blue",
-            width: 200,
-            height: 500,
-          }}
-        ></div>
+        <UserInfoDetailsContainer style={{marginTop:"10px"}}>
+          <GropusContainer>
+            <h3>Groups</h3>
+            <h3>Events</h3>
+            <h3>Followed Hashtags</h3>
+          </GropusContainer>
+          <HrTag/>
+          <DiscoverMoreButton>Discover more</DiscoverMoreButton>
+        </UserInfoDetailsContainer>
       </UserInfoContainer>
     </>
   );

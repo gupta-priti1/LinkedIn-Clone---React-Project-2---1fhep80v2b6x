@@ -111,6 +111,10 @@ export const UserInfoContainer = styled.div`
   /* background-color: red; */
   position: relative;
 `;
+export const UserInfoDetailsContainer = styled.div`
+  background-color: white;
+  border-radius: 15px;
+`;
 
 export const UserDetails = styled(FlexContainer)`
   flex-direction: column;
@@ -150,7 +154,7 @@ export const HrTag = styled.hr`
 `;
 export const UserPremium = styled(FlexContainer)`
   flex-direction: column;
-
+  gap: 4px;
   h3,
   p {
     margin: 0;
@@ -169,7 +173,22 @@ export const UserPremium = styled(FlexContainer)`
     }
   }
 `;
+export const GropusContainer = styled(FlexContainer)`
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 
+  h3 {
+    margin: 15px 10px 5px 20px;
+    font-size: 14px;
+    color: #0a77cd;
+  }
+`;
+export const DiscoverMoreButton = styled.div`
+text-align: center;
+height: 40px;
+opacity: 0.7;
+`
 export const CreatePostContainer = styled.div`
   width: 100%;
   height: 100px;
