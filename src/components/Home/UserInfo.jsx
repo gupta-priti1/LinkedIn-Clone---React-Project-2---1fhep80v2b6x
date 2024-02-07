@@ -69,7 +69,7 @@ const UserInfo = () => {
             <h3>Access exclusive tools & insights</h3>
             <p
               onClick={() => {
-                navigate("/subscription");
+                navigate("/premium");
               }}
             >
               Try Premium for free
