@@ -411,6 +411,23 @@ export const Temp2Container = styled.div`
 `;
 export const AdvertisementContainer = styled.div`
 background-color: white;
+text-align: center;
+padding: 0px 5px 15px 5px;
+`
+export const AdImageContainer = styled(FlexContainer)`
+justify-content: center;
+gap: 20px;
+`
+export const PremiumButton = styled.button`
+padding: 15px;
+width: 120px;
+border: 2px solid #70b5f9;
+border-radius: 50px;
+background-color: transparent;
+color: #70b5f9;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
 `
 
 // --------------------Modal------------------------
