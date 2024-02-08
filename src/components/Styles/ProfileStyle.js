@@ -8,6 +8,7 @@ export const UserProfileWrapper = styled(Wrapper)`
   justify-content: space-between;
   align-items: flex-start;
   margin: 20px;
+  gap: 5%;
 `;
 export const UserProfileDetailsContainer = styled(FlexContainer)`
   align-items: flex-start;
