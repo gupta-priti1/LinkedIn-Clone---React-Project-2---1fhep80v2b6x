@@ -3,15 +3,22 @@ import React from "react";
 import { Dropdown } from "@mui/base/Dropdown";
 import { MenuButton } from "@mui/base/MenuButton";
 import { Menu } from "@mui/base/Menu";
-import { MenuItem } from "@mui/base/MenuItem";
-import { styled } from "@mui/system";
-import { Avatar } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { DropDownWrapper } from "../Styles/Wrapper";
 import { DropDownContainer, DropDownItems } from "../Styles/Style";
 import UserImage from "../userImage/UserImage";
 
+import logoutFunction from "../helper/Logout";
+
+import { userContextApi } from "../context/UserContext";
+import { Link } from "react-router-dom";
+
 const UserDropdown = () => {
+  const { userData } = userContextApi();
+  const handleLogout = () => {
+    logoutFunction();
+    console.log("hello");
+  };
   return (
     <DropDownWrapper>
       <Dropdown>
@@ -32,10 +39,19 @@ const UserDropdown = () => {
           </DropDownContainer>
         </MenuButton>
         <Menu className="menu-items">
-          <DropDownItems className="menu-items">Profile</DropDownItems>
-          <DropDownItems>Try Premium</DropDownItems>
-          <DropDownItems>Dark Mode</DropDownItems>
-          <DropDownItems>Sign out</DropDownItems>
+          <DropDownItems className="menu-items">
+            {" "}
+            <Link to={`/user/${userData._id}`} className="link profile">
+              Profile
+            </Link>
+          </DropDownItems>
+          <DropDownItems >
+            <Link className="link">Try Premium</Link>
+          </DropDownItems>
+          <DropDownItems>
+            <Link className="link">Update Password</Link>
+          </DropDownItems>
+          <DropDownItems className="link" onClick={handleLogout}>Sign out</DropDownItems>
         </Menu>
       </Dropdown>
     </DropDownWrapper>

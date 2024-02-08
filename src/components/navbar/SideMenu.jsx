@@ -6,13 +6,12 @@ import { IoIosCloseCircle } from "react-icons/io";
 import UserDropdown from "./UserDropdown";
 import UserImage from "../userImage/UserImage";
 import { userContextApi } from "../context/UserContext";
-import { logoutFunction } from "../helper/Logout";
+import logoutFunction from "../helper/Logout";
 
 const SideMenu = () => {
   const { userData } = userContextApi();
   const handleLogout = () => {
     logoutFunction();
-    
   };
   return (
     <SidebarContainer>
