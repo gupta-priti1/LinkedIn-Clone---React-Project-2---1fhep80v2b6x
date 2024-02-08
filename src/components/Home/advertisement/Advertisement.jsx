@@ -34,6 +34,7 @@ const Advertisement = () => {
           src={premiumLogo}
           width={65}
           onClick={() => navigate("/premium")}
+          style={{cursor:"pointer"}}
         />
       </AdImageContainer>
       <p>See who's viewed your profile in the last 90 days</p>
