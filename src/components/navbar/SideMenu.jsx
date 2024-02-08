@@ -6,10 +6,14 @@ import { IoIosCloseCircle } from "react-icons/io";
 import UserDropdown from "./UserDropdown";
 import UserImage from "../userImage/UserImage";
 import { userContextApi } from "../context/UserContext";
+import { logoutFunction } from "../helper/Logout";
 
 const SideMenu = () => {
   const { userData } = userContextApi();
-
+  const handleLogout = () => {
+    logoutFunction();
+    
+  };
   return (
     <SidebarContainer>
       <LinkContainer>
@@ -21,7 +25,9 @@ const SideMenu = () => {
           }}
         />
 
-        <Link to={`/user/${userData._id}`} className="link profile">Profile</Link>
+        <Link to={`/user/${userData._id}`} className="link profile">
+          Profile
+        </Link>
         <Link to="/mynetwork" className="link">
           Network
         </Link>
@@ -34,9 +40,13 @@ const SideMenu = () => {
         <Link to="/mynetwork" className="link">
           Notifications
         </Link>
-        <Link to="/mynetwork" className="link">UpdatePassword</Link>
+        <Link to="/mynetwork" className="link">
+          UpdatePassword
+        </Link>
 
-        <Link className="link">Login/logout</Link>
+        <Link className="link" onClick={handleLogout}>
+          Login/logout
+        </Link>
       </LinkContainer>
     </SidebarContainer>
   );
