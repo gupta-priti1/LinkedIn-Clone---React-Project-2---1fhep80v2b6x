@@ -56,6 +56,10 @@ export const NavbarRightItems = styled.div`
   justify-content: space-between;
   gap: 22px;
   align-items: center;
+
+  @media only screen and (max-width: 492px) {
+    display: none;
+  }
 `;
 
 export const LinkContainer = styled.div`
@@ -100,6 +104,41 @@ export const DropDownItems = styled(MenuItem)`
   text-decoration: none;
   background-color: white !important;
 `;
+
+export const SmallScreenMenuDisplay = styled.div`
+display: none;
+
+@media only screen and (max-width:492px){
+  display: block;
+}
+`
+
+export const SidebarContainer = styled.div`
+background-color: white;
+position: absolute;
+padding: 5px;
+right: 0;
+top: 8vh;
+width: 40%;
+border-radius: 10px;
+
+.link{
+  padding: 10px;
+  color: #000;
+  width: 80%;
+  &:hover{
+    background-color: #BDBDBD;
+    text-decoration: underline;
+  }
+}
+.profile{
+  border: 1px solid #0A66C2;
+  border-radius: 50px;
+  &:hover{
+    background-color: #378FE9;
+  }
+}
+`
 // ---------------Home------------------
 
 export const HomeContainer = styled.div`
