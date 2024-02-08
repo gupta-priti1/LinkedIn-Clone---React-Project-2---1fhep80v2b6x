@@ -8,11 +8,14 @@ import UserImage from "../../userImage/UserImage";
 import DisplayingComments from "./DisplayingComments";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import { userContextApi } from "../../context/UserContext";
 
 const Comments = ({ props }) => {
   const [showPostButton, setShowPostButton] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [reFetchComments, setRefetchComments] = useState(false);
+
+  const { userData } = userContextApi();
 
   const postId = props.postId;
   console.log(postId);
@@ -44,8 +47,8 @@ const Comments = ({ props }) => {
     );
 
     console.log(response);
-    setCommentText("")
-    setRefetchComments(!reFetchComments)
+    setCommentText("");
+    setRefetchComments(!reFetchComments);
   };
 
   return (
@@ -60,8 +63,14 @@ const Comments = ({ props }) => {
             color: "white !important",
             fontSize: 12,
           }}
+          name={userData.name}
+          profileImage={userData.profileImage}
         />
-        <CommentInput type="text" onInput={handleCommentChange} value={commentText}/>
+        <CommentInput
+          type="text"
+          onInput={handleCommentChange}
+          value={commentText}
+        />
         {showPostButton && <Button onClick={handlePostingComment}>Post</Button>}
       </CommentsContainer>
       <DisplayingComments props={props} reFetchComments={reFetchComments} />
