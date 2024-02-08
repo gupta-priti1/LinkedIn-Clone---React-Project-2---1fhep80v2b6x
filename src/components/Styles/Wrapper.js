@@ -33,6 +33,11 @@ export const DropDownWrapper = styled(Wrapper)`
       cursor: pointer;
     }
   }
+  /* .menuItems ul{
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  } */
 `;
 export const RoutesWrapper = styled(Wrapper)`
   margin-top: 8vh;
@@ -51,7 +56,7 @@ export const PostWrapper = styled(Wrapper)`
   height: calc(100% - 8vh); */
 `;
 export const SearchDisplayWrapper = styled(Wrapper)`
-gap: 20px;
-height: 100%;
-align-items: flex-start;
-`
+  gap: 20px;
+  height: 100%;
+  align-items: flex-start;
+`;
