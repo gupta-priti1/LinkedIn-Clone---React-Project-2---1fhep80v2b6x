@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Image } from "react-bootstrap";
 
@@ -9,22 +9,30 @@ import { HiUsers } from "react-icons/hi";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { HiMiniChatBubbleLeftEllipsis } from "react-icons/hi2";
 import { GoBellFill } from "react-icons/go";
+import { IoMenu } from "react-icons/io5";
 
 import SearchBar from "./SearchBar";
 import UserDropdown from "./UserDropdown";
 
-import { NavbarWrapper} from "../Styles/Wrapper";
+import { NavbarWrapper } from "../Styles/Wrapper";
 import {
   LinkContainer,
   NavbarContainer,
   NavbarLeftItems,
   NavbarLinkText,
   NavbarRightItems,
+  SmallScreenMenuDisplay,
 } from "../Styles/Style";
+import SideMenu from "./SideMenu";
+import { IoIosCloseCircle } from "react-icons/io";
 
 const Navbar = () => {
-  return (
+  const [showMenu, setShowMenu] = useState(false);
 
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu);
+  };
+  return (
     <NavbarWrapper>
       <NavbarContainer>
         <NavbarLeftItems>
@@ -71,6 +79,15 @@ const Navbar = () => {
 
           <UserDropdown />
         </NavbarRightItems>
+
+        <SmallScreenMenuDisplay>
+          {!showMenu ? (
+            <IoMenu fontSize={"30px"} onClick={handleShowMenu} />
+          ) : (
+            <IoIosCloseCircle fontSize={'30px'} onClick={handleShowMenu}/>
+          )}
+        </SmallScreenMenuDisplay>
+        {showMenu && <SideMenu />}
       </NavbarContainer>
     </NavbarWrapper>
   );
