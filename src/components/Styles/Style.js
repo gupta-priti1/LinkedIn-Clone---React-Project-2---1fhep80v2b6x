@@ -374,6 +374,7 @@ export const SingleReaction = styled(FlexContainer)`
   &:hover {
     background-color: #ebebeb;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   .icon {
