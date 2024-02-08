@@ -14,7 +14,7 @@ import { Image } from "react-bootstrap";
 import Background from "./../../assets/Images/user-background.png";
 import UserImage from "../userImage/UserImage";
 import { userContextApi } from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserInfo = () => {
   const navigate = useNavigate();
@@ -66,23 +66,17 @@ const UserInfo = () => {
           <HrTag />
           <UserPremium>
             <h3>Access exclusive tools & insights</h3>
-            <p
-              onClick={() => {
-                navigate("/premium");
-              }}
-            >
-              Try Premium for free
-            </p>
+            <Link className="link" to='https://premium.linkedin.com/' >Try Premium for free</Link>
           </UserPremium>
         </UserInfoDetailsContainer>
 
-        <UserInfoDetailsContainer style={{marginTop:"10px"}}>
+        <UserInfoDetailsContainer style={{ marginTop: "10px" }}>
           <GropusContainer>
             <h3>Groups</h3>
             <h3>Events</h3>
             <h3>Followed Hashtags</h3>
           </GropusContainer>
-          <HrTag/>
+          <HrTag />
           <DiscoverMoreButton>Discover more</DiscoverMoreButton>
         </UserInfoDetailsContainer>
       </UserInfoContainer>

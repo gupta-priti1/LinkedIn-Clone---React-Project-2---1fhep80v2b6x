@@ -221,14 +221,15 @@ export const UserPremium = styled(FlexContainer)`
   flex-direction: column;
   gap: 4px;
   h3,
-  p {
+  .link {
     margin: 0;
+    text-decoration: none;
   }
   h3 {
     font-size: 13px;
     opacity: 0.6;
   }
-  p {
+  .link {
     margin-bottom: 5px;
     &:hover {
       color: #0a77cd;
