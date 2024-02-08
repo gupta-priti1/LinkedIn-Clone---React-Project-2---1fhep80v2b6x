@@ -14,7 +14,7 @@ export const NavbarContainer = styled.div`
   align-items: center;
   width: 74%;
 
-  @media only screen and (max-width: 872px){
+  @media only screen and (max-width: 872px) {
     width: 95%;
   }
 `;
@@ -91,7 +91,7 @@ export const NavbarLinkText = styled.h4`
   line-height: 16px;
   font-weight: 400;
   text-decoration: none !important;
-  @media only screen and (max-width: 872px){
+  @media only screen and (max-width: 872px) {
     display: none;
   }
 `;
@@ -103,42 +103,59 @@ export const DropDownContainer = styled.div`
 export const DropDownItems = styled(MenuItem)`
   text-decoration: none;
   background-color: white !important;
+  .link {
+    padding: 10px;
+    color: #000;
+    width: 80%;
+    &:hover {
+      background-color: #bdbdbd;
+      text-decoration: underline;
+    }
+  }
+  .profile {
+    border: 1px solid #0a66c2;
+    border-radius: 50px;
+
+    &:hover {
+      background-color: #378fe9;
+    }
+  }
 `;
 
 export const SmallScreenMenuDisplay = styled.div`
-display: none;
+  display: none;
 
-@media only screen and (max-width:492px){
-  display: block;
-}
-`
+  @media only screen and (max-width: 492px) {
+    display: block;
+  }
+`;
 
 export const SidebarContainer = styled.div`
-background-color: white;
-position: absolute;
-padding: 5px;
-right: 0;
-top: 8vh;
-width: 40%;
-border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  padding: 5px;
+  right: 0;
+  top: 8vh;
+  width: 40%;
+  border-radius: 10px;
 
-.link{
-  padding: 10px;
-  color: #000;
-  width: 80%;
-  &:hover{
-    background-color: #BDBDBD;
-    text-decoration: underline;
+  .link {
+    padding: 10px;
+    color: #000;
+    width: 80%;
+    &:hover {
+      background-color: #bdbdbd;
+      text-decoration: underline;
+    }
   }
-}
-.profile{
-  border: 1px solid #0A66C2;
-  border-radius: 50px;
-  &:hover{
-    background-color: #378FE9;
+  .profile {
+    border: 1px solid #0a66c2;
+    border-radius: 50px;
+    &:hover {
+      background-color: #378fe9;
+    }
   }
-}
-`
+`;
 // ---------------Home------------------
 
 export const HomeContainer = styled.div`
