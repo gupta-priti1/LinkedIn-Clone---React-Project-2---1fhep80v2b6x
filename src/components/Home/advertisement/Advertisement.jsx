@@ -8,7 +8,7 @@ import {
 import UserImage from "../../userImage/UserImage";
 import premiumLogo from "./../../../assets/Images/premium-logo.png";
 import { Image } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userContextApi } from "../../context/UserContext";
 
 const Advertisement = () => {
@@ -30,17 +30,19 @@ const Advertisement = () => {
             }}
           />
         </div>
-        <Image
-          src={premiumLogo}
-          width={65}
-          onClick={() => navigate("/premium")}
-          style={{cursor:"pointer"}}
-        />
+        <Link to="https://premium.linkedin.com/">
+          <Image
+            src={premiumLogo}
+            width={65}
+            // onClick={() => navigate("/premium")}
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
       </AdImageContainer>
       <p>See who's viewed your profile in the last 90 days</p>
-      <PremiumButton onClick={() => navigate("/premium")}>
-        Try for free
-      </PremiumButton>
+      <Link to="https://premium.linkedin.com/">
+        <PremiumButton>Try for free</PremiumButton>
+      </Link>
     </AdvertisementContainer>
   );
 };

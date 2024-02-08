@@ -58,7 +58,7 @@ const UserDropdown = () => {
             </Link>
           </DropDownItems>
           <DropDownItems>
-            <Link to="/subscription" className="link">Try Premium</Link>
+            <Link to="https://premium.linkedin.com/" className="link">Try Premium</Link>
           </DropDownItems>
           <DropDownItems>
             <Link className="link">Update Password</Link>
