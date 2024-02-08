@@ -18,7 +18,6 @@ const UserDropdown = () => {
   const handleLogout = () => {
     logoutFunction();
     console.log("hello");
-    
   };
   return (
     <DropDownWrapper>
@@ -40,19 +39,33 @@ const UserDropdown = () => {
           </DropDownContainer>
         </MenuButton>
         <Menu className="menu-items">
+          <DropDownItems>
+            <UserImage userImageStyling={{
+              width:"60px",
+              height:"60px",
+              backgroundColor:"#0A66C2",
+              fontSize:"30px"
+            }}
+            name={userData.name}
+            />
+            <div>
+              {userData.name}
+            </div>
+          </DropDownItems>
           <DropDownItems className="menu-items">
-            {" "}
             <Link to={`/user/${userData._id}`} className="link profile">
               Profile
             </Link>
           </DropDownItems>
-          <DropDownItems >
-            <Link className="link">Try Premium</Link>
+          <DropDownItems>
+            <Link to="/subscription" className="link">Try Premium</Link>
           </DropDownItems>
           <DropDownItems>
             <Link className="link">Update Password</Link>
           </DropDownItems>
-          <DropDownItems className="link" onClick={handleLogout}>Sign out</DropDownItems>
+          <DropDownItems onClick={handleLogout}>
+            <div className="link">Sign out</div>
+          </DropDownItems>
         </Menu>
       </Dropdown>
     </DropDownWrapper>
