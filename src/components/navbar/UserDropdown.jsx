@@ -18,6 +18,7 @@ const UserDropdown = () => {
   const handleLogout = () => {
     logoutFunction();
     console.log("hello");
+    
   };
   return (
     <DropDownWrapper>
