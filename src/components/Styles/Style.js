@@ -101,15 +101,17 @@ export const DropDownContainer = styled.div`
   justify-content: center;
 `;
 export const DropDownItems = styled(MenuItem)`
-  text-decoration: none;
   background-color: white !important;
+  text-align: center;
   .link {
+    text-decoration: none;
     padding: 10px;
     color: #000;
     width: 80%;
     &:hover {
       background-color: #bdbdbd;
       text-decoration: underline;
+      border-radius: 5px;
     }
   }
   .profile {
