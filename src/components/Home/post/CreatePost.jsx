@@ -12,8 +12,10 @@ import { RiImage2Fill } from "react-icons/ri";
 import { FaCalendarAlt } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
 import BasicModal from "../../modal/BasicModal";
+import { userContextApi } from "../../context/UserContext";
 
 const CreatePost = () => {
+  const {userData} = userContextApi();
   return (
     <Wrapper>
       <CreatePostContainer>
@@ -27,6 +29,9 @@ const CreatePost = () => {
               color: "white !important",
               fontSize: 18,
             }}
+            name={userData.name}
+            profileImage={userData.profileImage}
+
           />
           {/* <Button type="click">Start a post</Button> */}
           <BasicModal/>
