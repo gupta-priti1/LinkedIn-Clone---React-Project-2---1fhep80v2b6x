@@ -24,6 +24,10 @@ export const NavbarLeftItems = styled.div`
   gap: 8px;
   align-items: center;
   width: 30%;
+
+  @media only screen and (max-width: 492px){
+    width: 80%;
+  }
 `;
 
 export const SearchbarContainer = styled(NavbarContainer)`
@@ -428,9 +432,9 @@ export const NewsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* @media only screen and (max-width: 1072px) {
+  @media only screen and (max-width: 1072px) {
     display: none;
-  } */
+  }
 `;
 export const TempContainer = styled.div`
   background-color: white;
@@ -476,12 +480,16 @@ export const Temp2Container = styled.div`
   top: 70px;
   overflow: auto;
   width: 290px;
+  @media only screen and (max-width: 1072px) {
+    display: none;
+  }
 `;
 export const AdvertisementContainer = styled.div`
   background-color: white;
   text-align: center;
   border-radius: 15px;
   padding: 0px 5px 15px 5px;
+
 `;
 export const AdImageContainer = styled(FlexContainer)`
   justify-content: center;
