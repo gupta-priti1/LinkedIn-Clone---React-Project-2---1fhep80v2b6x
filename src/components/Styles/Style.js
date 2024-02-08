@@ -474,10 +474,12 @@ export const Temp2Container = styled.div`
   position: sticky;
   top: 70px;
   overflow: auto;
+  width: 290px;
 `;
 export const AdvertisementContainer = styled.div`
   background-color: white;
   text-align: center;
+  border-radius: 15px;
   padding: 0px 5px 15px 5px;
 `;
 export const AdImageContainer = styled(FlexContainer)`
