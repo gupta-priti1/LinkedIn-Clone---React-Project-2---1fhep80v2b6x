@@ -24,7 +24,6 @@ import {
 
 const Navbar = () => {
   return (
-    // <div className="navbar-wrapper">
 
     <NavbarWrapper>
       <NavbarContainer>
