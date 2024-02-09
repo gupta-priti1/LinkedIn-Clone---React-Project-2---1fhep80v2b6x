@@ -19,7 +19,7 @@ import PostMoreOptionModal from "../modal/PostMoreOptionModal";
 
 const PostContainer = ({ posts }) => {
   const navigate = useNavigate();
-  console.log("post", posts);
+  // console.log("post", posts);
   const Item = (props) => {
     return (
       <img
@@ -36,7 +36,7 @@ const PostContainer = ({ posts }) => {
     navigate(`/user/${id}`);
   };
   return (
-    <PostWrapper>
+    <div>
       <DisplayPostContainer>
         {posts?.map((item) => {
           let date = new Date(item.createdAt).getHours();
@@ -69,7 +69,7 @@ const PostContainer = ({ posts }) => {
                     </p>
                   </PostUserDetails>
                 </PostMarginContainer>
-                  <PostMoreOptionModal/>
+                  <PostMoreOptionModal id={item._id}/>
               </FlexContainer>
 
               <PostPara>{item.content}</PostPara>
@@ -92,7 +92,7 @@ const PostContainer = ({ posts }) => {
           );
         })}
       </DisplayPostContainer>
-    </PostWrapper>
+    </div>
   );
 };
 

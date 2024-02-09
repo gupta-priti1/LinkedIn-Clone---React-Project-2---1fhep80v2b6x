@@ -67,7 +67,7 @@ const DisplayPost = () => {
     if (scrollTop + clientHeight >= scrollHeight - 100) {
       fetchingPost();
     }
-  }, 1000);
+  }, 1500);
 
   useEffect(() => {
     console.log("window");

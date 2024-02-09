@@ -78,7 +78,6 @@ export default function BasicModal() {
 
     handleClose();
   };
-  console.log(postDetails);
   return (
     <>
       <Button type="click" onClick={handleOpen}>
