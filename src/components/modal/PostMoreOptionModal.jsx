@@ -1,8 +1,11 @@
 import React from 'react'
+import { BsThreeDots } from 'react-icons/bs'
 
 const PostMoreOptionModal = () => {
   return (
-    <div>PostMoreOptionModal</div>
+    <>
+    <BsThreeDots />
+    </>
   )
 }
 
