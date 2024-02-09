@@ -44,7 +44,7 @@ const navigate = useNavigate();
           "userInfo",
           JSON.stringify(response.data.data)
         );
-        navigate("/feed");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);

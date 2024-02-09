@@ -61,7 +61,7 @@ const SignupForm = () => {
           "userInfo",
           JSON.stringify(response.data.data.user)
         );
-        navigate("/feed");
+        navigate("/");
       }
     } catch (e) {
       console.log(e);
