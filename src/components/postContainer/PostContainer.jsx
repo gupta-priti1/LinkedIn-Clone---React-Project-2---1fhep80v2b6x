@@ -37,7 +37,7 @@ const PostContainer = ({ posts }) => {
   };
   return (
       <DisplayPostContainer>
-        {posts?.map((item) => {
+        {posts?.map((item,index) => {
           let date = new Date(item.createdAt).getHours();
           return (
             <SinglePost key={item.author.createdAt}>
