@@ -17,7 +17,7 @@ const UserDropdown = () => {
   const { userData } = userContextApi();
   const handleLogout = () => {
     logoutFunction();
-    console.log("hello");
+    // console.log("hello");
   };
   return (
     <DropDownWrapper>
