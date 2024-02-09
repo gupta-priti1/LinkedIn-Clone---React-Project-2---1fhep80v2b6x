@@ -56,7 +56,7 @@ const DisplayPost = () => {
 
   useEffect(() => {
     fetchingPost();
-  }, []);
+  }, [like]);
 
   return (
     <InfiniteScroll
