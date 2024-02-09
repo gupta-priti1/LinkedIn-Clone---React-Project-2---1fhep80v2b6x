@@ -6,6 +6,7 @@ import Temp2 from "../../../components/Home/advertisement/Temp2";
 import { Image } from "react-bootstrap";
 
 import NoProduct from "./../../../assets/Images/no-search-found.webp";
+import { SearchContainer } from "../../../components/Styles/Style";
 
 const SearchDisplay = () => {
   const { searchItems, setSearchItems } = searchItemsContext();
@@ -18,9 +19,9 @@ const SearchDisplay = () => {
   }
   return (
     <SearchDisplayWrapper>
-      <div style={{width:"50%",marginTop:"15px"}}>
+      <SearchContainer>
         <PostContainer posts={searchItems} />
-      </div>
+      </SearchContainer>
       <Temp2 />
     </SearchDisplayWrapper>
   );
