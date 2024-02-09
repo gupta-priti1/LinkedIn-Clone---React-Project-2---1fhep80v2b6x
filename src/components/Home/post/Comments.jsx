@@ -9,6 +9,7 @@ import DisplayingComments from "./DisplayingComments";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 import { userContextApi } from "../../context/UserContext";
+import { ToasterMessage } from "../../helper/ToastHelper";
 
 const Comments = ({ props }) => {
   const [showPostButton, setShowPostButton] = useState(false);
@@ -31,24 +32,31 @@ const Comments = ({ props }) => {
   // console.log(commentText);
 
   const handlePostingComment = async () => {
-    const response = await axios.post(
-      `https://academics.newtonschool.co/api/v1/linkedin/comment/${postId}`,
-      {
-        content: commentText,
-      },
-      {
-        headers: {
-          projectID: "hv45l4abtvvc",
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+    try {
+      const response = await axios.post(
+        `https://academics.newtonschool.co/api/v1/linkedin/comment/${postId}`,
+        {
+          content: commentText,
         },
+        {
+          headers: {
+            projectID: "hv45l4abtvvc",
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+          },
+        }
+      );
+      console.log(response);
+      if (response.status === 200) {
+        ToasterMessage("success", response.data.message);
+        setCommentText("");
+        setRefetchComments(!reFetchComments);
       }
-    );
-
-    console.log(response);
-    setCommentText("");
-    setRefetchComments(!reFetchComments);
+    } catch (error) {
+      console.log(error);
+      ToasterMessage("error", "Something went wrong");
+    }
   };
 
   return (
