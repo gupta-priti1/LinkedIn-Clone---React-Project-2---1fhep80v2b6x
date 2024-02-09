@@ -36,7 +36,6 @@ const PostContainer = ({ posts }) => {
     navigate(`/user/${id}`);
   };
   return (
-    <div>
       <DisplayPostContainer>
         {posts?.map((item) => {
           let date = new Date(item.createdAt).getHours();
@@ -92,7 +91,7 @@ const PostContainer = ({ posts }) => {
           );
         })}
       </DisplayPostContainer>
-    </div>
+    
   );
 };
 
