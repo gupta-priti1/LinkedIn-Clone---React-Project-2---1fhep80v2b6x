@@ -5,21 +5,22 @@ import { searchItemsContext } from "../../../components/context/SearchItemsConte
 import Temp2 from "../../../components/Home/advertisement/Temp2";
 import { Image } from "react-bootstrap";
 
-import NoProduct from "./../../../assets/Images/no-search-found.webp"
+import NoProduct from "./../../../assets/Images/no-search-found.webp";
 
 const SearchDisplay = () => {
   const { searchItems, setSearchItems } = searchItemsContext();
-  if(searchItems.length === 0)
-  {
-    return(
+  if (searchItems.length === 0) {
+    return (
       <div>
-        <Image src={NoProduct} alt="no-product" loading="lazy" fluid/>
+        <Image src={NoProduct} alt="no-product" loading="lazy" fluid />
       </div>
-    )
+    );
   }
   return (
     <SearchDisplayWrapper>
-      <PostContainer posts={searchItems} />
+      <div style={{width:"50%",marginTop:"15px"}}>
+        <PostContainer posts={searchItems} />
+      </div>
       <Temp2 />
     </SearchDisplayWrapper>
   );
