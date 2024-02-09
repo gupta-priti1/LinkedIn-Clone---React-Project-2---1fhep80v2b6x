@@ -14,6 +14,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import axios from "axios";
 import { likePostContext } from "../../context/LikePostContext";
 import { postContext } from "../../context/PostContext";
+import { ToasterMessage } from "../../helper/ToastHelper";
 
 const Reactions = ({ props, show }) => {
   const [likedPost, setLikedPost] = useState(false);
@@ -34,6 +35,7 @@ const Reactions = ({ props, show }) => {
   // }
   const handleLikeClick = async () => {
     setLikedPost(!likedPost);
+
     const response = await axios.post(
       `https://academics.newtonschool.co/api/v1/linkedin/like/${postId}`,
       "",
@@ -48,8 +50,7 @@ const Reactions = ({ props, show }) => {
     console.log(response);
     if (response.status === 201) {
       setLike(like + 1);
-      console.log("liked");
-      alert("Post liked successfully")
+      ToasterMessage("success", "Post liked successfully");
     }
   };
 
@@ -62,7 +63,11 @@ const Reactions = ({ props, show }) => {
       <ReactionsContainer>
         <SingleReaction onClick={handleLikeClick}>
           {/* <FaThumbsUp className="icon"/> */}
-          {likedPost ? <FaThumbsUp className="icon" color="#378FE9"/> : <FaRegThumbsUp className="icon" />}
+          {likedPost ? (
+            <FaThumbsUp className="icon" color="#378FE9" />
+          ) : (
+            <FaRegThumbsUp className="icon" />
+          )}
 
           <h4>Like</h4>
         </SingleReaction>
