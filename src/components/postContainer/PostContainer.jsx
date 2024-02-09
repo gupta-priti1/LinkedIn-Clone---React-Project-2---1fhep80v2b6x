@@ -1,6 +1,7 @@
 import React from "react";
 import {
   DisplayPostContainer,
+  FlexContainer,
   PostMarginContainer,
   PostPara,
   PostUserDetails,
@@ -14,16 +15,26 @@ import ReactionsAndComments from "../Home/post/ReactionsAndComments";
 import { PostWrapper } from "../Styles/Wrapper";
 import { useNavigate } from "react-router-dom";
 
+import { BsThreeDots } from "react-icons/bs";
+
 const PostContainer = ({ posts }) => {
   const navigate = useNavigate();
   console.log("post", posts);
   const Item = (props) => {
-    return <img src={props.img} alt="image" width={"100%"} height={"350px"} loading="lazy"/>;
+    return (
+      <img
+        src={props.img}
+        alt="image"
+        width={"100%"}
+        height={"350px"}
+        loading="lazy"
+      />
+    );
   };
 
-  const handleUserClick = (id) =>{
-    navigate(`/user/${id}`)
-  }
+  const handleUserClick = (id) => {
+    navigate(`/user/${id}`);
+  };
   return (
     <PostWrapper>
       <DisplayPostContainer>
@@ -31,29 +42,35 @@ const PostContainer = ({ posts }) => {
           let date = new Date(item.createdAt).getHours();
           return (
             <SinglePost key={item.author.createdAt}>
-              <PostMarginContainer onClick={()=>handleUserClick(item.author._id)}>
-                <UserImage
-                  userImageStyling={{
-                    width: 35,
-                    height: 35,
-                    marginTop: "2px",
-                    backgroundColor: "green",
-                    color: "white !important",
-                    fontSize: 12,
-                  }}
-                  profileImage={item.author.profileImage}
-                  name={item.author.name}
-                />
-                <PostUserDetails>
-                  <h4>{item.author.name}</h4>
-                  <p>
-                    {date}hrs •{" "}
-                    <span>
-                      <MdPublic />
-                    </span>
-                  </p>
-                </PostUserDetails>
-              </PostMarginContainer>
+              <FlexContainer style={{justifyContent:"space-between", marginRight:"25px"}}>
+                <PostMarginContainer
+                  onClick={() => handleUserClick(item.author._id)}
+                >
+                  <UserImage
+                    userImageStyling={{
+                      width: 35,
+                      height: 35,
+                      marginTop: "2px",
+                      backgroundColor: "green",
+                      color: "white !important",
+                      fontSize: 12,
+                    }}
+                    profileImage={item.author.profileImage}
+                    name={item.author.name}
+                  />
+
+                  <PostUserDetails>
+                    <h4>{item.author.name}</h4>
+                    <p>
+                      {date}hrs •{" "}
+                      <span>
+                        <MdPublic />
+                      </span>
+                    </p>
+                  </PostUserDetails>
+                </PostMarginContainer>
+                  <BsThreeDots />
+              </FlexContainer>
 
               <PostPara>{item.content}</PostPara>
               <Carousel
