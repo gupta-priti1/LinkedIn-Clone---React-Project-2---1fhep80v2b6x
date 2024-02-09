@@ -18,7 +18,7 @@ const PostContainer = ({ posts }) => {
   const navigate = useNavigate();
   console.log("post", posts);
   const Item = (props) => {
-    return <img src={props.img} alt="image" width={"100%"} height={"350px"} />;
+    return <img src={props.img} alt="image" width={"100%"} height={"350px"} loading="lazy"/>;
   };
 
   const handleUserClick = (id) =>{
