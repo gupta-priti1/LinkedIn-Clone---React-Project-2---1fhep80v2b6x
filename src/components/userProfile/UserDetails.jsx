@@ -52,12 +52,13 @@ const UserDetails = () => {
     setFollowed(false);
   };
 
-  console.log(user);
+  console.log(user, "user");
 
   if (!user) {
     return <p>loading...</p>;
   }
   return (
+    
     <UserProfileDetailsContainer className="user-profile">
       <SeperatorContainer className="seperator">
         <div style={{ position: "relative", width: "100%", height: "150px" }}>
@@ -99,9 +100,15 @@ const UserDetails = () => {
             })}
           </div>
           <div>
-            {/* <span>{user.address[0]?.city}, </span>
-            <span>{user.address[0]?.state}, </span>
-            <span>{user.address[0]?.country} </span> */}
+            {user?.address?.length > 0 ? (
+              <>
+                <span>{user.address[0]?.city}, </span>
+                <span>{user.address[0]?.state}, </span>
+                <span>{user.address[0]?.country} </span>
+              </>
+            ) : (
+              <></>
+            )}
 
             <ContactInfoModal phone={user.phone} email={user.email} />
           </div>
