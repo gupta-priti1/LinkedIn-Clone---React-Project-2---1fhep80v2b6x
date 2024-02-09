@@ -416,6 +416,12 @@ export const SingleReaction = styled(FlexContainer)`
   .repost-icon {
     height: 20px;
   }
+
+  h4{
+    @media only screen and (max-width: 450px){
+      display: none;
+    }
+  }
 `;
 export const LikeDisplayContainer = styled.div`
   background-color: #378fe9;
