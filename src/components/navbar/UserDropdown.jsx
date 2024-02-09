@@ -32,6 +32,7 @@ const UserDropdown = () => {
               color: "white !important",
               fontSize: 12,
             }}
+            name={userData.name}
           />
           <DropDownContainer>
             Me

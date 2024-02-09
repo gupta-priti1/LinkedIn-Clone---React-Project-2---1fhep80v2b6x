@@ -28,6 +28,7 @@ const Advertisement = () => {
               width: "70px",
               height: "70px",
             }}
+            name={userData.name}
           />
         </div>
         <Link to="https://premium.linkedin.com/">
