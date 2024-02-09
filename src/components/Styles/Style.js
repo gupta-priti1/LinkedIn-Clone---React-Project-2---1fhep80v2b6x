@@ -558,6 +558,17 @@ export const TextArea = styled.textarea`
   font-size: 18px;
 `;
 
+
+// -------------------Search-------------------------------
+
+export const SearchContainer = styled.div`
+width: 50%;
+margin-top: 15px;
+
+@media only screen and (max-width:1072px){
+  width: 80%;
+}
+`
 // -------------------Footer------------------------------
 
 export const FooterContainer = styled(FlexContainer)`
