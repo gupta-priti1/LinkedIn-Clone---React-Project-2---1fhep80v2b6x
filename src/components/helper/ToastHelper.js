@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 
 const successToastOptions = {
   position: "top-right",
-  autoClose: 1000,
+  autoClose: 800,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: false,
@@ -11,7 +11,7 @@ const successToastOptions = {
 };
 const errorToatOptions = {
   position: "bottom-right",
-  autoClose: 1000,
+  autoClose: 800,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: false,
@@ -20,7 +20,7 @@ const errorToatOptions = {
 };
 const infoToastOptions = {
   position: "top-center",
-  autoClose: 1000,
+  autoClose: 800,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: false,
