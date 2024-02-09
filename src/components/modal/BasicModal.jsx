@@ -16,6 +16,7 @@ import { Form, SubmitButton } from "../Styles/LoginStyle";
 import { Input } from "@mui/material";
 import axios from "axios";
 import { ToasterMessage } from "../helper/ToastHelper";
+import { likePostContext } from "../context/LikePostContext";
 
 const style = {
   position: "absolute",
@@ -38,6 +39,7 @@ export default function BasicModal() {
     images: null,
   });
 
+  const{like,setLike} = likePostContext();
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -67,6 +69,7 @@ export default function BasicModal() {
       );
       if (response.status === 201) {
         ToasterMessage("success", response.data.message);
+        setLike(like + 1);
       }
     } catch (error) {
       console.log("help");
