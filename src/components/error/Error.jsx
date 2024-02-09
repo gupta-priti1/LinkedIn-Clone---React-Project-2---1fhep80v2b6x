@@ -7,7 +7,7 @@ const Error = () => {
     const navigate = useNavigate();
   return (
     <div>
-      <Image src={errorImage} />
+      <Image src={errorImage} loading="lazy" alt="error"/>
       <SubmitButton style={{ width: 200 }} onClick={()=>navigate("/feed")}>Back to home</SubmitButton>
     </div>
   );
