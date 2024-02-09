@@ -47,9 +47,7 @@ const PostMoreOptionModal = ({ id }) => {
       if (response.status === 204) {
         ToasterMessage("info", "Post deleted");
         setLike(like + 1);
-        console.log(like);
-        // handleClose();
-        console.log(like);
+        handleClose();
       }
     } catch (error) {}
   };
