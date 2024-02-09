@@ -13,7 +13,7 @@ const SearchDisplay = () => {
   {
     return(
       <div>
-        <Image src={NoProduct}/>
+        <Image src={NoProduct} alt="no-product" loading="lazy" fluid/>
       </div>
     )
   }
