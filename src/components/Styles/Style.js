@@ -170,15 +170,27 @@ export const HomeContainer = styled.div`
   height: 100%;
   justify-content: space-between;
   /* align-items: center; */
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   position: relative;
   padding-top: 15px;
+
+  @media only screen and (max-width: 1272px){
+    width: 90%;
+    justify-content: center;
+    gap: 20px;
+  }
+  @media only screen and (max-width: 590px){
+    flex-wrap: wrap;
+  }
 `;
 
 export const UserInfoContainer = styled.div`
   width: 225px;
   /* background-color: red; */
-  position: relative;
+  /* position: relative; */
+  @media only screen and (max-width: 590px){
+  width: 92%;
+  }
 `;
 export const UserInfoDetailsContainer = styled.div`
   background-color: white;
@@ -189,6 +201,7 @@ export const UserDetails = styled(FlexContainer)`
   flex-direction: column;
   justify-content: center;
   margin-top: 45px;
+  padding-bottom: 15px;
   padding-left: 5px;
   h4,
   p {
@@ -215,11 +228,17 @@ export const UserImpression = styled(FlexContainer)`
   span {
     color: #0a77cd;
   }
+  @media only screen and (max-width: 590px){
+   display: none;
+  }
 `;
 
 export const HrTag = styled.hr`
   opacity: 0.7;
   width: 95%;
+  @media only screen and (max-width: 590px){
+   display: none;
+  }
 `;
 export const UserPremium = styled(FlexContainer)`
   flex-direction: column;
@@ -242,6 +261,9 @@ export const UserPremium = styled(FlexContainer)`
       cursor: pointer;
     }
   }
+  @media only screen and (max-width: 590px){
+   display: none;
+  }
 `;
 export const GropusContainer = styled(FlexContainer)`
   flex-direction: column;
@@ -253,11 +275,17 @@ export const GropusContainer = styled(FlexContainer)`
     font-size: 14px;
     color: #0a77cd;
   }
+  @media only screen and (max-width: 590px){
+   display: none;
+  }
 `;
 export const DiscoverMoreButton = styled.div`
   text-align: center;
   height: 40px;
   opacity: 0.7;
+  @media only screen and (max-width: 590px){
+   display: none;
+  }
 `;
 export const CreatePostContainer = styled.div`
   width: 100%;
