@@ -28,26 +28,29 @@ const UserInfo = () => {
     <>
       <UserInfoContainer>
         <UserInfoDetailsContainer>
-          <Image
-            src={Background}
-            width={"100%"}
-            style={{ borderRadius: "5px 5px 0px 0px" }}
-            loading="lazy"
-            alt="background"
-          />
-          <div onClick={handleUserClick}>
-            <UserImage
-              userImageStyling={{
-                width: "70px",
-                height: "70px",
-                position: "absolute",
-                top: "30px",
-                left: "35%",
-                fontSize: "30px",
-              }}
-              name={userData.name}
-              profileImage={userData.profileImage}
+          <div style={{position:"relative", height:"60px"}}>
+            <Image
+              src={Background}
+              width={"100%"}
+              style={{ borderRadius: "5px 5px 0px 0px" }}
+              loading="lazy"
+              height={"60px"}
+              alt="background"
             />
+            <div onClick={handleUserClick} style={{position:"absolute", top:"30px", left:'35%'}}>
+              <UserImage
+                userImageStyling={{
+                  width: "70px",
+                  height: "70px",
+                  // position: "absolute",
+                  // top: "30px",
+                  // left: "35%",
+                  fontSize: "30px",
+                }}
+                name={userData.name}
+                profileImage={userData.profileImage}
+              />
+            </div>
           </div>
 
           <UserDetails>
@@ -68,7 +71,9 @@ const UserInfo = () => {
           <HrTag />
           <UserPremium>
             <h3>Access exclusive tools & insights</h3>
-            <Link className="link" to='https://premium.linkedin.com/' >Try Premium for free</Link>
+            <Link className="link" to="https://premium.linkedin.com/">
+              Try Premium for free
+            </Link>
           </UserPremium>
         </UserInfoDetailsContainer>
 
