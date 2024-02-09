@@ -6,11 +6,23 @@ const UserImage = ({ userImageStyling, profileImage, name }) => {
   return (
     <>
       {profileImage ? (
-        <Image src={profileImage} style={{...userImageStyling, borderRadius:"50%", cursor:"pointer"}}/>
+        <Image
+          src={profileImage}
+          alt="profile-image"
+          loading="lazy"
+          style={{
+            ...userImageStyling,
+            borderRadius: "50%",
+            cursor: "pointer",
+          }}
+        />
       ) : (
         <div className="user-photo">
-          <Avatar sx={userImageStyling} style={{ border: "3.5px solid white", cursor:"pointer"}}>
-          {name?.charAt(0).toUpperCase()}
+          <Avatar
+            sx={userImageStyling}
+            style={{ border: "3.5px solid white", cursor: "pointer" }}
+          >
+            {name?.charAt(0).toUpperCase()}
           </Avatar>
         </div>
       )}
