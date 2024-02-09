@@ -14,7 +14,7 @@ const Temp2 = () => {
         <span style={{color:"#0a66c2", fontWeight:"500"}}>
           Linked
         </span>
-          <Image src={logo} width={20}/>
+          <Image src={logo} width={20} alt="logo" loading="lazy"/>
           <span>
           LinkedIn Corporation © 2024
           </span>
