@@ -36,6 +36,8 @@ const Advertisement = () => {
             width={65}
             // onClick={() => navigate("/premium")}
             style={{ cursor: "pointer" }}
+            alt="premiumLogo"
+            loading="lazy"
           />
         </Link>
       </AdImageContainer>
