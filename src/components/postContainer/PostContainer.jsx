@@ -15,7 +15,6 @@ import ReactionsAndComments from "../Home/post/ReactionsAndComments";
 import { PostWrapper } from "../Styles/Wrapper";
 import { useNavigate } from "react-router-dom";
 
-import { BsThreeDots } from "react-icons/bs";
 import PostMoreOptionModal from "../modal/PostMoreOptionModal";
 
 const PostContainer = ({ posts }) => {
