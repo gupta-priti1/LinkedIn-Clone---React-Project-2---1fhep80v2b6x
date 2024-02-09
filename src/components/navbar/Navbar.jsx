@@ -43,7 +43,7 @@ const Navbar = () => {
         </NavbarLeftItems>
         <NavbarRightItems>
           <LinkContainer>
-            <Link to="/feed" className="link">
+            <Link to="/" className="link">
               <FaHome className="navbar-icon" />
               <NavbarLinkText>Home</NavbarLinkText>
             </Link>
