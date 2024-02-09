@@ -14,7 +14,6 @@ const Routers = () => {
     <RoutesWrapper >
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/feed" element={<Home />} />
         <Route path="/mynetwork" element={<UnderConstruction />} />
         <Route path="/jobs" element={<UnderConstruction />} />
         <Route path="/messaging" element={<UnderConstruction />} />

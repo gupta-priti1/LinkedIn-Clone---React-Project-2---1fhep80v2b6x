@@ -8,7 +8,7 @@ const Error = () => {
   return (
     <div>
       <Image src={errorImage} loading="lazy" alt="error"/>
-      <SubmitButton style={{ width: 200 }} onClick={()=>navigate("/feed")}>Back to home</SubmitButton>
+      <SubmitButton style={{ width: 200 }} onClick={()=>navigate("/")}>Back to home</SubmitButton>
     </div>
   );
 };
