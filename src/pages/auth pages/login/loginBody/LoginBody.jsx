@@ -14,7 +14,7 @@ const LoginBody = () => {
         <LoginForm />
       </LoginLeftContainer>
 
-      <Image src={SideImage} width={'50%'} height={600} fluid/>
+      <Image src={SideImage} width={'50%'} height={600} fluid alt="side-image" loading="lazy"/>
     </LoginBodyContainer>
   );
 };
