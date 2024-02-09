@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ToasterMessage } from "./ToastHelper";
 
 export const followUser = async (id) => {
   try {
@@ -16,7 +17,7 @@ export const followUser = async (id) => {
 
     if(response.status === 201)
     {
-        alert('followed successfull')
+        ToasterMessage('success','followed successfull')
     }
   } catch (error) {
     console.log(error.response.data.message);

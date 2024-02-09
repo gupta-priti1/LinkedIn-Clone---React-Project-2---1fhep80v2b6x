@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ToasterMessage } from "./ToastHelper";
 
 export const unfollowUser = async (id) => {
   try {
@@ -14,7 +15,7 @@ export const unfollowUser = async (id) => {
     );
     console.log(response);
     if(response.status === 201){
-        alert('unfollowed user successfully')
+        ToasterMessage('info','unfollowed user successfully')
     }
   } catch (error) {
     console.log(error);
