@@ -15,6 +15,7 @@ import UserImage from "../userImage/UserImage";
 import { Form, SubmitButton } from "../Styles/LoginStyle";
 import { Input } from "@mui/material";
 import axios from "axios";
+import { ToasterMessage } from "../helper/ToastHelper";
 
 const style = {
   position: "absolute",
@@ -53,7 +54,7 @@ export default function BasicModal() {
           title: postDetails.title,
           content: postDetails.description,
           images: postDetails.images,
-          // Content-Type: "multipart/form-data" 
+          // Content-Type: "multipart/form-data"
         },
         {
           headers: {
@@ -64,10 +65,15 @@ export default function BasicModal() {
           },
         }
       );
-      console.log("postCreate", response);
+      if (response.status === 201) {
+        ToasterMessage("success", response.data.message);
+      }
     } catch (error) {
-      console.log(error);
+      console.log("help");
+      ToasterMessage("error", "Something went wrong please try again!");
     }
+
+    handleClose();
   };
   console.log(postDetails);
   return (
