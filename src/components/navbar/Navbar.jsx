@@ -37,7 +37,7 @@ const Navbar = () => {
       <NavbarContainer>
         <NavbarLeftItems>
           <Link to="/feed">
-            <Image src={logo} width={"45px"} className="navbar-logo" />
+            <Image src={logo} width={"45px"} className="navbar-logo" alt="logo" loading="lazy"/>
           </Link>
           <SearchBar />
         </NavbarLeftItems>
