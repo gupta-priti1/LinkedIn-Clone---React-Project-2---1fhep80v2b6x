@@ -13,28 +13,32 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
 import BasicModal from "../../modal/BasicModal";
 import { userContextApi } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
-  const {userData} = userContextApi();
+  const navigate = useNavigate();
+  const { userData } = userContextApi();
+  
   return (
     <Wrapper>
       <CreatePostContainer>
         <FlexContainer>
-          <UserImage
-            userImageStyling={{
-              width: 45,
-              height: 45,
-              marginTop: "2px",
-              backgroundColor: "#0A66C2",
-              color: "white !important",
-              fontSize: 18,
-            }}
-            name={userData.name}
-            profileImage={userData.profileImage}
+          <span onClick={()=>navigate(`/user/${userData._id}`)}>
+            <UserImage
+              userImageStyling={{
+                width: 45,
+                height: 45,
+                marginTop: "2px",
+                backgroundColor: "#0A66C2",
+                color: "white !important",
+                fontSize: 18,
+              }}
+              name={userData.name}
+              profileImage={userData.profileImage}
+            />
+          </span>
 
-          />
-          {/* <Button type="click">Start a post</Button> */}
-          <BasicModal/>
+          <BasicModal />
         </FlexContainer>
 
         <FlexContainer>
