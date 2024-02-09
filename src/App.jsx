@@ -6,6 +6,7 @@ import Routers from "./Routes/Routers";
 import Signup from "./pages/auth pages/signup/Signup";
 import Login from "./pages/auth pages/login/Login";
 import { accessTokenApi } from "./components/context/AccessTokenContext";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const { accessToken } = accessTokenApi();
@@ -13,6 +14,8 @@ const App = () => {
   return (
     <div className="app-wrapper">
       <div className="app-container">
+     
+        <ToastContainer />
         {accessToken ? (
           <>
             <Navbar />
