@@ -66,6 +66,8 @@ const UserDetails = () => {
             fluid
             width="100%"
             height="150px"
+            alt="background-image"
+            loading="lazy"
             style={{ borderRadius: "10px 10px 0px 0px" }}
           />
           <UserImage
