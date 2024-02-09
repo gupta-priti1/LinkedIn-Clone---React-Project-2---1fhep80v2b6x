@@ -75,11 +75,11 @@ const Reactions = ({ props, show }) => {
           <BsChatText />
           <h4>Comment</h4>
         </SingleReaction>
-        <SingleReaction>
+        <SingleReaction style={{ cursor: "not-allowed" }}>
           <BiRepost className="repost-icon" />
           <h4>Repost</h4>
         </SingleReaction>
-        <SingleReaction>
+        <SingleReaction style={{ cursor: "not-allowed" }}>
           <RiSendPlaneFill />
           <h4>Send</h4>
         </SingleReaction>
