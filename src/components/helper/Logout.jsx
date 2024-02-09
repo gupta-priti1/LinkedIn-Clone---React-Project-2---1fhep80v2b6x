@@ -3,10 +3,9 @@ import { accessTokenApi } from "../context/AccessTokenContext";
 
 
 const logoutFunction =()=>{
-    const {setAccessToken} = accessTokenApi();
+    console.log('hello');
     localStorage.removeItem('accessToken');
     localStorage.removeItem('userInfo');
-    setAccessToken('');
     alert('logged out')
 }
 
