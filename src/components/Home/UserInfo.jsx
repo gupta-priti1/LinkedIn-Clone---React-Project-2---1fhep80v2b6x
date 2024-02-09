@@ -32,6 +32,8 @@ const UserInfo = () => {
             src={Background}
             width={"100%"}
             style={{ borderRadius: "5px 5px 0px 0px" }}
+            loading="lazy"
+            alt="background"
           />
           <div onClick={handleUserClick}>
             <UserImage
