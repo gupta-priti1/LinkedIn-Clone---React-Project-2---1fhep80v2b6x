@@ -9,14 +9,16 @@ import Or from "../../../../components/FormOrComponent/Or";
 import { accessTokenApi } from "../../../../components/context/AccessTokenContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { userContextApi } from "../../../../components/context/UserContext";
 
 const LoginForm = () => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const { setAccessToken } = accessTokenApi();
+  const { userData, setUserData } = userContextApi();
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -35,15 +37,14 @@ const navigate = useNavigate();
           },
         }
       );
+      console.log(response);
       if (response.status === 200) {
         const accessToken = response.data.token;
         setAccessToken(response.data.token);
+        setUserData(response.data.data);
 
         localStorage.setItem("accessToken", JSON.stringify(accessToken));
-        localStorage.setItem(
-          "userInfo",
-          JSON.stringify(response.data.data)
-        );
+        localStorage.setItem("userInfo", JSON.stringify(response.data.data));
         navigate("/");
       }
     } catch (error) {
