@@ -14,6 +14,9 @@ export const UserProfileDetailsContainer = styled(FlexContainer)`
   align-items: flex-start;
   flex-direction: column;
   width: 80%;
+  @media only screen and (max-width: 1072px){
+    width: 100%;
+  }
 `;
 
 export const SeperatorContainer = styled.div`
