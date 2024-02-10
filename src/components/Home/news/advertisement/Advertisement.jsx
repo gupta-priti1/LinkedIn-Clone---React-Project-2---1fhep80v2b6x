@@ -4,12 +4,12 @@ import {
   AdvertisementContainer,
   FlexContainer,
   PremiumButton,
-} from "../../Styles/Style";
-import UserImage from "../../userImage/UserImage";
+} from "../../../Styles/Style";
+import UserImage from "../../../userImage/UserImage";
 import premiumLogo from "./../../../assets/Images/premium-logo.png";
 import { Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { userContextApi } from "../../context/UserContext";
+import { userContextApi } from "../../../context/UserContext";
 
 const Advertisement = () => {
   const { userData } = userContextApi();
