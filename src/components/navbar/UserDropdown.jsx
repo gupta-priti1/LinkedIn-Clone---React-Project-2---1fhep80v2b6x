@@ -17,12 +17,12 @@ import { accessTokenApi } from "../context/AccessTokenContext";
 const UserDropdown = () => {
   const navigate = useNavigate();
   const { userData } = userContextApi();
-  const {accessToken, setAccessToken} = accessTokenApi();
+  const { accessToken, setAccessToken } = accessTokenApi();
 
   const handleLogout = () => {
     logoutFunction();
-    navigate('/login');
-    setAccessToken('');
+    setAccessToken("");
+    navigate("/login");
   };
   return (
     <DropDownWrapper>
@@ -46,17 +46,16 @@ const UserDropdown = () => {
         </MenuButton>
         <Menu className="menu-items">
           <DropDownItems>
-            <UserImage userImageStyling={{
-              width:"60px",
-              height:"60px",
-              backgroundColor:"#0A66C2",
-              fontSize:"30px"
-            }}
-            name={userData.name}
+            <UserImage
+              userImageStyling={{
+                width: "60px",
+                height: "60px",
+                backgroundColor: "#0A66C2",
+                fontSize: "30px",
+              }}
+              name={userData.name}
             />
-            <div>
-              {userData.name}
-            </div>
+            <div>{userData.name}</div>
           </DropDownItems>
           <DropDownItems className="menu-items">
             <Link to={`/user/${userData._id}`} className="link profile">
@@ -64,7 +63,9 @@ const UserDropdown = () => {
             </Link>
           </DropDownItems>
           <DropDownItems>
-            <Link to="https://premium.linkedin.com/" className="link">Try Premium</Link>
+            <Link to="https://premium.linkedin.com/" className="link">
+              Try Premium
+            </Link>
           </DropDownItems>
           <DropDownItems>
             <Link className="link">Update Password</Link>
