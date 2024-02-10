@@ -2,11 +2,14 @@ import React from "react";
 import {
   AdImageContainer,
   AdvertisementContainer,
+
   FlexContainer,
+
   PremiumButton,
 } from "../../../Styles/Style";
 import UserImage from "../../../userImage/UserImage";
-import premiumLogo from "./../../../assets/Images/premium-logo.png";
+// import premiumLogo from "./../../../assets/Images/premium-logo.png";
+import premiumLogo from "./../../../../assets/Images/premium-logo.png";
 import { Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { userContextApi } from "../../../context/UserContext";
