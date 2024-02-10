@@ -15,8 +15,7 @@ const App = () => {
       <div className="app-container">
      
         <ToastContainer />
-        {accessToken ? (
-          <>
+        
             <Navbar />
             <div
               style={{
@@ -27,10 +26,6 @@ const App = () => {
             >
               <Routers />
             </div>
-          </>
-        ) : (
-          <Login />
-        )}
       </div>
     </div>
   );
