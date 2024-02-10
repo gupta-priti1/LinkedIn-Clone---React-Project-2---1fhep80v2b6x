@@ -11,13 +11,18 @@ import UserImage from "../userImage/UserImage";
 import logoutFunction from "../helper/Logout";
 
 import { userContextApi } from "../context/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { accessTokenApi } from "../context/AccessTokenContext";
 
 const UserDropdown = () => {
+  const navigate = useNavigate();
   const { userData } = userContextApi();
+  const {accessToken, setAccessToken} = accessTokenApi();
+
   const handleLogout = () => {
     logoutFunction();
-    // console.log("hello");
+    navigate('/login');
+    setAccessToken('');
   };
   return (
     <DropDownWrapper>
