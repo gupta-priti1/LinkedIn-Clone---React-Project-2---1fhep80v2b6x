@@ -10,6 +10,7 @@ import { accessTokenApi } from "../../../../components/context/AccessTokenContex
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { userContextApi } from "../../../../components/context/UserContext";
+import { ToasterMessage } from "../../../../components/helper/ToastHelper";
 
 const LoginForm = () => {
   const [loginData, setLoginData] = useState({
@@ -48,7 +49,8 @@ const LoginForm = () => {
         navigate("/");
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data.message);
+      ToasterMessage("error", error.response.data.message);
     }
   };
 
