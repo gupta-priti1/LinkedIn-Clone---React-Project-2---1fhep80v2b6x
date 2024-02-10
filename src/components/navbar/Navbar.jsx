@@ -57,21 +57,21 @@ const Navbar = () => {
           </LinkContainer>
 
           <LinkContainer>
-            <Link to="/mynetwork" className="link">
+            <Link to="/jobs" className="link">
               <BsFillBriefcaseFill className="navbar-icon" />
               <NavbarLinkText>Jobs</NavbarLinkText>
             </Link>
           </LinkContainer>
 
           <LinkContainer>
-            <Link to="/mynetwork" className="link">
+            <Link to="/messaging" className="link">
               <HiMiniChatBubbleLeftEllipsis className="navbar-icon" />
               <NavbarLinkText>Messaging</NavbarLinkText>
             </Link>
           </LinkContainer>
 
           <LinkContainer>
-            <Link to="/mynetwork" className="link">
+            <Link to="/notifications" className="link">
               <GoBellFill className="navbar-icon" />
               <NavbarLinkText>Notifications</NavbarLinkText>
             </Link>
