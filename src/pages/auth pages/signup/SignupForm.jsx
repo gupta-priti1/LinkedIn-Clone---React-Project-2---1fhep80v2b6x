@@ -10,6 +10,7 @@ import Or from "../../../components/FormOrComponent/Or";
 import axios from "axios";
 import { accessTokenApi } from "../../../components/context/AccessTokenContext";
 import { Link, useNavigate } from "react-router-dom";
+import { userContextApi } from "../../../components/context/UserContext";
 
 const SignupForm = () => {
   const [signupData, setSignupData] = useState({
@@ -19,6 +20,8 @@ const SignupForm = () => {
   });
   const navigate = useNavigate();
   const { setAccessToken } = accessTokenApi();
+  const { setUserData } = userContextApi();
+
   const handleChange = (e) => {
     // console.log(e.target.value);
     setSignupData({
@@ -51,10 +54,8 @@ const SignupForm = () => {
 
       if (response.status === 201) {
         const accessToken = response.data.token;
-        const id = response.data.data.user._id;
-        const email = response.data.data.user.email;
-        const name = response.data.data.user.name;
         setAccessToken(response.data.token);
+        setUserData(response.data.data);
 
         localStorage.setItem("accessToken", JSON.stringify(accessToken));
         localStorage.setItem(
