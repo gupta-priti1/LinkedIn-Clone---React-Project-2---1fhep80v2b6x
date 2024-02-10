@@ -49,7 +49,6 @@ const LoginForm = () => {
         navigate("/");
       }
     } catch (error) {
-      console.log(error.response.data.message);
       ToasterMessage("error", error.response.data.message);
     }
   };
