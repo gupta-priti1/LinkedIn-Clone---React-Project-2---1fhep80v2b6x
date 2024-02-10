@@ -11,6 +11,7 @@ import axios from "axios";
 import { accessTokenApi } from "../../../components/context/AccessTokenContext";
 import { Link, useNavigate } from "react-router-dom";
 import { userContextApi } from "../../../components/context/UserContext";
+import { ToasterMessage } from "../../../components/helper/ToastHelper";
 
 const SignupForm = () => {
   const [signupData, setSignupData] = useState({
@@ -64,8 +65,8 @@ const SignupForm = () => {
         );
         navigate("/");
       }
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      ToasterMessage("error", error.response.data.message);
     }
   };
   return (
