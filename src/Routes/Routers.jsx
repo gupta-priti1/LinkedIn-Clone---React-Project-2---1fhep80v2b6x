@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../pages/public pages/Home";
 import SearchDisplay from "../pages/public pages/search display pages/SearchDisplay";
 import { RoutesWrapper } from "../components/Styles/Wrapper";
@@ -10,8 +10,9 @@ import Error from "../components/error/Error";
 import UnderConstruction from "../pages/underConstruction pages/UnderConstruction";
 
 const Routers = () => {
+  const location = useLocation();
   return (
-    <RoutesWrapper >
+    <RoutesWrapper loc = {location.pathname}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mynetwork" element={<UnderConstruction />} />

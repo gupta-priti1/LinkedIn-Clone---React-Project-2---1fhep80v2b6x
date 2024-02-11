@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Image } from "react-bootstrap";
 
 import logo from "./../../assets/Images/linkedin-logo.svg";
@@ -28,7 +28,11 @@ import { IoIosCloseCircle } from "react-icons/io";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-
+  const location = useLocation();
+  // console.log(location.pathname);
+  if(location.pathname === "/login" || location.pathname === "/signup"){
+    return;
+  }
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };

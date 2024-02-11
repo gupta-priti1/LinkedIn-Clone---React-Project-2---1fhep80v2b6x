@@ -40,7 +40,8 @@ export const DropDownWrapper = styled(Wrapper)`
   } */
 `;
 export const RoutesWrapper = styled(Wrapper)`
-  margin-top: 8vh;
+margin-top: ${props => props.loc === "/login" || props.loc === "/signup" ? "0" : "8vh"};
+  /* margin-top: 8vh; */
   /* height: calc(100% - 8vh); */
 `;
 export const CommentsWrapper = styled(Wrapper)`
