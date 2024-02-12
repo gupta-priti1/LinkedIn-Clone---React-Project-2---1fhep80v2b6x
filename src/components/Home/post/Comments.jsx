@@ -19,7 +19,7 @@ const Comments = ({ props }) => {
   const { userData } = userContextApi();
 
   const postId = props.postId;
-  console.log(postId);
+
   const handleCommentChange = (e) => {
     // console.log(e.target.value);
     if (e.target.value.trim().length > 0 && e.target.value != "") {
