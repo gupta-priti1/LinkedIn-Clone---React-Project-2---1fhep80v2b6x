@@ -17,9 +17,9 @@ import { useNavigate } from "react-router-dom";
 
 import PostMoreOptionModal from "../modal/PostMoreOptionModal";
 
-const PostContainer = ({ posts }) => {
+const PostContainer = ({ posts, props }) => {
   const navigate = useNavigate();
-  // console.log("post", posts);
+  // console.log("post", props);
   const Item = (props) => {
     return (
       <img
@@ -31,67 +31,72 @@ const PostContainer = ({ posts }) => {
       />
     );
   };
-
+  const { refetchingPost, setRefetchingPost } = props;
+  // console.log({refetchingPost, setRefetchingPost});
   const handleUserClick = (id) => {
     navigate(`/user/${id}`);
   };
   return (
-      <DisplayPostContainer>
-        {posts?.map((item,index) => {
-          let date = new Date(item.createdAt).getHours();
-          return (
-            <SinglePost key={item.author.createdAt}>
-              <FlexContainer style={{justifyContent:"space-between", marginRight:"25px"}}>
-                <PostMarginContainer
-                  onClick={() => handleUserClick(item.author._id)}
-                >
-                  <UserImage
-                    userImageStyling={{
-                      width: 35,
-                      height: 35,
-                      marginTop: "2px",
-                      backgroundColor: "green",
-                      color: "white !important",
-                      fontSize: 12,
-                    }}
-                    profileImage={item.author.profileImage}
-                    name={item.author.name}
-                  />
-
-                  <PostUserDetails>
-                    <h4>{item.author.name}</h4>
-                    <p>
-                      {date}hrs •{" "}
-                      <span>
-                        <MdPublic />
-                      </span>
-                    </p>
-                  </PostUserDetails>
-                </PostMarginContainer>
-                  <PostMoreOptionModal id={item._id}/>
-              </FlexContainer>
-
-              <PostPara>{item.content}</PostPara>
-              <Carousel
-                autoPlay={false}
-                animation={"slide"}
-                cycleNavigation={false}
+    <DisplayPostContainer>
+      {posts?.map((item, index) => {
+        let date = new Date(item.createdAt).getHours();
+        return (
+          <SinglePost key={item.author.createdAt}>
+            <FlexContainer
+              style={{ justifyContent: "space-between", marginRight: "25px" }}
+            >
+              <PostMarginContainer
+                onClick={() => handleUserClick(item.author._id)}
               >
-                {item?.images?.map((img) => (
-                  <Item img={img} />
-                ))}
-              </Carousel>
-              <DisplayReactions
-                props={{ likes: item.likeCount, comments: item.commentCount }}
-              />
-              <ReactionsAndComments
-                props={{ likes: item.likeCount, postId: item._id }}
-              />
-            </SinglePost>
-          );
-        })}
-      </DisplayPostContainer>
-    
+                <UserImage
+                  userImageStyling={{
+                    width: 35,
+                    height: 35,
+                    marginTop: "2px",
+                    backgroundColor: "green",
+                    color: "white !important",
+                    fontSize: 12,
+                  }}
+                  profileImage={item.author.profileImage}
+                  name={item.author.name}
+                />
+
+                <PostUserDetails>
+                  <h4>{item.author.name}</h4>
+                  <p>
+                    {date}hrs •{" "}
+                    <span>
+                      <MdPublic />
+                    </span>
+                  </p>
+                </PostUserDetails>
+              </PostMarginContainer>
+
+              <PostMoreOptionModal id={item._id} props={props}/>
+
+            </FlexContainer>
+
+            <PostPara>{item.content}</PostPara>
+            <Carousel
+              autoPlay={false}
+              animation={"slide"}
+              cycleNavigation={false}
+            >
+              {item?.images?.map((img) => (
+                <Item img={img} />
+              ))}
+            </Carousel>
+            <DisplayReactions
+              props={{ likes: item.likeCount, comments: item.commentCount }}
+            />
+            <ReactionsAndComments
+              likeProps={{ likes: item.likeCount, postId: item._id }}
+              props={props}
+            />
+          </SinglePost>
+        );
+      })}
+    </DisplayPostContainer>
   );
 };
 

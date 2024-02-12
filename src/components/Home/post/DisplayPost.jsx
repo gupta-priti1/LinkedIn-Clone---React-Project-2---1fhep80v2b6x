@@ -21,7 +21,10 @@ import PostContainer from "../../postContainer/PostContainer";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const DisplayPost = () => {
+const DisplayPost = ({ props }) => {
+  const { refetchingPost, setRefetchingPost } = props;
+  // console.log({refetchingPost, setRefetchingPost});
+
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const { post, setPost } = postContext();
@@ -35,28 +38,29 @@ const DisplayPost = () => {
           projectID: "hv45l4abtvvc",
         },
       }
-    ).then((res) => res.json())
+    )
+      .then((res) => res.json())
 
-    .then((res) => {
-      // console.log(data);
+      .then((res) => {
+        // console.log(data);
 
-      setPost((p) => [...p, ...res.data]);
+        // setPost((p) => [...res.data, ...p]);
+        setPost((p) => [...p, ...res.data]);
+        // setPost(res.data);
 
-      setPage((p) => p + 1);
+        // setPage((p) => p + 1);
+      })
 
-    })
+      .catch((error) => {
+        console.log(error);
 
-    .catch((error) => {
-      console.log(error);
-
-      setHasMore(false);
-
-    });
+        setHasMore(false);
+      });
   };
 
   useEffect(() => {
     fetchingPost();
-  }, [like]);
+  }, [refetchingPost]);
 
   return (
     <InfiniteScroll
@@ -75,7 +79,10 @@ const DisplayPost = () => {
     >
       <Wrapper>
         <DisplayPostContainer>
-          <PostContainer posts={post} />
+          <PostContainer
+            posts={post}
+            props={{ refetchingPost, setRefetchingPost }}
+          />
         </DisplayPostContainer>
       </Wrapper>
     </InfiniteScroll>

@@ -17,6 +17,7 @@ import { Input } from "@mui/material";
 import axios from "axios";
 import { ToasterMessage } from "../helper/ToastHelper";
 import { likePostContext } from "../context/LikePostContext";
+import { postContext } from "../context/PostContext";
 
 const style = {
   position: "absolute",
@@ -31,15 +32,21 @@ const style = {
   width: "50%",
 };
 
-export default function BasicModal() {
+export default function BasicModal({props}) {
   const [open, setOpen] = useState(false);
   const [postDetails, setPostDetails] = useState({
     title: "",
     description: "",
     images: null,
   });
+  const { post, setPost } = postContext();
+  const { like, setLike } = likePostContext();
 
-  const{like,setLike} = likePostContext();
+
+  const {refetchingPost, setRefetchingPost} = props;
+
+  // console.log({refetchingPost, setRefetchingPost});
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -67,9 +74,14 @@ export default function BasicModal() {
           },
         }
       );
+      console.log(response);
       if (response.status === 201) {
         ToasterMessage("success", response.data.message);
-        setLike(like + 1);
+        // setLike(like + 1);
+        // window.location.reload();
+        // fetchingPost();
+        setRefetchingPost(!refetchingPost);
+        console.log('fetchingpost', refetchingPost);
       }
     } catch (error) {
       console.log("help");

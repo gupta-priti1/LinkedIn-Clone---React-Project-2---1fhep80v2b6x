@@ -15,7 +15,7 @@ import BasicModal from "../../modal/BasicModal";
 import { userContextApi } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
-const CreatePost = () => {
+const CreatePost = ({props}) => {
   const navigate = useNavigate();
   const { userData } = userContextApi();
   
@@ -38,7 +38,7 @@ const CreatePost = () => {
             />
           </span>
 
-          <BasicModal />
+          <BasicModal props={props}/>
         </FlexContainer>
 
         <FlexContainer>

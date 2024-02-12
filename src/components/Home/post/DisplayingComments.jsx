@@ -9,14 +9,14 @@ import UserImage from "../../userImage/UserImage";
 import { CommentsWrapper, Wrapper } from "../../Styles/Wrapper";
 import SingleComment from "./SingleComment";
 
-const DisplayingComments = ({ props, reFetchComments}) => {
+const DisplayingComments = ({ likeProps, reFetchComments}) => {
   const [comments, setComments] = useState();
 
   useEffect(() => {
     handleFetchingComments();
   }, [reFetchComments]);
 
-  const postId = props.postId;
+  const postId = likeProps.postId;
 
   const handleFetchingComments = async () => {
     // console.log("comment");

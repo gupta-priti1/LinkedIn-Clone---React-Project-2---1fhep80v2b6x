@@ -16,14 +16,15 @@ import { likePostContext } from "../../context/LikePostContext";
 import { postContext } from "../../context/PostContext";
 import { ToasterMessage } from "../../helper/ToastHelper";
 
-const Reactions = ({ props, show }) => {
+const Reactions = ({ likeProps, show ,props}) => {
   const [likedPost, setLikedPost] = useState(false);
 
   const { like, setLike } = likePostContext();
-
+// console.log(props);
+const {refetchingPost, setRefetchingPost} = props;
   const showComments = show.show;
   const setShowComments = show.setShow;
-  const postId = props.postId;
+  const postId = likeProps.postId;
 
   // console.log(setShowComments);
   // useEffect(()=>{
@@ -49,7 +50,8 @@ const Reactions = ({ props, show }) => {
     );
     console.log(response);
     if (response.status === 201) {
-      setLike(like + 1);
+      // setLike(like + 1);
+      setRefetchingPost(!refetchingPost);
       ToasterMessage("success", "Post liked successfully");
     }
   };
