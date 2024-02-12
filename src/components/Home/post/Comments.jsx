@@ -11,14 +11,14 @@ import axios from "axios";
 import { userContextApi } from "../../context/UserContext";
 import { ToasterMessage } from "../../helper/ToastHelper";
 
-const Comments = ({ props }) => {
+const Comments = ({ likeProps }) => {
   const [showPostButton, setShowPostButton] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [reFetchComments, setRefetchComments] = useState(false);
 
   const { userData } = userContextApi();
 
-  const postId = props.postId;
+  const postId = likeProps.postId;
 
   const handleCommentChange = (e) => {
     // console.log(e.target.value);
@@ -81,7 +81,7 @@ const Comments = ({ props }) => {
         />
         {showPostButton && <Button onClick={handlePostingComment}>Post</Button>}
       </CommentsContainer>
-      <DisplayingComments props={props} reFetchComments={reFetchComments} />
+      <DisplayingComments likeProps={likeProps} reFetchComments={reFetchComments} />
     </div>
   );
 };
