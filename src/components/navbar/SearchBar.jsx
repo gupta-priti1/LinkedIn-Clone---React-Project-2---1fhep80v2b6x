@@ -28,24 +28,26 @@ const SearchBar = () => {
     {
       return
     }
-    try {
-      const response = await axios.get(
-        `https://academics.newtonschool.co/api/v1/linkedin/post?search={"author.name":"${searchTerm}","content":"${searchTerm}","title":"${searchTerm}"}`,
-        {
-          headers: {
-            projectID: "hv45l4abtvvc",
-          },
-        }
-      );
-      // console.log(response);
-      if(response.status === 200)
-      {
-        setSearchItems(response.data.data)
-      }
-      navigate(`/search/${searchTerm}`)
-    } catch (e) {
-      console.log(e);
-    }
+
+    navigate(`/search/${searchTerm}`)
+    // try {
+    //   const response = await axios.get(
+    //     `https://academics.newtonschool.co/api/v1/linkedin/post?search={"author.name":"${searchTerm}","content":"${searchTerm}","title":"${searchTerm}"}`,
+    //     {
+    //       headers: {
+    //         projectID: "hv45l4abtvvc",
+    //       },
+    //     }
+    //   );
+    //   // console.log(response);
+    //   if(response.status === 200)
+    //   {
+    //     setSearchItems(response.data.data)
+    //   }
+    //   navigate(`/search/${searchTerm}`)
+    // } catch (e) {
+    //   console.log(e);
+    // }
   };
 console.log('searchItems', searchItems);
 

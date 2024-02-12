@@ -7,22 +7,48 @@ import { Image } from "react-bootstrap";
 
 import NoProduct from "./../../../assets/Images/no-search-found.webp";
 import { SearchContainer } from "../../../components/Styles/Style";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { accessTokenApi } from "../../../components/context/AccessTokenContext";
+import axios from "axios";
 
 const SearchDisplay = () => {
   const { searchItems, setSearchItems } = searchItemsContext();
+  const params = useParams();
+  const searchTerm = params.searchTerm
+  // console.log(searchTerm);
 
   const { accessToken } = accessTokenApi();
-  
+
   const navigate = useNavigate();
   useEffect(() => {
     if (accessToken === "") {
       navigate("/login");
       return;
     }
+
+    fetchingSearch();
   }, []);
 
+  const fetchingSearch = async()=>{
+    try {
+      const response = await axios.get(
+        `https://academics.newtonschool.co/api/v1/linkedin/post?search={"author.name":"${searchTerm}","content":"${searchTerm}","title":"${searchTerm}"}`,
+        {
+          headers: {
+            projectID: "hv45l4abtvvc",
+          },
+        }
+      );
+      // console.log(response);
+      if(response.status === 200)
+      {
+        setSearchItems(response.data.data)
+      }
+     
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   if (searchItems.length === 0) {
     return (
@@ -34,7 +60,7 @@ const SearchDisplay = () => {
   return (
     <SearchDisplayWrapper>
       <SearchContainer>
-        <PostContainer posts={searchItems} />
+        <PostContainer posts={searchItems} props={{}} />
       </SearchContainer>
       <Temp2 />
     </SearchDisplayWrapper>
