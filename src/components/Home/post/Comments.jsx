@@ -10,6 +10,7 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 import { userContextApi } from "../../context/UserContext";
 import { ToasterMessage } from "../../helper/ToastHelper";
+import { accessTokenApi } from "../../context/AccessTokenContext";
 
 const Comments = ({ likeProps }) => {
   const [showPostButton, setShowPostButton] = useState(false);
@@ -17,6 +18,7 @@ const Comments = ({ likeProps }) => {
   const [reFetchComments, setRefetchComments] = useState(false);
 
   const { userData } = userContextApi();
+  const {accessToken} = accessTokenApi();
 
   const postId = likeProps.postId;
 
@@ -42,8 +44,7 @@ const Comments = ({ likeProps }) => {
           headers: {
             projectID: "hv45l4abtvvc",
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+            Authorization: `Bearer ${accessToken}`,
           },
         }
       );
@@ -81,7 +82,10 @@ const Comments = ({ likeProps }) => {
         />
         {showPostButton && <Button onClick={handlePostingComment}>Post</Button>}
       </CommentsContainer>
-      <DisplayingComments likeProps={likeProps} reFetchComments={reFetchComments} />
+      <DisplayingComments
+        likeProps={likeProps}
+        reFetchComments={reFetchComments}
+      />
     </div>
   );
 };
