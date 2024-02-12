@@ -14,10 +14,12 @@ import DisplayReactions from "../Home/post/DisplayReactions";
 import ReactionsAndComments from "../Home/post/ReactionsAndComments";
 import axios from "axios";
 import { ToasterMessage } from "../helper/ToastHelper";
+import { useNavigate } from "react-router-dom";
 
 const SingleComponent = ({ item, date, props }) => {
   const [likePost, setLikePost] = useState(0);
   const likeCount = item.likeCount;
+  const navigate = useNavigate();
 //   console.log(likeCount);
 
   const Item = (props) => {
