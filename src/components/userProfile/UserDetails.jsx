@@ -132,7 +132,7 @@ const UserDetails = () => {
                 <Heading>{exp.designation}</Heading>
                 <Title>{exp.companyName}</Title>
                 <LighterPara>
-                  {exp.startDate} - {exp.endDate}
+                  {new Date(exp.startDate).getFullYear()} - {new Date(exp.endDate).getFullYear()}
                 </LighterPara>
                 <LighterPara>{exp.location}</LighterPara>
               </div>
