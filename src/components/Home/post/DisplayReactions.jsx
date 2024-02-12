@@ -8,8 +8,10 @@ import {
 
 import { FaThumbsUp } from "react-icons/fa";
 const DisplayReactions = ({ props }) => {
-  const likes = props.likes;
+  // const likes = props.likes;
   const comments = props.comments;
+  const likePost = props.likePost;
+  
   return (
     <Wrapper>
       <DisplayReactionsContainer>
@@ -17,7 +19,7 @@ const DisplayReactions = ({ props }) => {
           <LikeDisplayContainer>
             <FaThumbsUp className="like-icon" />
           </LikeDisplayContainer>
-          <h4>{likes}</h4>
+          <h4>{likePost}</h4>
         </FlexContainer>
         <FlexContainer>
           <h4>{comments} comments</h4>

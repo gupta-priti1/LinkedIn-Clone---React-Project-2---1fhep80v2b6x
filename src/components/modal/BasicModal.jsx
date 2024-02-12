@@ -18,6 +18,8 @@ import axios from "axios";
 import { ToasterMessage } from "../helper/ToastHelper";
 import { likePostContext } from "../context/LikePostContext";
 import { postContext } from "../context/PostContext";
+import { accessTokenApi } from "../context/AccessTokenContext";
+import { userContextApi } from "../context/UserContext";
 
 const style = {
   position: "absolute",
@@ -41,9 +43,11 @@ export default function BasicModal({props}) {
   });
   const { post, setPost } = postContext();
   const { like, setLike } = likePostContext();
-
+  const {accessToken} = accessTokenApi();
 
   const {refetchingPost, setRefetchingPost} = props;
+
+  const { userData } = userContextApi();
 
   // console.log({refetchingPost, setRefetchingPost});
 
@@ -70,7 +74,7 @@ export default function BasicModal({props}) {
             projectID: "hv45l4abtvvc",
             "Content-Type": "multipart/form-data",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWVhMWY1MmUyMWUyZjk3ZmVjMDM5NiIsImlhdCI6MTcwNTk0MzU0MSwiZXhwIjoxNzM3NDc5NTQxfQ.czAeNFN7xxc1ocRkvDlHlDJubmZ6mCGYAkgAFA4UM7w",
+              `Bearer ${accessToken}`,
           },
         }
       );
@@ -105,7 +109,7 @@ export default function BasicModal({props}) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <UserDetailsContainer>
               <UserImage />
-              <h4>john</h4>
+              <h4>{userData.name}</h4>
             </UserDetailsContainer>
           </Typography>
           <Typography

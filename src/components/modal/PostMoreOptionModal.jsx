@@ -23,14 +23,14 @@ const style = {
   // alignItems:"center",
   // justifyContent:"center"
 };
-const PostMoreOptionModal = ({ id ,props}) => {
+const PostMoreOptionModal = ({ id, props }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const { like, setLike } = likePostContext();
 
-  const {refetchingPost, setRefetchingPost} = props;
+  const { refetchingPost, setRefetchingPost } = props;
 
   const handleDelete = async () => {
     try {
@@ -50,7 +50,9 @@ const PostMoreOptionModal = ({ id ,props}) => {
         ToasterMessage("info", "Post deleted");
         // setLike(like + 1);
         // window.location.reload();
-        setRefetchingPost(!refetchingPost);
+        if (refetchingPost) {
+          setRefetchingPost(!refetchingPost);
+        }
         handleClose();
       }
     } catch (error) {}

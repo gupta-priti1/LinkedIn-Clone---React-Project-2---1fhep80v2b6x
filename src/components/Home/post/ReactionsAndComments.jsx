@@ -3,7 +3,7 @@ import Reactions from "./Reactions";
 import Comments from "./Comments";
 
 const ReactionsAndComments = ({ likeProps, props }) => {
-  // console.log(props);
+  // console.log(likeProps);
   const [show, setShow] = useState(false);
   return (
     <div>

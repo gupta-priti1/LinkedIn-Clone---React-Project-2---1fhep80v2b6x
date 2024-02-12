@@ -44,11 +44,11 @@ const DisplayPost = ({ props }) => {
       .then((res) => {
         // console.log(data);
 
-        // setPost((p) => [...res.data, ...p]);
-        setPost((p) => [...p, ...res.data]);
+        setPost((p) => [...res.data, ...p]);
+        // setPost((p) => [...p, ...res.data]);
         // setPost(res.data);
 
-        // setPage((p) => p + 1);
+        setPage((p) => p + 1);
       })
 
       .catch((error) => {
@@ -63,29 +63,31 @@ const DisplayPost = ({ props }) => {
   }, [refetchingPost]);
 
   return (
-    <InfiniteScroll
-      dataLength={post.length}
-      style={{
-        display: "flex",
+    <div style={{ width: "100%" }}>
+      <InfiniteScroll
+        dataLength={post.length}
+        style={{
+          display: "flex",
 
-        flexWrap: "wrap",
+          flexWrap: "wrap",
 
-        overflow: "hidden",
+          overflow: "hidden",
 
-        padding: "15px",
-      }}
-      hasMore={hasMore}
-      next={fetchingPost}
-    >
-      <Wrapper>
-        <DisplayPostContainer>
-          <PostContainer
-            posts={post}
-            props={{ refetchingPost, setRefetchingPost }}
-          />
-        </DisplayPostContainer>
-      </Wrapper>
-    </InfiniteScroll>
+          padding: "15px",
+        }}
+        hasMore={hasMore}
+        next={fetchingPost}
+      >
+        <Wrapper>
+          <DisplayPostContainer>
+            <PostContainer
+              posts={post}
+              props={{ refetchingPost, setRefetchingPost }}
+            />
+          </DisplayPostContainer>
+        </Wrapper>
+      </InfiniteScroll>
+    </div>
   );
 };
 
