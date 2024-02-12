@@ -67,9 +67,9 @@ const UserDropdown = () => {
               Try Premium
             </Link>
           </DropDownItems>
-          <DropDownItems>
+          {/* <DropDownItems>
             <Link className="link">Update Password</Link>
-          </DropDownItems>
+          </DropDownItems> */}
           <DropDownItems onClick={handleLogout}>
             <div className="link">Sign out</div>
           </DropDownItems>
