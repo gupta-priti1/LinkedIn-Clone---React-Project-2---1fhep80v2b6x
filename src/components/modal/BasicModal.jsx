@@ -20,6 +20,7 @@ import { likePostContext } from "../context/LikePostContext";
 import { postContext } from "../context/PostContext";
 import { accessTokenApi } from "../context/AccessTokenContext";
 import { userContextApi } from "../context/UserContext";
+import { fetchingPost } from "../helper/FetchingPost";
 
 const style = {
   position: "absolute",
@@ -34,7 +35,7 @@ const style = {
   width: "50%",
 };
 
-export default function BasicModal({props}) {
+export default function BasicModal({ props }) {
   const [open, setOpen] = useState(false);
   const [postDetails, setPostDetails] = useState({
     title: "",
@@ -43,9 +44,9 @@ export default function BasicModal({props}) {
   });
   const { post, setPost } = postContext();
   const { like, setLike } = likePostContext();
-  const {accessToken} = accessTokenApi();
+  const { accessToken } = accessTokenApi();
 
-  const {refetchingPost, setRefetchingPost} = props;
+  const { refetchingPost, setRefetchingPost } = props;
 
   const { userData } = userContextApi();
 
@@ -73,8 +74,7 @@ export default function BasicModal({props}) {
           headers: {
             projectID: "hv45l4abtvvc",
             "Content-Type": "multipart/form-data",
-            Authorization:
-              `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           },
         }
       );
@@ -84,8 +84,11 @@ export default function BasicModal({props}) {
         // setLike(like + 1);
         // window.location.reload();
         // fetchingPost();
-        setRefetchingPost(!refetchingPost);
-        console.log('fetchingpost', refetchingPost);
+        // setRefetchingPost(!refetchingPost);
+        const newPost = await fetchingPost();
+        // console.log(newPost);
+        setPost(newPost)
+        console.log("fetchingpost", refetchingPost);
       }
     } catch (error) {
       console.log("help");
