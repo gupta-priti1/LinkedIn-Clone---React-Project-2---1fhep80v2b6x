@@ -10,19 +10,19 @@ import AccessTokenContext from "./components/context/AccessTokenContext.jsx";
 import UserContext from "./components/context/UserContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <PostContext>
-        <LikePostContext>
-          <AccessTokenContext>
-            <SearchItemsContext>
-              <UserContext>
-                <App />
-              </UserContext>
-            </SearchItemsContext>
-          </AccessTokenContext>
-        </LikePostContext>
-      </PostContext>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <PostContext>
+      <LikePostContext>
+        <AccessTokenContext>
+          <SearchItemsContext>
+            <UserContext>
+              <App />
+            </UserContext>
+          </SearchItemsContext>
+        </AccessTokenContext>
+      </LikePostContext>
+    </PostContext>
+  </BrowserRouter>
+  // </React.StrictMode>
 );
